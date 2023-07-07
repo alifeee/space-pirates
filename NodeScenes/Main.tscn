@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://76ev6qb2a1qi" path="res://Assets/captain_room.png" id="1_isubg"]
 [ext_resource type="Texture2D" uid="uid://tv70ntjxkffm" path="res://Assets/mechanic_room.png" id="2_oshy8"]
-[ext_resource type="Texture2D" uid="uid://csi8ba6cp7gqh" path="res://Assets/Space shit/shitty steeringwheel.png" id="3_d30o0"]
+[ext_resource type="Texture2D" uid="uid://8b5lcvfcrtt8" path="res://Assets/Space shit/captain side/image.png" id="3_gsado"]
 [ext_resource type="Script" path="res://NodeScenes/Wheel.gd" id="4_vi048"]
 
 [node name="Main" type="Node2D"]
@@ -18,5 +18,5 @@ texture = ExtResource("2_oshy8")
 [node name="Wheel" type="Sprite2D" parent="."]
 position = Vector2(232, 408)
 scale = Vector2(0.330741, 0.330741)
-texture = ExtResource("3_d30o0")
+texture = ExtResource("3_gsado")
 script = ExtResource("4_vi048")
