@@ -1,17 +1,26 @@
 extends CharacterBody2D
 
+@export var speed = 400
+@export var rotation_speed = 1.5
 
-const SPEED = 200.0
+var coal_increase_amount = 10
+var coal_count = 0
 
+var rotation_direction = 0
+
+func get_input():
+	rotation_direction = Input.get_axis("left", "right")
+	#velocity = -transform.y * Input.get_action_raw_strength("Go!") * speed
+	if(Input.get_action_raw_strength("Go!")):
+		increase_coal(coal_increase_amount)
+		print(coal_count)
+
+func _process(delta):
+	get_input()
 
 func _physics_process(delta):
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	rotation += rotation_direction * rotation_speed * delta
 	move_and_slide()
+
+func increase_coal(coalAmount):
+	coal_count += coalAmount
