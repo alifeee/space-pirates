@@ -1,11 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dn0m6jk28c2uj"]
+[gd_scene load_steps=5 format=3 uid="uid://dn0m6jk28c2uj"]
 
 [ext_resource type="Texture2D" uid="uid://d6d6mchwtbms" path="res://NodeScenes/TwoPlayerTest/floor.png" id="1_cpj34"]
+[ext_resource type="Script" path="res://NodeScenes/TwoPlayerTest/BallPit.gd" id="1_e7ijh"]
 [ext_resource type="PackedScene" uid="uid://b3vg5nxhybvah" path="res://NodeScenes/TwoPlayerTest/ControllableBall.tscn" id="2_6w066"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gome0"]
 
 [node name="BallPit" type="Node2D"]
+script = ExtResource("1_e7ijh")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
