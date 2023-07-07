@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3vg5nxhybvah"]
+
+[ext_resource type="Script" path="res://NodeScenes/TwoPlayerTest/ControllableBall.gd" id="1_xc3bv"]
+[ext_resource type="Texture2D" uid="uid://b0jkct26dgy31" path="res://NodeScenes/TwoPlayerTest/ball.png" id="1_yihbm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xdmgm"]
+
+[node name="ControllableBall" type="CharacterBody2D"]
+script = ExtResource("1_xc3bv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_yihbm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(13.4052, 13.4052)
+shape = SubResource("CircleShape2D_xdmgm")
