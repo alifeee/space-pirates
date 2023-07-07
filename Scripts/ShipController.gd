@@ -22,17 +22,15 @@ func _process(delta):
 
 func _physics_process(delta):
 	if(coal_count > 0):
-		move_speed += acceleration
+		move_speed = move_toward(move_speed, max_move_speed, acceleration)
 		move_speed = clamp(move_speed, 0, max_move_speed)
 		velocity = -transform.y * move_speed
 		coal_count -= coal_burn_rate * delta
 	else:
-		move_speed -= deceleration
-		move_speed = clamp(move_speed, 0, 400)
+		move_speed = move_toward(move_speed, 0, deceleration)
+		move_speed = clamp(move_speed, 0, max_move_speed)
 		velocity = -transform.y * move_speed
 		coal_count = 0;
-		if(velocity < Vector2(0,0)):
-			velocity = Vector2(0,0)
 	
 	rotation += rotation_direction * rotation_speed * delta
 	move_and_slide()
