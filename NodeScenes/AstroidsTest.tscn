@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8cyweua1jrrv"]
+[gd_scene load_steps=4 format=3 uid="uid://c8cyweua1jrrv"]
 
 [ext_resource type="Texture2D" uid="uid://l4x71iwuv6hv" path="res://icon.svg" id="1_chsn2"]
+[ext_resource type="Script" path="res://Scripts/ShipController.gd" id="1_jfeiv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_08qko"]
 
@@ -8,6 +9,7 @@
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(543, 304)
+script = ExtResource("1_jfeiv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("CapsuleShape2D_08qko")
