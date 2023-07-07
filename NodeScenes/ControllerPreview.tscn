@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhl0mo4t5y41p"]
+
+[ext_resource type="Script" path="res://NodeScenes/ControllerPreview.gd" id="1_nauaw"]
+
+[node name="ControllerPreview" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_nauaw")
