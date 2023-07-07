@@ -1,24 +1,39 @@
 extends CharacterBody2D
 
-@export var speed = 400
+@export var max_move_speed = 400.0
 @export var rotation_speed = 1.5
+@export var coal_increase_amount = 1
+@export var coal_burn_rate = 2
+@export var acceleration = 0.5
+@export var deceleration = 0.5
 
-var coal_increase_amount = 10
+var move_speed = 0
 var coal_count = 0
-
 var rotation_direction = 0
 
 func get_input():
 	rotation_direction = Input.get_axis("left", "right")
-	#velocity = -transform.y * Input.get_action_raw_strength("Go!") * speed
-	if(Input.get_action_raw_strength("Go!")):
+	#velocity = -transform.y * Input.get_action_raw_strength("Go!") * move_speed
+	if(Input.is_action_just_pressed("add_coal")):
 		increase_coal(coal_increase_amount)
-		print(coal_count)
 
 func _process(delta):
 	get_input()
 
 func _physics_process(delta):
+	if(coal_count > 0):
+		move_speed += acceleration
+		move_speed = clamp(move_speed, 0, max_move_speed)
+		velocity = -transform.y * move_speed
+		coal_count -= coal_burn_rate * delta
+	else:
+		move_speed -= deceleration
+		move_speed = clamp(move_speed, 0, 400)
+		velocity = -transform.y * move_speed
+		coal_count = 0;
+		if(velocity < Vector2(0,0)):
+			velocity = Vector2(0,0)
+	
 	rotation += rotation_direction * rotation_speed * delta
 	move_and_slide()
 
