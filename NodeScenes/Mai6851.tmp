@@ -1,0 +1,64 @@
+[gd_scene load_steps=11 format=3 uid="uid://br4vudmfn607"]
+
+[ext_resource type="Texture2D" uid="uid://76ev6qb2a1qi" path="res://Assets/captain_room.png" id="1_isubg"]
+[ext_resource type="Script" path="res://NodeScenes/Main.gd" id="1_uptqq"]
+[ext_resource type="Texture2D" uid="uid://tv70ntjxkffm" path="res://Assets/mechanic_room.png" id="2_oshy8"]
+[ext_resource type="Texture2D" uid="uid://8b5lcvfcrtt8" path="res://Assets/Space shit/captain side/image.png" id="3_gsado"]
+[ext_resource type="Script" path="res://NodeScenes/Wheel.gd" id="4_vi048"]
+[ext_resource type="Texture2D" uid="uid://dmnalcgng2od4" path="res://Assets/mechanic side/press button.png" id="5_qgp27"]
+[ext_resource type="Script" path="res://NodeScenes/Button1.gd" id="6_ttfst"]
+[ext_resource type="Texture2D" uid="uid://okibml5s40ng" path="res://Assets/captain_hat.png" id="8_81xj1"]
+[ext_resource type="Texture2D" uid="uid://cdpql3qusj7u3" path="res://Assets/mechanic_wrench.png" id="9_mpmoo"]
+[ext_resource type="Script" path="res://NodeScenes/PlayerIcon.gd" id="9_u4iu4"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_uptqq")
+
+[node name="Captain Room" type="Sprite2D" parent="."]
+position = Vector2(224, 320)
+texture = ExtResource("1_isubg")
+
+[node name="Mechanic Room" type="Sprite2D" parent="."]
+position = Vector2(680, 320)
+texture = ExtResource("2_oshy8")
+
+[node name="Wheel" type="Sprite2D" parent="."]
+position = Vector2(232, 408)
+scale = Vector2(0.330741, 0.330741)
+texture = ExtResource("3_gsado")
+script = ExtResource("4_vi048")
+
+[node name="Button1" type="Sprite2D" parent="."]
+position = Vector2(608, 128)
+texture = ExtResource("5_qgp27")
+vframes = 2
+frame = 1
+script = ExtResource("6_ttfst")
+
+[node name="Button2" type="Sprite2D" parent="."]
+position = Vector2(712, 128)
+texture = ExtResource("5_qgp27")
+vframes = 2
+frame = 1
+script = ExtResource("6_ttfst")
+PLAYER1_ACTION = "player1_action2"
+PLAYER2_ACTION = "player0_right"
+
+[node name="Button3" type="Sprite2D" parent="."]
+position = Vector2(816, 128)
+texture = ExtResource("5_qgp27")
+vframes = 2
+frame = 1
+
+[node name="Captain Icon" type="Sprite2D" parent="."]
+position = Vector2(240, 592)
+scale = Vector2(0.388941, 0.388941)
+texture = ExtResource("8_81xj1")
+script = ExtResource("9_u4iu4")
+
+[node name="Mechanic Icon" type="Sprite2D" parent="."]
+position = Vector2(672, 592)
+scale = Vector2(0.253364, 0.253364)
+texture = ExtResource("9_mpmoo")
+script = ExtResource("9_u4iu4")
+controller = 1
