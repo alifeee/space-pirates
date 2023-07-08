@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://cyscssogti41t"]
+[gd_scene load_steps=78 format=3 uid="uid://cyscssogti41t"]
 
 [ext_resource type="Texture2D" uid="uid://dj42bpxy5l4bl" path="res://Assets/Space shit/real space tiles.png" id="1_s85f7"]
 [ext_resource type="PackedScene" uid="uid://5qslbyyyg40x" path="res://Assets/NodeAssets/asteroid.tscn" id="2_n0fda"]
@@ -27,6 +27,9 @@
 [ext_resource type="Script" path="res://Scripts/CoalOvenDoor.gd" id="23_xslfu"]
 [ext_resource type="Texture2D" uid="uid://v6jxi2tqkhb2" path="res://Assets/furnacedoor.png" id="24_c32nm"]
 [ext_resource type="PackedScene" uid="uid://bv3g4mtknlkbu" path="res://NodeScenes/WinAndLosePopup.tscn" id="25_wj4lu"]
+[ext_resource type="Texture2D" uid="uid://233rf6jcwfdq" path="res://Assets/mind stone up n down.png" id="27_glk8i"]
+[ext_resource type="Script" path="res://Scripts/AnimateGem.gd" id="28_fhklq"]
+[ext_resource type="Texture2D" uid="uid://dlp1ggec1236e" path="res://Assets/mind stone.png" id="28_r2i32"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x3xb6"]
 texture = ExtResource("1_s85f7")
@@ -251,6 +254,131 @@ size = Vector2(90.3374, 70.0647)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pypg2"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3dpxl"]
+atlas = ExtResource("27_glk8i")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfbs6"]
+atlas = ExtResource("27_glk8i")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gucb"]
+atlas = ExtResource("27_glk8i")
+region = Rect2(0, 20, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ux5o"]
+atlas = ExtResource("27_glk8i")
+region = Rect2(20, 20, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ribam"]
+atlas = ExtResource("27_glk8i")
+region = Rect2(0, 40, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2h6q1"]
+atlas = ExtResource("27_glk8i")
+region = Rect2(20, 40, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_elx7r"]
+atlas = ExtResource("28_r2i32")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klrue"]
+atlas = ExtResource("28_r2i32")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aklcs"]
+atlas = ExtResource("28_r2i32")
+region = Rect2(40, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ys3d1"]
+atlas = ExtResource("28_r2i32")
+region = Rect2(0, 20, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82wer"]
+atlas = ExtResource("28_r2i32")
+region = Rect2(20, 20, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlh83"]
+atlas = ExtResource("28_r2i32")
+region = Rect2(40, 20, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eo3i1"]
+atlas = ExtResource("28_r2i32")
+region = Rect2(0, 40, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxxh1"]
+atlas = ExtResource("28_r2i32")
+region = Rect2(20, 40, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27d3g"]
+atlas = ExtResource("28_r2i32")
+region = Rect2(40, 40, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rve48"]
+atlas = ExtResource("28_r2i32")
+region = Rect2(0, 60, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gvib2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3dpxl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfbs6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1gucb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ux5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ribam")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2h6q1")
+}],
+"loop": true,
+"name": &"chillin",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_elx7r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_klrue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aklcs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ys3d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82wer")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jlh83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eo3i1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxxh1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27d3g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rve48")
+}],
+"loop": true,
+"name": &"spinnin",
+"speed": 20.0
+}]
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Ship World" type="Node2D" parent="."]
@@ -460,6 +588,14 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ship Inside/Right Wall"]
 shape = SubResource("WorldBoundaryShape2D_pypg2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ship Inside"]
+position = Vector2(522, 320)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_gvib2")
+animation = &"chillin"
+frame_progress = 0.000253069
+script = ExtResource("28_fhklq")
 
 [node name="WinAndLoseScreen" parent="." instance=ExtResource("25_wj4lu")]
 
