@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://coews64022nqf"]
+[gd_scene load_steps=4 format=3 uid="uid://coews64022nqf"]
 
 [ext_resource type="PackedScene" uid="uid://dhl0mo4t5y41p" path="res://NodeScenes/ControllerPreview.tscn" id="1_i0i3m"]
 [ext_resource type="Script" path="res://NodeScenes/ControllerTest.gd" id="1_kv6yg"]
+[ext_resource type="Script" path="res://NodeScenes/SwitchSceneButton.gd" id="3_d2md8"]
 
 [node name="ControllerTest" type="Node2D"]
 script = ExtResource("1_kv6yg")
@@ -36,3 +37,12 @@ offset_right = 766.0
 offset_bottom = 410.0
 scale = Vector2(3.89312, 3.89312)
 text = "Player 2"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 448.0
+offset_top = 512.0
+offset_right = 704.0
+offset_bottom = 576.0
+text = "Back to main menu"
+script = ExtResource("3_d2md8")
+scene = "res://NodeScenes/MainMenu.tscn"
