@@ -69,15 +69,20 @@ func _on_coal_pile_new_coal_made(coal):
 	coal.pickup()
 	
 func game_win():
-	WinAndLoseScreen.visible = true
+	$"../WinAndLoseScreen".showSelf(true)
 	print("You LOSE!")
 	pass
 
 func game_lose():
-	WinAndLoseScreen.visible = true
+	$"../WinAndLoseScreen".showSelf(false)
 	print("You LOSE!")
 	pass
 
 func _on_space_ship_ship_died():
 	game_lose()
+	pass # Replace with function body.
+
+
+func _on_space_ship_ship_escaped():
+	game_win()
 	pass # Replace with function body.

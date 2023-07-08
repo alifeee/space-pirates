@@ -12,6 +12,7 @@ extends CharacterBody2D
 @onready var _animated_sprite = $AnimatedSprite2D
 
 signal shipDied
+signal shipEscaped
 
 var shipIsDead = false
 var move_speed = 0
@@ -65,6 +66,12 @@ func kills_ship():
 	_animated_sprite.play("ShipDeath")
 	coal_count = 0
 	shipDied.emit()
+	
+func ship_escaped():
+	if(shipIsDead):
+		return
+	shipIsDead = true
+	shipEscaped.emit()
 
 func checkCollisions():
 	for i in get_slide_collision_count():
@@ -73,6 +80,9 @@ func checkCollisions():
 		if collider.is_in_group("Asteroid"):
 			print("I collided with ", collider.name)
 			kills_ship()
+		if collider.is_in_group("WinZone"):
+			print("I WIN!!! I collided with ", collider.name)
+			ship_escaped()
 
 func _on_coal_oven_coal_filled(amount):
 	increase_coal(amount)
