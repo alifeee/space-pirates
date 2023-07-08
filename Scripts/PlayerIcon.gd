@@ -13,9 +13,9 @@ func _process(delta):
 
 func update_sprite():
 	if controller == 0:
-		self.texture = load("res://Assets/captain_hat.png")
+		self.texture = load("res://Assets/hat1.png")
 	elif controller == 1:
-		self.texture = load("res://Assets/mechanic_wrench.png")
+		self.texture = load("res://Assets/fire mechanic.png")
 	
 func swap_controller():
 	if controller == 0:
