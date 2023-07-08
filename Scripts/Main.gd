@@ -7,7 +7,6 @@ func _ready():
 	for node in get_tree().get_nodes_in_group("draggables"):
 		node.connect("clicked", _on_draggable_clicked)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
@@ -55,11 +54,7 @@ func _unhandled_input(event):
 			held_object = null
 
 
-func _on_coal_pile_new_coal_made(new_coal):
-	if held_object:
-		held_object.drop()
-	held_object = new_coal
-	held_object.pickup()
-
-	
+func _on_coal_pile_new_coal_made(coal):
+	held_object = coal
+	coal.pickup()
 	
