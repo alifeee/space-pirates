@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://ragonj4hk2qg" path="res://Assets/mechanic side/furnace vackground.png" id="20_yqdew"]
 [ext_resource type="Texture2D" uid="uid://b5fm35gjxmcoi" path="res://Assets/mechanic side/furnace2.png" id="21_1nmh3"]
 [ext_resource type="Script" path="res://Scripts/CoalOven.gd" id="21_a7u7q"]
-[ext_resource type="PackedScene" path="res://NodeScenes/Coal.tscn" id="22_r64ks"]
+[ext_resource type="PackedScene" uid="uid://b115b7r0f7jrj" path="res://NodeScenes/Coal.tscn" id="22_r64ks"]
 [ext_resource type="Script" path="res://Scripts/CoalOvenDoor.gd" id="23_xslfu"]
 [ext_resource type="PackedScene" path="res://NodeScenes/WinAndLosePopup.tscn" id="25_wj4lu"]
 
