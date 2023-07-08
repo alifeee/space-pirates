@@ -64,7 +64,6 @@ func close_door():
 	if $"..".num_coals_in_oven() > 0:
 		locked = true
 		$AnimatedSprite2D.play()
-		door_timer.start()
 	door_closed.emit()
 
 func start_steering():
@@ -101,13 +100,12 @@ func _input(event):
 			var yamount = event.relative.y
 			translate(Vector2.DOWN * yamount)
 			position.y = clamp(position.y, initial_y_position + OPEN_HEIGHT, initial_y_position + CLOSED_HEIGHT)
-
-
-func _on_animated_sprite_2d_animation_looped():
-	locked = false
-	$"AnimatedSprite2D".stop()
 	
 func _on_mouse_entered():
 	mouse_over_door = true
 func _on_mouse_exited():
 	mouse_over_door = false
+
+
+func _on_animated_sprite_2d_animation_finished():
+	locked = false

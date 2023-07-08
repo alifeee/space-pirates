@@ -241,7 +241,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mnskf")
 }],
-"loop": true,
+"loop": false,
 "name": &"oven",
 "speed": 10.0
 }]
@@ -632,4 +632,5 @@ script = ExtResource("28_fhklq")
 [connection signal="mouse_entered" from="Ship Inside/Coal Oven/Door" to="Ship Inside/Coal Oven/Door" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Ship Inside/Coal Oven/Door" to="Ship Inside/Coal Oven/Door" method="_on_mouse_exited"]
 [connection signal="timeout" from="Ship Inside/Coal Oven/Door/DoorTimer" to="Ship Inside/Coal Oven" method="_on_door_timer_timeout"]
+[connection signal="animation_finished" from="Ship Inside/Coal Oven/Door/AnimatedSprite2D" to="Ship Inside/Coal Oven/Door" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_looped" from="Ship Inside/Coal Oven/Door/AnimatedSprite2D" to="Ship Inside/Coal Oven/Door" method="_on_animated_sprite_2d_animation_looped"]
