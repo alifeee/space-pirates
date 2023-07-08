@@ -1,0 +1,79 @@
+[gd_scene load_steps=6 format=3 uid="uid://pi28wul3o44l"]
+
+[ext_resource type="Script" path="res://Scripts/federation.gd" id="1_83cqp"]
+[ext_resource type="PackedScene" uid="uid://by6pekchroqlc" path="res://Assets/federation_ship.tscn" id="1_hvns5"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tyw64"]
+
+[sub_resource type="Gradient" id="Gradient_4rf38"]
+offsets = PackedFloat32Array(0, 0.424051, 1)
+colors = PackedColorArray(0.410327, 5.83585e-07, 1.44392e-07, 1, 0.705882, 0.0862745, 0.0862745, 0.768627, 0.89, 0.178, 0.178, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fhlw5"]
+gradient = SubResource("Gradient_4rf38")
+fill_from = Vector2(1, 1)
+
+[node name="Federation" type="Area2D"]
+script = ExtResource("1_83cqp")
+
+[node name="Federation Ship2" parent="." instance=ExtResource("1_hvns5")]
+position = Vector2(-97, -2)
+
+[node name="Federation Ship" parent="." instance=ExtResource("1_hvns5")]
+position = Vector2(4, 43)
+scale = Vector2(2.95833, 2.95833)
+
+[node name="Federation Ship3" parent="." instance=ExtResource("1_hvns5")]
+position = Vector2(121, -10)
+scale = Vector2(1.375, 1.375)
+
+[node name="Federation Ship4" parent="." instance=ExtResource("1_hvns5")]
+position = Vector2(246, 18)
+scale = Vector2(2.375, 2.375)
+
+[node name="Federation Ship5" parent="." instance=ExtResource("1_hvns5")]
+position = Vector2(-299, -33)
+
+[node name="Federation Ship6" parent="." instance=ExtResource("1_hvns5")]
+position = Vector2(-187, -25)
+
+[node name="Federation Ship7" parent="." instance=ExtResource("1_hvns5")]
+position = Vector2(73, -39)
+
+[node name="Federation Ship8" parent="." instance=ExtResource("1_hvns5")]
+position = Vector2(179, -65)
+scale = Vector2(1.625, 1.625)
+
+[node name="Federation Ship9" parent="." instance=ExtResource("1_hvns5")]
+position = Vector2(291, -47)
+
+[node name="Federation Ship13" parent="." instance=ExtResource("1_hvns5")]
+position = Vector2(-232, -61)
+scale = Vector2(1.38567, 1.38567)
+
+[node name="Federation Ship14" parent="." instance=ExtResource("1_hvns5")]
+position = Vector2(-274, 37)
+scale = Vector2(1.58334, 1.58334)
+
+[node name="Federation Ship15" parent="." instance=ExtResource("1_hvns5")]
+position = Vector2(-147, 16)
+
+[node name="Federation Ship10" parent="." instance=ExtResource("1_hvns5")]
+position = Vector2(388, -45)
+
+[node name="Federation Ship11" parent="." instance=ExtResource("1_hvns5")]
+position = Vector2(-114, -64)
+
+[node name="Federation Ship12" parent="." instance=ExtResource("1_hvns5")]
+position = Vector2(-17, -62)
+scale = Vector2(1.54167, 1.54167)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_tyw64")
+
+[node name="Red Mist" type="Sprite2D" parent="."]
+position = Vector2(0, 11)
+scale = Vector2(16.25, 3.09375)
+texture = SubResource("GradientTexture2D_fhlw5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
