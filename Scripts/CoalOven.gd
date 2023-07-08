@@ -17,7 +17,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	var overlapping_coals = get_overlapping_bodies()
+	if len(overlapping_coals) > 0:
+		var first_overlapping_coal = overlapping_coals[0]
+		if first_overlapping_coal.held:
+			return
+		else:
+			first_overlapping_coal.queue_free()
+			add_coal_to_oven()
 
 func _input(event):
 	if event.is_action_pressed("player1_action1"):

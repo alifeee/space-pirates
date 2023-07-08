@@ -1,9 +1,11 @@
 extends CanvasLayer
 
+var held_object = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	for node in get_tree().get_nodes_in_group("draggables"):
+		node.connect("clicked", _on_draggable_clicked)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -32,8 +34,8 @@ func switch_players():
 	captain_icon.swap_controller()
 	mechanic_icon.swap_controller()
 	
-	var coal = get_node("Coal")
-	coal.controller = swap(coal.controller)
+	var coal_pile = get_node("Coal Pile")
+	coal_pile.controller = swap(coal_pile.controller)
 
 func swap(num: int):
 	if num == 0:
@@ -41,7 +43,23 @@ func swap(num: int):
 	elif num == 1:
 		return 0
 	
-	
-	
+func _on_draggable_clicked(object):
+	if !held_object:
+		held_object = object
+		held_object.pickup()
+		
+func _unhandled_input(event):
+	if event is InputEventMouseButton and event.is_action("joy0_select"):
+		if held_object and !event.pressed:
+			held_object.drop(Input.get_last_mouse_velocity())
+			held_object = null
+
+
+func _on_coal_pile_new_coal_made(new_coal):
+	if held_object:
+		held_object.drop()
+	held_object = new_coal
+	held_object.pickup()
+
 	
 	
