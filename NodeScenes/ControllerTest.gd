@@ -14,8 +14,14 @@ func _process(delta):
 func _init():
 	Input.connect("joy_connection_changed", _joy_connection_changed)
 	pass
-	
-	
+		
 func _joy_connection_changed(id, connected):
-	print(str(id)+" "+str(connected))
-	pass
+	if connected:
+		print(str(id)+"connected")
+	else:
+		print(str(id)+"disconnected")
+
+func _input(event):
+	var device = event.device
+	var text = event.as_text()
+	print(str(device) + ": " + text)
