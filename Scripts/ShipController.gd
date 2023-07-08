@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var acceleration = 0.5
 @export var deceleration = 0.5
 
-@onready var _ship_wheel = $"../../Main/Wheel"
+@onready var _ship_wheel = $"../../Ship Inside/Wheel"
 @onready var _animated_sprite = $AnimatedSprite2D
 
 var shipIsDead = false
