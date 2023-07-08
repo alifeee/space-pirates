@@ -11,6 +11,8 @@ extends CharacterBody2D
 @onready var _coal_label = $"../../Ship Inside/Label"
 @onready var _animated_sprite = $AnimatedSprite2D
 
+signal shipDied
+
 var shipIsDead = false
 var move_speed = 0
 var coal_count = 0
@@ -48,7 +50,6 @@ func _physics_process(delta):
 	move_and_slide()
 	checkCollisions()
 
-
 func increase_coal(coalAmount):
 	coal_count += coalAmount
 	_coal_label.text = str(coal_count)
@@ -63,6 +64,7 @@ func kills_ship():
 	shipIsDead = true
 	_animated_sprite.play("ShipDeath")
 	coal_count = 0
+	shipDied.emit()
 
 func checkCollisions():
 	for i in get_slide_collision_count():
@@ -71,8 +73,6 @@ func checkCollisions():
 		if collider.is_in_group("Asteroid"):
 			print("I collided with ", collider.name)
 			kills_ship()
-
-
 
 func _on_coal_oven_coal_filled(amount):
 	increase_coal(amount)

@@ -2,6 +2,8 @@ extends CanvasLayer
 
 var held_object = null
 
+@export var WinAndLoseScreen: CanvasLayer
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for node in get_tree().get_nodes_in_group("draggables"):
@@ -60,3 +62,16 @@ func _on_coal_pile_new_coal_made(coal):
 	held_object = coal
 	coal.pickup()
 	
+func game_win():
+	WinAndLoseScreen.visible = true
+	print("You LOSE!")
+	pass
+
+func game_lose():
+	WinAndLoseScreen.visible = true
+	print("You LOSE!")
+	pass
+
+func _on_space_ship_ship_died():
+	game_lose()
+	pass # Replace with function body.
