@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://pi28wul3o44l"]
+[gd_scene load_steps=8 format=3 uid="uid://btsg7h70a0ae0"]
 
 [ext_resource type="Script" path="res://Scripts/federation.gd" id="1_83cqp"]
-[ext_resource type="PackedScene" uid="uid://by6pekchroqlc" path="res://Assets/federation_ship.tscn" id="1_hvns5"]
+[ext_resource type="PackedScene" uid="uid://wkwlcywbkl3r" path="res://Assets/federation_ship.tscn" id="1_hvns5"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tyw64"]
 
@@ -75,120 +75,112 @@ position = Vector2(388, -45)
 [node name="Federation Ship11" parent="." instance=ExtResource("1_hvns5")]
 position = Vector2(-114, -64)
 
-[node name="Federation Ship12" parent="." instance=ExtResource("1_hvns5")]
-position = Vector2(-17, -62)
-scale = Vector2(1.54167, 1.54167)
+[node name="Federation Ship2" parent="Federation Ship11" instance=ExtResource("1_hvns5")]
+position = Vector2(755, 56)
 
-[node name="Federation Ship16" parent="." instance=ExtResource("1_hvns5")]
-position = Vector2(-1118.58, 36.2503)
-scale = Vector2(1.54167, 1.54167)
-
-[node name="Federation Ship17" parent="." instance=ExtResource("1_hvns5")]
-position = Vector2(-962.874, 105.626)
-scale = Vector2(4.56077, 4.56077)
-
-[node name="Federation Ship18" parent="." instance=ExtResource("1_hvns5")]
-position = Vector2(-782.498, 23.917)
-scale = Vector2(2.1198, 2.1198)
-
-[node name="Federation Ship19" parent="." instance=ExtResource("1_hvns5")]
-position = Vector2(-589.789, 67.0837)
-scale = Vector2(3.66147, 3.66147)
-
-[node name="Federation Ship20" parent="." instance=ExtResource("1_hvns5")]
-position = Vector2(-1430, -11.5414)
-scale = Vector2(1.54167, 1.54167)
-
-[node name="Federation Ship21" parent="." instance=ExtResource("1_hvns5")]
-position = Vector2(-1257.33, 0.791939)
-scale = Vector2(1.54167, 1.54167)
-
-[node name="Federation Ship22" parent="." instance=ExtResource("1_hvns5")]
-position = Vector2(-856.498, -20.7914)
-scale = Vector2(1.54167, 1.54167)
-
-[node name="Federation Ship23" parent="." instance=ExtResource("1_hvns5")]
-position = Vector2(-693.081, -60.8749)
-scale = Vector2(2.50521, 2.50521)
-
-[node name="Federation Ship24" parent="." instance=ExtResource("1_hvns5")]
-position = Vector2(-520.414, -33.1248)
-scale = Vector2(1.54167, 1.54167)
-
-[node name="Federation Ship25" parent="." instance=ExtResource("1_hvns5")]
-position = Vector2(-1326.71, -54.7082)
-scale = Vector2(2.13625, 2.13625)
-
-[node name="Federation Ship26" parent="." instance=ExtResource("1_hvns5")]
-position = Vector2(-1391.46, 96.3759)
-scale = Vector2(2.44099, 2.44099)
-
-[node name="Federation Ship27" parent="." instance=ExtResource("1_hvns5")]
-position = Vector2(-1195.67, 64.0004)
-scale = Vector2(1.54167, 1.54167)
-
-[node name="Federation Ship28" parent="." instance=ExtResource("1_hvns5")]
-position = Vector2(-370.872, -30.0415)
-scale = Vector2(1.54167, 1.54167)
-
-[node name="Federation Ship29" parent="." instance=ExtResource("1_hvns5")]
-position = Vector2(-1144.79, -59.3332)
-scale = Vector2(1.54167, 1.54167)
-
-[node name="Federation Ship30" parent="." instance=ExtResource("1_hvns5")]
-position = Vector2(-995.249, -56.2499)
-scale = Vector2(2.37675, 2.37675)
-
-[node name="Federation Ship31" parent="." instance=ExtResource("1_hvns5")]
-position = Vector2(641, -8)
-
-[node name="Federation Ship32" parent="." instance=ExtResource("1_hvns5")]
-position = Vector2(742, 37)
+[node name="Federation Ship" parent="Federation Ship11" instance=ExtResource("1_hvns5")]
+position = Vector2(856, 101)
 scale = Vector2(2.95833, 2.95833)
 
-[node name="Federation Ship33" parent="." instance=ExtResource("1_hvns5")]
-position = Vector2(859, -16)
+[node name="Federation Ship3" parent="Federation Ship11" instance=ExtResource("1_hvns5")]
+position = Vector2(973, 48)
 scale = Vector2(1.375, 1.375)
 
-[node name="Federation Ship34" parent="." instance=ExtResource("1_hvns5")]
-position = Vector2(984, 12)
+[node name="Federation Ship4" parent="Federation Ship11" instance=ExtResource("1_hvns5")]
+position = Vector2(1098, 76)
 scale = Vector2(2.375, 2.375)
 
-[node name="Federation Ship35" parent="." instance=ExtResource("1_hvns5")]
-position = Vector2(439, -39)
+[node name="Federation Ship5" parent="Federation Ship11" instance=ExtResource("1_hvns5")]
+position = Vector2(553, 25)
 
-[node name="Federation Ship36" parent="." instance=ExtResource("1_hvns5")]
-position = Vector2(551, -31)
+[node name="Federation Ship6" parent="Federation Ship11" instance=ExtResource("1_hvns5")]
+position = Vector2(665, 33)
 
-[node name="Federation Ship37" parent="." instance=ExtResource("1_hvns5")]
-position = Vector2(811, -45)
+[node name="Federation Ship7" parent="Federation Ship11" instance=ExtResource("1_hvns5")]
+position = Vector2(925, 19)
 
-[node name="Federation Ship38" parent="." instance=ExtResource("1_hvns5")]
-position = Vector2(917, -71)
+[node name="Federation Ship8" parent="Federation Ship11" instance=ExtResource("1_hvns5")]
+position = Vector2(1031, -7)
 scale = Vector2(1.625, 1.625)
 
-[node name="Federation Ship39" parent="." instance=ExtResource("1_hvns5")]
-position = Vector2(1029, -53)
+[node name="Federation Ship9" parent="Federation Ship11" instance=ExtResource("1_hvns5")]
+position = Vector2(1143, 11)
 
-[node name="Federation Ship40" parent="." instance=ExtResource("1_hvns5")]
-position = Vector2(506, -67)
+[node name="Federation Ship13" parent="Federation Ship11" instance=ExtResource("1_hvns5")]
+position = Vector2(620, -3)
 scale = Vector2(1.38567, 1.38567)
 
-[node name="Federation Ship41" parent="." instance=ExtResource("1_hvns5")]
-position = Vector2(464, 31)
+[node name="Federation Ship14" parent="Federation Ship11" instance=ExtResource("1_hvns5")]
+position = Vector2(578, 95)
 scale = Vector2(1.58334, 1.58334)
 
-[node name="Federation Ship42" parent="." instance=ExtResource("1_hvns5")]
-position = Vector2(591, 10)
+[node name="Federation Ship15" parent="Federation Ship11" instance=ExtResource("1_hvns5")]
+position = Vector2(705, 74)
 
-[node name="Federation Ship43" parent="." instance=ExtResource("1_hvns5")]
-position = Vector2(1126, -51)
+[node name="Federation Ship10" parent="Federation Ship11" instance=ExtResource("1_hvns5")]
+position = Vector2(1240, 13)
 
-[node name="Federation Ship44" parent="." instance=ExtResource("1_hvns5")]
-position = Vector2(624, -70)
+[node name="Federation Ship11" parent="Federation Ship11" instance=ExtResource("1_hvns5")]
+position = Vector2(738, -6)
 
-[node name="Federation Ship45" parent="." instance=ExtResource("1_hvns5")]
-position = Vector2(721, -68)
+[node name="Federation Ship12" parent="Federation Ship11" instance=ExtResource("1_hvns5")]
+position = Vector2(835, -4)
+scale = Vector2(1.54167, 1.54167)
+
+[node name="Federation Ship2" parent="Federation Ship11/Federation Ship12" instance=ExtResource("1_hvns5")]
+position = Vector2(-1193.24, 67.6217)
+
+[node name="Federation Ship" parent="Federation Ship11/Federation Ship12" instance=ExtResource("1_hvns5")]
+position = Vector2(-1092.24, 112.622)
+scale = Vector2(2.95833, 2.95833)
+
+[node name="Federation Ship3" parent="Federation Ship11/Federation Ship12" instance=ExtResource("1_hvns5")]
+position = Vector2(-975.24, 59.6217)
+scale = Vector2(1.375, 1.375)
+
+[node name="Federation Ship4" parent="Federation Ship11/Federation Ship12" instance=ExtResource("1_hvns5")]
+position = Vector2(-850.24, 87.6217)
+scale = Vector2(2.375, 2.375)
+
+[node name="Federation Ship5" parent="Federation Ship11/Federation Ship12" instance=ExtResource("1_hvns5")]
+position = Vector2(-1395.24, 36.6217)
+
+[node name="Federation Ship6" parent="Federation Ship11/Federation Ship12" instance=ExtResource("1_hvns5")]
+position = Vector2(-1283.24, 44.6217)
+
+[node name="Federation Ship7" parent="Federation Ship11/Federation Ship12" instance=ExtResource("1_hvns5")]
+position = Vector2(-1023.24, 30.6217)
+
+[node name="Federation Ship8" parent="Federation Ship11/Federation Ship12" instance=ExtResource("1_hvns5")]
+position = Vector2(-917.24, 4.62169)
+scale = Vector2(1.625, 1.625)
+
+[node name="Federation Ship9" parent="Federation Ship11/Federation Ship12" instance=ExtResource("1_hvns5")]
+position = Vector2(-805.24, 22.6217)
+
+[node name="Federation Ship13" parent="Federation Ship11/Federation Ship12" instance=ExtResource("1_hvns5")]
+position = Vector2(-1328.24, 8.62169)
+scale = Vector2(1.38567, 1.38567)
+
+[node name="Federation Ship14" parent="Federation Ship11/Federation Ship12" instance=ExtResource("1_hvns5")]
+position = Vector2(-1370.24, 106.622)
+scale = Vector2(1.58334, 1.58334)
+
+[node name="Federation Ship15" parent="Federation Ship11/Federation Ship12" instance=ExtResource("1_hvns5")]
+position = Vector2(-1243.24, 85.6217)
+
+[node name="Federation Ship10" parent="Federation Ship11/Federation Ship12" instance=ExtResource("1_hvns5")]
+position = Vector2(-708.24, 24.6217)
+
+[node name="Federation Ship11" parent="Federation Ship11/Federation Ship12" instance=ExtResource("1_hvns5")]
+position = Vector2(-1210.24, 5.62169)
+
+[node name="Federation Ship12" parent="Federation Ship11/Federation Ship12" instance=ExtResource("1_hvns5")]
+position = Vector2(-1113.24, 7.62169)
+scale = Vector2(1.54167, 1.54167)
+
+[node name="Federation Ship12" parent="." instance=ExtResource("1_hvns5")]
+position = Vector2(-17, -62)
 scale = Vector2(1.54167, 1.54167)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
