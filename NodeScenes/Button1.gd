@@ -6,8 +6,8 @@ var countdown = 0
 const DEFAULT_FRAME = 1
 const PRESSED_FRAME = 0
 
-@export var PLAYER1_ACTION: String = "joy1_action1"
-@export var PLAYER2_ACTION: String = "joy0_left"
+@export var PLAYER1_ACTION: String = "player1_action1"
+@export var PLAYER2_ACTION: String = "player0_left"
 @export var controller: int = 1
 
 const JOY_THRESHOLD = 0.5

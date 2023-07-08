@@ -16,7 +16,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if controller == 0:
-		var joy_amount = Input.get_axis("joy0_left", "joy0_right")
+		var joy_amount = Input.get_axis("player0_left", "player0_right")
 	
 		var speed
 		if joy_amount == 0:
@@ -26,7 +26,7 @@ func _process(delta):
 			
 		rotation = move_toward(rotation, joy_amount * ROTATION_MAX, speed * delta)
 	elif controller == 1:
-		var direction = Input.get_axis("joy1_action1", "joy1_action2")
+		var direction = Input.get_axis("player1_action1", "player1_action2")
 		
 		if direction == 1:
 			rotation = move_toward(rotation, ROTATION_MAX, CONTROL_SPEED * delta)
