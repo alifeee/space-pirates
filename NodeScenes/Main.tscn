@@ -68,6 +68,12 @@ texture = ExtResource("9_mpmoo")
 script = ExtResource("9_u4iu4")
 controller = 1
 
+[node name="Coal Pile" type="Sprite2D" parent="."]
+position = Vector2(848, 584)
+scale = Vector2(0.517974, 0.517974)
+texture = ExtResource("13_j51dl")
+script = ExtResource("14_bgr24")
+
 [node name="Coal" type="RigidBody2D" parent="."]
 position = Vector2(671, 447)
 input_pickable = true
