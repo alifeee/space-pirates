@@ -5,18 +5,15 @@ signal clicked
 const click_radius = 32
 var held: bool = false
 var in_furnace: bool = false
+var limit = 0
+
+func _init():
+	limit = ProjectSettings.get_setting("display/window/size/viewport_width") / 2
 	
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
-#		if event.pressed and event.is_action("joy0_select"):
 		if event.pressed and event.is_action("joy0_select"):
 			emit_signal("clicked", self)
-
-func _process(delta):
-	if held and in_furnace:
-		pass
-#		send signal
-#		delete self
 
 func _physics_process(delta):
 	if held:
