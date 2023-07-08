@@ -220,6 +220,13 @@ script = ExtResource("7_xddt0")
 position = Vector2(224, 320)
 texture = ExtResource("8_b0gjl")
 
+[node name="Label" type="Label" parent="Ship Inside"]
+offset_left = 378.0
+offset_top = 53.0
+offset_right = 418.0
+offset_bottom = 79.0
+text = "0"
+
 [node name="Mechanic Room" type="Sprite2D" parent="Ship Inside"]
 position = Vector2(680, 320)
 texture = ExtResource("9_c24cm")

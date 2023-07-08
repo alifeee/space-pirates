@@ -8,6 +8,7 @@ extends CharacterBody2D
 @export var deceleration = 0.5
 
 @onready var _ship_wheel = $"../../Ship Inside/Wheel"
+@onready var _coal_label = $"../../Ship Inside/Label"
 @onready var _animated_sprite = $AnimatedSprite2D
 
 var shipIsDead = false
@@ -37,7 +38,7 @@ func _physics_process(delta):
 		move_speed = move_toward(move_speed, max_move_speed, acceleration)
 		move_speed = clamp(move_speed, 0, max_move_speed)
 		velocity = -transform.y * move_speed
-		coal_count -= coal_burn_rate * delta
+		decrease_coal(coal_burn_rate * delta)
 	else:
 		move_speed = move_toward(move_speed, 0, deceleration)
 		move_speed = clamp(move_speed, 0, max_move_speed)
@@ -51,6 +52,11 @@ func _physics_process(delta):
 
 func increase_coal(coalAmount):
 	coal_count += coalAmount
+	_coal_label.text = str(coal_count)
+	
+func decrease_coal(coalAmount):
+	coal_count -= coalAmount
+	_coal_label.text = str(coal_count)
 
 func kills_ship():
 	if(shipIsDead):
