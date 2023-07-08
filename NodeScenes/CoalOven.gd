@@ -1,6 +1,8 @@
 extends Area2D
 
 @export var coals: Array[Node2D] = []
+@export var door: Sprite2D
+var door_open = true
 
 func _init():
 	pass
@@ -18,11 +20,12 @@ func _input(event):
 	if event.is_action_pressed("player1_action1"):
 		add_coal_to_oven()
 	if event.is_action_pressed("player1_action2"):
-		remove_all_coal_from_oven()
+		toggle_door()
 		
 func add_coal_to_oven():
+	if not door_open:
+		return
 	for coal in coals:
-		print(coal.visible)
 		if not coal.visible:
 			coal.visible = true
 			break
@@ -31,5 +34,16 @@ func remove_all_coal_from_oven():
 	for coal in coals:
 		coal.visible = false
 
+func toggle_door():
+	if door_open:
+		close_door()
+	else:
+		open_door()
 
-
+func open_door():
+	door.position.y -= 150
+	door_open = true
+func close_door():
+	door.position.y += 150
+	remove_all_coal_from_oven()
+	door_open = false
