@@ -2,7 +2,10 @@ extends Area2D
 
 @export var coals: Array[Node2D] = []
 @export var door: AnimatedSprite2D
+@export var door_timer: Timer
+
 var door_open = false
+var door_locked = false
 
 signal coal_filled(amount)
 var coal_fill_amount = 0
@@ -48,7 +51,7 @@ func remove_all_coal_from_oven():
 		if coal.visible:
 			num_coals += 1
 		coal.visible = false
-		
+	
 	coal_filled.emit(num_coals)
 
 func toggle_door():
@@ -58,9 +61,20 @@ func toggle_door():
 		open_door()
 
 func open_door():
+	if door_locked:
+		return
 	door.position.y -= 150
 	door_open = true
 func close_door():
 	door.position.y += 150
 	remove_all_coal_from_oven()
 	door_open = false
+	door_locked = true
+	door.play()
+	door_timer.start()
+
+func _on_door_animation_looped():
+	door.stop()
+
+func _on_door_timer_timeout():
+	door_locked = false

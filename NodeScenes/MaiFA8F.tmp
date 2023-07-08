@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bscurni1iuq57" path="res://Assets/Space shit/spaceship/death.png" id="5_f3mkm"]
 [ext_resource type="Script" path="res://Scripts/CameraController.gd" id="6_oxnn0"]
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="7_xddt0"]
-[ext_resource type="Texture2D" uid="uid://brvklbtxo7j3r" path="res://Assets/mechanic side/mechanis.png" id="8_dqo4h"]
+[ext_resource type="Texture2D" path="res://Assets/mechanic side/mechanis.png" id="8_dqo4h"]
 [ext_resource type="Texture2D" uid="uid://bijpwt851dnri" path="res://Assets/Space shit/captain side/captains quarters.png" id="8_vy08g"]
 [ext_resource type="Texture2D" uid="uid://8b5lcvfcrtt8" path="res://Assets/Space shit/captain side/image.png" id="10_bfvsd"]
 [ext_resource type="Script" path="res://Scripts/Wheel.gd" id="11_b7h1i"]
@@ -19,12 +19,12 @@
 [ext_resource type="Texture2D" uid="uid://c1nsnw68oxqcv" path="res://Assets/pile_of_coal.png" id="17_51quc"]
 [ext_resource type="Script" path="res://Scripts/CoalPile.gd" id="18_dtvdv"]
 [ext_resource type="PackedScene" uid="uid://cwewv3pdnwjv1" path="res://NodeScenes/DraggableCoal.tscn" id="19_62qb6"]
-[ext_resource type="Texture2D" uid="uid://c45ei840muwhc" path="res://Assets/mechanic side/furnacedoor.png" id="20_x3l38"]
-[ext_resource type="Texture2D" uid="uid://d1fk3q6bv4k6j" path="res://Assets/mechanic side/furnace vackground.png" id="20_yqdew"]
-[ext_resource type="Texture2D" uid="uid://bci4fu3dchyel" path="res://Assets/mechanic side/furnace2.png" id="21_1nmh3"]
+[ext_resource type="Texture2D" path="res://Assets/mechanic side/furnacedoor.png" id="20_x3l38"]
+[ext_resource type="Texture2D" path="res://Assets/mechanic side/furnace vackground.png" id="20_yqdew"]
+[ext_resource type="Texture2D" path="res://Assets/mechanic side/furnace2.png" id="21_1nmh3"]
 [ext_resource type="Script" path="res://Scripts/CoalOven.gd" id="21_a7u7q"]
 [ext_resource type="PackedScene" uid="uid://btusexu0lh4s7" path="res://NodeScenes/Coal.tscn" id="22_r64ks"]
-[ext_resource type="PackedScene" uid="uid://bv3g4mtknlkbu" path="res://NodeScenes/WinAndLosePopup.tscn" id="25_wj4lu"]
+[ext_resource type="PackedScene" path="res://NodeScenes/WinAndLosePopup.tscn" id="25_wj4lu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x3xb6"]
 texture = ExtResource("1_s85f7")
@@ -236,7 +236,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"oven",
-"speed": 10.0
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0w15l"]
@@ -362,13 +362,12 @@ position = Vector2(0, 1.52588e-05)
 scale = Vector2(2.73206, 2.73206)
 shape = SubResource("CircleShape2D_pih3j")
 
-[node name="Coal Oven" type="Area2D" parent="Ship Inside" node_paths=PackedStringArray("coals", "door", "door_timer")]
+[node name="Coal Oven" type="Area2D" parent="Ship Inside" node_paths=PackedStringArray("coals", "door")]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("21_a7u7q")
 coals = [NodePath("Coal 1"), NodePath("Coal 2"), NodePath("Coal 3"), NodePath("Coal 4"), NodePath("Coal 5"), NodePath("Coal 6")]
 door = NodePath("Door")
-door_timer = NodePath("DoorTimer")
 
 [node name="Back" type="Sprite2D" parent="Ship Inside/Coal Oven"]
 position = Vector2(864, 368)
@@ -404,7 +403,6 @@ position = Vector2(872, 368)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_0hlr3")
 animation = &"oven"
-frame_progress = 0.632735
 
 [node name="Oven" type="Sprite2D" parent="Ship Inside/Coal Oven"]
 position = Vector2(872, 368)
@@ -415,8 +413,6 @@ texture = ExtResource("21_1nmh3")
 position = Vector2(877.158, 448)
 scale = Vector2(3.07386, 3.07386)
 shape = SubResource("RectangleShape2D_0w15l")
-
-[node name="DoorTimer" type="Timer" parent="Ship Inside/Coal Oven"]
 
 [node name="DraggableCoal" parent="Ship Inside" groups=["draggables"] instance=ExtResource("19_62qb6")]
 position = Vector2(776, 592)
@@ -454,6 +450,3 @@ visible = false
 [connection signal="mouse_exited" from="Ship Inside/Coal Pile" to="Ship Inside/Coal Pile" method="_on_mouse_exited"]
 [connection signal="new_coal_made" from="Ship Inside/Coal Pile" to="Ship Inside" method="_on_coal_pile_new_coal_made"]
 [connection signal="coal_filled" from="Ship Inside/Coal Oven" to="Ship World/SpaceShip" method="_on_coal_oven_coal_filled"]
-[connection signal="animation_finished" from="Ship Inside/Coal Oven/Door" to="Ship Inside/Coal Oven" method="_on_door_animation_finished"]
-[connection signal="animation_looped" from="Ship Inside/Coal Oven/Door" to="Ship Inside/Coal Oven" method="_on_door_animation_looped"]
-[connection signal="timeout" from="Ship Inside/Coal Oven/DoorTimer" to="Ship Inside/Coal Oven" method="_on_door_timer_timeout"]
