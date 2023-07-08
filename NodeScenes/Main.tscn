@@ -69,7 +69,7 @@ script = ExtResource("9_u4iu4")
 controller = 1
 
 [node name="Coal" type="RigidBody2D" parent="."]
-position = Vector2(820, 550)
+position = Vector2(833, 520)
 input_pickable = true
 gravity_scale = 0.0
 freeze_mode = 1
