@@ -141,10 +141,11 @@ animations = [{
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Player" type="Node2D" parent="."]
+[node name="Player" type="Node2D" parent="." groups=["Player"]]
 
-[node name="SpaceShip" type="CharacterBody2D" parent="Player"]
+[node name="SpaceShip" type="CharacterBody2D" parent="Player" groups=["Player"]]
 position = Vector2(577, 322)
+collision_layer = 3
 script = ExtResource("1_jfeiv")
 max_move_speed = 600.0
 deceleration = 1.5
