@@ -5,10 +5,12 @@ var offset = Vector2()
 var drag = false
 var click_radius = 32
 var mouse_sens= 300.0
+var isMoving: bool = false
+var targetPosition: Vector2 = Vector2(671, 447)
 
 @export var controller: int = 0
 func _ready():
-	self.position = Vector2(5,5) 
+	self.position = Vector2(841, 501) 
 
 func _physics_process(delta):
 	return
@@ -22,14 +24,24 @@ func _physics_process(delta):
 	var movement = mouse_sens * direction * delta
 	if (movement):  
 		get_viewport().warp_mouse(get_global_mouse_position()+movement) 
-		
+
+				
 func _process(delta):
+	
 	if controller == 0:
 		return
 	if controller == 1:
 		if Input.is_action_just_pressed("add_coal_button"):
-			var speed = 1 # Change this to increase it to more units/second
-			position = position.move_toward(Vector2(0,0), delta * speed)
+			isMoving = true
+		print("add coal button pressed")
+		if isMoving:
+			var movementSpeed = 3 
+			var direction = (targetPosition - self.position)
+			var distance = movementSpeed * delta
+			self.position += direction * distance
+		
+			if self.position.distance_to(targetPosition) <= distance:
+				isMoving = false	
 	
 func _input(event):
 	if controller == 1:
