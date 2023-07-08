@@ -52,7 +52,7 @@ func _input(event):
 	# mouse control (player 0 only)
 	if controller != 0:
 		return
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+	if event.is_action("joy0_select"):
 		if (event.position - self.position).length() < CLICK_RADIUS:
 			if not mouse_steering and event.pressed:
 				start_steering()

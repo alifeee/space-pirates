@@ -23,7 +23,6 @@ func get_input():
 		return
 
 	rotation_direction = _ship_wheel.rotation
-	print(rotation_direction)
 	if(Input.is_action_just_pressed("add_coal")):
 		increase_coal(coal_increase_amount)
 
