@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://br4vudmfn607"]
+[gd_scene load_steps=19 format=3 uid="uid://br4vudmfn607"]
 
 [ext_resource type="Texture2D" uid="uid://76ev6qb2a1qi" path="res://Assets/captain_room.png" id="1_isubg"]
 [ext_resource type="Script" path="res://NodeScenes/Main.gd" id="1_uptqq"]
@@ -82,11 +82,12 @@ texture = ExtResource("13_j51dl")
 script = ExtResource("14_bgr24")
 
 [node name="Coal" type="RigidBody2D" parent="."]
-position = Vector2(671, 447)
+position = Vector2(760, 600)
 input_pickable = true
 gravity_scale = 0.0
 freeze_mode = 1
 script = ExtResource("6_028wc")
+controller = 1
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Coal"]
