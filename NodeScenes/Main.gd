@@ -18,6 +18,7 @@ func switch_players():
 	var wheel = get_node("Wheel")
 	
 	wheel.controller = swap(wheel.controller)
+	wheel.stop_steering()
 	
 	var button1 = get_node("Button1")
 	var button2 = get_node("Button2")

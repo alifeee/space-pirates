@@ -9,7 +9,7 @@ const RESET_SPEED = PI * 1
 
 @export var controller: int = 0
 
-var steering = false
+var mouse_steering = false
 const CLICK_RADIUS = 150
 const MOUSE_CONTROL_SPEED = .01
 
@@ -27,7 +27,7 @@ func _process(delta):
 			speed = RESET_SPEED
 		else: #joystick engaged
 			speed = CONTROL_SPEED
-		if not steering:
+		if not mouse_steering:
 			rotation = move_toward(rotation, joy_amount * ROTATION_MAX, speed * delta)
 		
 		# mouse movement
@@ -40,20 +40,26 @@ func _process(delta):
 		elif direction == -1:
 			rotation = move_toward(rotation, -ROTATION_MAX, CONTROL_SPEED * delta)
 
+func start_steering():
+	mouse_steering = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+func stop_steering():
+	mouse_steering = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
 func _input(event):
 	# mouse control (player 0 only)
 	if controller != 0:
 		return
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if (event.position - self.position).length() < CLICK_RADIUS:
-			if not steering and event.pressed:
-				steering = true
-				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		if steering and not event.pressed:
-			steering = false
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			if not mouse_steering and event.pressed:
+				start_steering()
+		if mouse_steering and not event.pressed:
+			stop_steering()
 	
-	if event is InputEventMouseMotion and steering:
+	if event is InputEventMouseMotion and mouse_steering:
 		var xmove = event.relative.x
 		
 		if xmove > 0:
