@@ -45,8 +45,10 @@ func start_steering():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 func stop_steering():
-	mouse_steering = false
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	if mouse_steering:
+		mouse_steering = false
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		get_viewport().warp_mouse(position)
 
 func _input(event):
 	# mouse control (player 0 only)
