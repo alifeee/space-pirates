@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://br4vudmfn607"]
+[gd_scene load_steps=7 format=3 uid="uid://br4vudmfn607"]
 
 [ext_resource type="Texture2D" uid="uid://76ev6qb2a1qi" path="res://Assets/captain_room.png" id="1_isubg"]
 [ext_resource type="Texture2D" uid="uid://tv70ntjxkffm" path="res://Assets/mechanic_room.png" id="2_oshy8"]
 [ext_resource type="Texture2D" uid="uid://8b5lcvfcrtt8" path="res://Assets/Space shit/captain side/image.png" id="3_gsado"]
 [ext_resource type="Script" path="res://NodeScenes/Wheel.gd" id="4_vi048"]
+[ext_resource type="Texture2D" uid="uid://dmnalcgng2od4" path="res://Assets/mechanic side/press button.png" id="5_qgp27"]
+[ext_resource type="Script" path="res://NodeScenes/Button1.gd" id="6_ttfst"]
 
 [node name="Main" type="Node2D"]
 
@@ -20,3 +22,24 @@ position = Vector2(232, 408)
 scale = Vector2(0.330741, 0.330741)
 texture = ExtResource("3_gsado")
 script = ExtResource("4_vi048")
+
+[node name="Button1" type="Sprite2D" parent="."]
+position = Vector2(608, 128)
+texture = ExtResource("5_qgp27")
+vframes = 2
+frame = 1
+script = ExtResource("6_ttfst")
+
+[node name="Button2" type="Sprite2D" parent="."]
+position = Vector2(712, 128)
+texture = ExtResource("5_qgp27")
+vframes = 2
+frame = 1
+script = ExtResource("6_ttfst")
+PRESS_ACTION = "joy1_action2"
+
+[node name="Button3" type="Sprite2D" parent="."]
+position = Vector2(816, 128)
+texture = ExtResource("5_qgp27")
+vframes = 2
+frame = 1
