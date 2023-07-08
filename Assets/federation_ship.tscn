@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://by6pekchroqlc"]
+[gd_scene load_steps=2 format=3 uid="uid://wkwlcywbkl3r"]
 
-[ext_resource type="Texture2D" uid="uid://b1f1rtugrqdat" path="res://Assets/Space shit/spaceship/spaceship.png" id="1_4mlwv"]
+[ext_resource type="Texture2D" uid="uid://b0deqrxcf7ywl" path="res://Assets/Space shit/Nautolan Ship - Battlecruiser - Base.png" id="1_4du3w"]
 
 [node name="Federation Ship" type="Sprite2D"]
-texture = ExtResource("1_4mlwv")
+texture = ExtResource("1_4du3w")
