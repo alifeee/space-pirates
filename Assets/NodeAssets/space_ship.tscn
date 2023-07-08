@@ -1,0 +1,147 @@
+[gd_scene load_steps=21 format=3 uid="uid://ba0j1druawko5"]
+
+[ext_resource type="Script" path="res://Scripts/ShipController.gd" id="1_orkop"]
+[ext_resource type="Texture2D" uid="uid://b1f1rtugrqdat" path="res://Assets/Space shit/spaceship/spaceship.png" id="2_o221x"]
+[ext_resource type="Texture2D" uid="uid://bscurni1iuq57" path="res://Assets/Space shit/spaceship/death.png" id="3_6u2mq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rcuwi"]
+size = Vector2(40.225, 40.247)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xeht0"]
+atlas = ExtResource("3_6u2mq")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xoy66"]
+atlas = ExtResource("3_6u2mq")
+region = Rect2(64, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fvps"]
+atlas = ExtResource("3_6u2mq")
+region = Rect2(128, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qeac"]
+atlas = ExtResource("3_6u2mq")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spv70"]
+atlas = ExtResource("3_6u2mq")
+region = Rect2(256, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpqdh"]
+atlas = ExtResource("3_6u2mq")
+region = Rect2(320, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqdi1"]
+atlas = ExtResource("3_6u2mq")
+region = Rect2(384, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bofr0"]
+atlas = ExtResource("3_6u2mq")
+region = Rect2(448, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qskfg"]
+atlas = ExtResource("3_6u2mq")
+region = Rect2(512, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqlgf"]
+atlas = ExtResource("3_6u2mq")
+region = Rect2(576, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsj7q"]
+atlas = ExtResource("3_6u2mq")
+region = Rect2(640, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q560g"]
+atlas = ExtResource("3_6u2mq")
+region = Rect2(704, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufb64"]
+atlas = ExtResource("3_6u2mq")
+region = Rect2(768, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0c0fb"]
+atlas = ExtResource("3_6u2mq")
+region = Rect2(832, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_th8ha"]
+atlas = ExtResource("3_6u2mq")
+region = Rect2(896, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wvedr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_o221x")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xeht0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xoy66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fvps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qeac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spv70")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpqdh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqdi1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bofr0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qskfg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqlgf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsj7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q560g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufb64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0c0fb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_th8ha")
+}],
+"loop": false,
+"name": &"ShipDeath",
+"speed": 10.0
+}]
+
+[node name="SpaceShip" type="CharacterBody2D" groups=["Player"]]
+script = ExtResource("1_orkop")
+max_move_speed = 600.0
+deceleration = 1.5
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+scale = Vector2(0.978497, 1.06318)
+shape = SubResource("RectangleShape2D_rcuwi")
+one_way_collision_margin = 0.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wvedr")
+animation = &"Idle"
+autoplay = "Idle"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

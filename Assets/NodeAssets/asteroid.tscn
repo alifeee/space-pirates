@@ -1,10 +1,65 @@
-[gd_scene load_steps=4 format=3 uid="uid://5qslbyyyg40x"]
+[gd_scene load_steps=11 format=3 uid="uid://5qslbyyyg40x"]
 
 [ext_resource type="Script" path="res://Scripts/asteroid.gd" id="1_ltq0j"]
 [ext_resource type="Texture2D" uid="uid://dfetu76rpdoe7" path="res://Assets/Space shit/Asteroide.png" id="1_xkps5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mgsi5"]
 radius = 40.0125
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roby4"]
+atlas = ExtResource("1_xkps5")
+region = Rect2(0, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_extyg"]
+atlas = ExtResource("1_xkps5")
+region = Rect2(0, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8sncx"]
+atlas = ExtResource("1_xkps5")
+region = Rect2(60, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a43hs"]
+atlas = ExtResource("1_xkps5")
+region = Rect2(0, 60, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_em6oa"]
+atlas = ExtResource("1_xkps5")
+region = Rect2(60, 60, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2auk"]
+atlas = ExtResource("1_xkps5")
+region = Rect2(0, 120, 60, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_23xq3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roby4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_extyg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8sncx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a43hs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_em6oa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2auk")
+}],
+"loop": false,
+"name": &"explode",
+"speed": 5.0
+}]
 
 [node name="Asteroid" type="Area2D" groups=["Asteroid"]]
 script = ExtResource("1_ltq0j")
@@ -13,9 +68,10 @@ script = ExtResource("1_ltq0j")
 scale = Vector2(0.4, 0.4)
 shape = SubResource("CircleShape2D_mgsi5")
 
-[node name="Asteroide" type="Sprite2D" parent="."]
-texture = ExtResource("1_xkps5")
-hframes = 2
-vframes = 3
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_23xq3")
+animation = &"explode"
+autoplay = "default"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
