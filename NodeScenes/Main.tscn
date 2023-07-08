@@ -12,9 +12,16 @@
 [ext_resource type="Texture2D" uid="uid://okibml5s40ng" path="res://Assets/captain_hat.png" id="8_81xj1"]
 [ext_resource type="Texture2D" uid="uid://cdpql3qusj7u3" path="res://Assets/mechanic_wrench.png" id="9_mpmoo"]
 [ext_resource type="Script" path="res://NodeScenes/PlayerIcon.gd" id="9_u4iu4"]
+[ext_resource type="Texture2D" uid="uid://c1nsnw68oxqcv" path="res://Assets/pile_of_coal.png" id="13_j51dl"]
+[ext_resource type="Script" path="res://NodeScenes/CoalPile.gd" id="14_bgr24"]
+[ext_resource type="Script" path="res://NodeScenes/CoalOven.gd" id="15_0q2hx"]
+[ext_resource type="PackedScene" uid="uid://btusexu0lh4s7" path="res://NodeScenes/Coal.tscn" id="16_vt864"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2eisw"]
 radius = 28.96
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0w15l"]
+size = Vector2(95.8854, 77.6673)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_uptqq")
@@ -87,3 +94,49 @@ texture = ExtResource("5_lhwsp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coal"]
 shape = SubResource("CircleShape2D_2eisw")
+
+[node name="Coal Oven" type="Area2D" parent="." node_paths=PackedStringArray("coal_nodes", "coals")]
+script = ExtResource("15_0q2hx")
+coal_nodes = [NodePath("Coal Node 1"), NodePath("Coal Node 2"), NodePath("Coal Node 3"), NodePath("Coal Node 4"), NodePath("Coal Node 5"), NodePath("Coal Node 6")]
+coals = [NodePath("Coal 1"), NodePath("Coal 2"), NodePath("Coal 3"), NodePath("Coal 4"), NodePath("Coal 5"), NodePath("Coal 6")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coal Oven"]
+position = Vector2(668.631, 392.631)
+scale = Vector2(3.07386, 3.07386)
+shape = SubResource("RectangleShape2D_0w15l")
+
+[node name="Coal Node 1" type="Node2D" parent="Coal Oven"]
+position = Vector2(592, 480)
+
+[node name="Coal Node 2" type="Node2D" parent="Coal Oven"]
+position = Vector2(644, 485)
+
+[node name="Coal Node 3" type="Node2D" parent="Coal Oven"]
+position = Vector2(699, 483)
+
+[node name="Coal Node 4" type="Node2D" parent="Coal Oven"]
+position = Vector2(616, 443)
+
+[node name="Coal Node 5" type="Node2D" parent="Coal Oven"]
+position = Vector2(673, 441)
+
+[node name="Coal Node 6" type="Node2D" parent="Coal Oven"]
+position = Vector2(643, 405)
+
+[node name="Coal 1" parent="Coal Oven" instance=ExtResource("16_vt864")]
+position = Vector2(-294, 233)
+
+[node name="Coal 2" parent="Coal Oven" instance=ExtResource("16_vt864")]
+position = Vector2(-294, 233)
+
+[node name="Coal 3" parent="Coal Oven" instance=ExtResource("16_vt864")]
+position = Vector2(-294, 233)
+
+[node name="Coal 4" parent="Coal Oven" instance=ExtResource("16_vt864")]
+position = Vector2(-294, 233)
+
+[node name="Coal 5" parent="Coal Oven" instance=ExtResource("16_vt864")]
+position = Vector2(-294, 233)
+
+[node name="Coal 6" parent="Coal Oven" instance=ExtResource("16_vt864")]
+position = Vector2(-294, 233)
