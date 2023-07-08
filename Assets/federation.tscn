@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://pi28wul3o44l"]
+[gd_scene load_steps=8 format=3 uid="uid://pi28wul3o44l"]
 
 [ext_resource type="Script" path="res://Scripts/federation.gd" id="1_83cqp"]
 [ext_resource type="PackedScene" uid="uid://by6pekchroqlc" path="res://Assets/federation_ship.tscn" id="1_hvns5"]
@@ -11,10 +11,21 @@ colors = PackedColorArray(0.410327, 5.83585e-07, 1.44392e-07, 1, 0.705882, 0.086
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_fhlw5"]
 gradient = SubResource("Gradient_4rf38")
+width = 256
+height = 128
 fill_from = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_inv2e"]
+colors = PackedColorArray(0.417969, 0.0078125, 0.0078125, 1, 0.417969, 0.0078125, 0.0078125, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_itavo"]
+gradient = SubResource("Gradient_inv2e")
+fill_from = Vector2(1, 0)
+fill_to = Vector2(1, 1)
 
 [node name="Federation" type="Area2D"]
 script = ExtResource("1_83cqp")
+MOVE_DIRECTION = Vector2(0, -1)
 
 [node name="Federation Ship2" parent="." instance=ExtResource("1_hvns5")]
 position = Vector2(-97, -2)
@@ -64,16 +75,126 @@ position = Vector2(388, -45)
 [node name="Federation Ship11" parent="." instance=ExtResource("1_hvns5")]
 position = Vector2(-114, -64)
 
+[node name="Federation Ship2" parent="Federation Ship11" instance=ExtResource("1_hvns5")]
+position = Vector2(755, 56)
+
+[node name="Federation Ship" parent="Federation Ship11" instance=ExtResource("1_hvns5")]
+position = Vector2(856, 101)
+scale = Vector2(2.95833, 2.95833)
+
+[node name="Federation Ship3" parent="Federation Ship11" instance=ExtResource("1_hvns5")]
+position = Vector2(973, 48)
+scale = Vector2(1.375, 1.375)
+
+[node name="Federation Ship4" parent="Federation Ship11" instance=ExtResource("1_hvns5")]
+position = Vector2(1098, 76)
+scale = Vector2(2.375, 2.375)
+
+[node name="Federation Ship5" parent="Federation Ship11" instance=ExtResource("1_hvns5")]
+position = Vector2(553, 25)
+
+[node name="Federation Ship6" parent="Federation Ship11" instance=ExtResource("1_hvns5")]
+position = Vector2(665, 33)
+
+[node name="Federation Ship7" parent="Federation Ship11" instance=ExtResource("1_hvns5")]
+position = Vector2(925, 19)
+
+[node name="Federation Ship8" parent="Federation Ship11" instance=ExtResource("1_hvns5")]
+position = Vector2(1031, -7)
+scale = Vector2(1.625, 1.625)
+
+[node name="Federation Ship9" parent="Federation Ship11" instance=ExtResource("1_hvns5")]
+position = Vector2(1143, 11)
+
+[node name="Federation Ship13" parent="Federation Ship11" instance=ExtResource("1_hvns5")]
+position = Vector2(620, -3)
+scale = Vector2(1.38567, 1.38567)
+
+[node name="Federation Ship14" parent="Federation Ship11" instance=ExtResource("1_hvns5")]
+position = Vector2(578, 95)
+scale = Vector2(1.58334, 1.58334)
+
+[node name="Federation Ship15" parent="Federation Ship11" instance=ExtResource("1_hvns5")]
+position = Vector2(705, 74)
+
+[node name="Federation Ship10" parent="Federation Ship11" instance=ExtResource("1_hvns5")]
+position = Vector2(1240, 13)
+
+[node name="Federation Ship11" parent="Federation Ship11" instance=ExtResource("1_hvns5")]
+position = Vector2(738, -6)
+
+[node name="Federation Ship12" parent="Federation Ship11" instance=ExtResource("1_hvns5")]
+position = Vector2(835, -4)
+scale = Vector2(1.54167, 1.54167)
+
+[node name="Federation Ship2" parent="Federation Ship11/Federation Ship12" instance=ExtResource("1_hvns5")]
+position = Vector2(-1193.24, 67.6217)
+
+[node name="Federation Ship" parent="Federation Ship11/Federation Ship12" instance=ExtResource("1_hvns5")]
+position = Vector2(-1092.24, 112.622)
+scale = Vector2(2.95833, 2.95833)
+
+[node name="Federation Ship3" parent="Federation Ship11/Federation Ship12" instance=ExtResource("1_hvns5")]
+position = Vector2(-975.24, 59.6217)
+scale = Vector2(1.375, 1.375)
+
+[node name="Federation Ship4" parent="Federation Ship11/Federation Ship12" instance=ExtResource("1_hvns5")]
+position = Vector2(-850.24, 87.6217)
+scale = Vector2(2.375, 2.375)
+
+[node name="Federation Ship5" parent="Federation Ship11/Federation Ship12" instance=ExtResource("1_hvns5")]
+position = Vector2(-1395.24, 36.6217)
+
+[node name="Federation Ship6" parent="Federation Ship11/Federation Ship12" instance=ExtResource("1_hvns5")]
+position = Vector2(-1283.24, 44.6217)
+
+[node name="Federation Ship7" parent="Federation Ship11/Federation Ship12" instance=ExtResource("1_hvns5")]
+position = Vector2(-1023.24, 30.6217)
+
+[node name="Federation Ship8" parent="Federation Ship11/Federation Ship12" instance=ExtResource("1_hvns5")]
+position = Vector2(-917.24, 4.62169)
+scale = Vector2(1.625, 1.625)
+
+[node name="Federation Ship9" parent="Federation Ship11/Federation Ship12" instance=ExtResource("1_hvns5")]
+position = Vector2(-805.24, 22.6217)
+
+[node name="Federation Ship13" parent="Federation Ship11/Federation Ship12" instance=ExtResource("1_hvns5")]
+position = Vector2(-1328.24, 8.62169)
+scale = Vector2(1.38567, 1.38567)
+
+[node name="Federation Ship14" parent="Federation Ship11/Federation Ship12" instance=ExtResource("1_hvns5")]
+position = Vector2(-1370.24, 106.622)
+scale = Vector2(1.58334, 1.58334)
+
+[node name="Federation Ship15" parent="Federation Ship11/Federation Ship12" instance=ExtResource("1_hvns5")]
+position = Vector2(-1243.24, 85.6217)
+
+[node name="Federation Ship10" parent="Federation Ship11/Federation Ship12" instance=ExtResource("1_hvns5")]
+position = Vector2(-708.24, 24.6217)
+
+[node name="Federation Ship11" parent="Federation Ship11/Federation Ship12" instance=ExtResource("1_hvns5")]
+position = Vector2(-1210.24, 5.62169)
+
+[node name="Federation Ship12" parent="Federation Ship11/Federation Ship12" instance=ExtResource("1_hvns5")]
+position = Vector2(-1113.24, 7.62169)
+scale = Vector2(1.54167, 1.54167)
+
 [node name="Federation Ship12" parent="." instance=ExtResource("1_hvns5")]
 position = Vector2(-17, -62)
 scale = Vector2(1.54167, 1.54167)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -19)
 shape = SubResource("WorldBoundaryShape2D_tyw64")
 
 [node name="Red Mist" type="Sprite2D" parent="."]
-position = Vector2(0, 11)
+position = Vector2(-1, 42)
 scale = Vector2(16.25, 3.09375)
 texture = SubResource("GradientTexture2D_fhlw5")
+
+[node name="Red Mist2" type="Sprite2D" parent="."]
+position = Vector2(2, 586.5)
+scale = Vector2(65.0938, 11.0781)
+texture = SubResource("GradientTexture2D_itavo")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
