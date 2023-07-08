@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bscurni1iuq57" path="res://Assets/Space shit/spaceship/death.png" id="5_f3mkm"]
 [ext_resource type="Script" path="res://Scripts/CameraController.gd" id="6_oxnn0"]
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="7_xddt0"]
-[ext_resource type="Texture2D" uid="uid://76ev6qb2a1qi" path="res://Assets/captain_room.png" id="8_b0gjl"]
+[ext_resource type="Texture2D" uid="uid://bijpwt851dnri" path="res://Assets/Space shit/captain side/captains quarters.png" id="8_vy08g"]
 [ext_resource type="Texture2D" uid="uid://tv70ntjxkffm" path="res://Assets/mechanic_room.png" id="9_c24cm"]
 [ext_resource type="Texture2D" uid="uid://8b5lcvfcrtt8" path="res://Assets/Space shit/captain side/image.png" id="10_bfvsd"]
 [ext_resource type="Script" path="res://Scripts/Wheel.gd" id="11_b7h1i"]
@@ -217,8 +217,9 @@ PlayerNode = NodePath("../SpaceShip")
 script = ExtResource("7_xddt0")
 
 [node name="Captain Room" type="Sprite2D" parent="Ship Inside"]
-position = Vector2(224, 320)
-texture = ExtResource("8_b0gjl")
+position = Vector2(227.319, 253.734)
+scale = Vector2(1.5325, 1.5325)
+texture = ExtResource("8_vy08g")
 
 [node name="Label" type="Label" parent="Ship Inside"]
 offset_left = 378.0
