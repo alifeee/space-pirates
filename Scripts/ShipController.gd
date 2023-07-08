@@ -41,16 +41,23 @@ func _physics_process(delta):
 	
 	rotation += rotation_direction * rotation_speed * delta
 	move_and_slide()
+	checkCollisions()
+
 
 func increase_coal(coalAmount):
 	coal_count += coalAmount
 
 func kills_ship():
+	if(shipIsDead):
+		return
 	shipIsDead = true
 	_animated_sprite.play("ShipDeath")
 	coal_count = 0
 
-func _on_area_2d_body_entered(body):
-	kills_ship()
-	print("Hit Astroid!!: " + body.name)
-
+func checkCollisions():
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		if collider.is_in_group("Asteroid"):
+			print("I collided with ", collider.name)
+			kills_ship()

@@ -1,4 +1,4 @@
-extends Node2D
+extends Area2D
 
 @export var spinSpeed = 1
 
@@ -6,8 +6,13 @@ extends Node2D
 func _ready():
 	spinSpeed = spinSpeed * randf_range(0, 3) * randf_range(-1, 1)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	rotate(spinSpeed * delta)
+
+
+func _on_body_entered(body):
+	if(body.is_in_group("Player")):
+		print("It's WORKING!!!")
+		body.kills_ship()
 
