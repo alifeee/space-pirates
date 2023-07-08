@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://cyscssogti41t"]
+[gd_scene load_steps=55 format=3 uid="uid://cyscssogti41t"]
 
 [ext_resource type="Texture2D" uid="uid://dj42bpxy5l4bl" path="res://Assets/Space shit/real space tiles.png" id="1_s85f7"]
 [ext_resource type="PackedScene" uid="uid://5qslbyyyg40x" path="res://Assets/NodeAssets/asteroid.tscn" id="2_n0fda"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bscurni1iuq57" path="res://Assets/Space shit/spaceship/death.png" id="5_f3mkm"]
 [ext_resource type="Script" path="res://Scripts/CameraController.gd" id="6_oxnn0"]
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="7_xddt0"]
-[ext_resource type="Texture2D" uid="uid://brvklbtxo7j3r" path="res://Assets/mechanic side/mechanis.png" id="8_dqo4h"]
+[ext_resource type="Texture2D" path="res://Assets/mechanic side/mechanis.png" id="8_dqo4h"]
 [ext_resource type="Texture2D" uid="uid://bijpwt851dnri" path="res://Assets/Space shit/captain side/captains quarters.png" id="8_vy08g"]
 [ext_resource type="Texture2D" uid="uid://8b5lcvfcrtt8" path="res://Assets/Space shit/captain side/image.png" id="10_bfvsd"]
 [ext_resource type="Script" path="res://Scripts/Wheel.gd" id="11_b7h1i"]
@@ -19,9 +19,9 @@
 [ext_resource type="Texture2D" uid="uid://c1nsnw68oxqcv" path="res://Assets/pile_of_coal.png" id="17_51quc"]
 [ext_resource type="Script" path="res://Scripts/CoalPile.gd" id="18_dtvdv"]
 [ext_resource type="PackedScene" uid="uid://cwewv3pdnwjv1" path="res://NodeScenes/DraggableCoal.tscn" id="19_62qb6"]
-[ext_resource type="Texture2D" uid="uid://c45ei840muwhc" path="res://Assets/mechanic side/furnacedoor.png" id="20_x3l38"]
-[ext_resource type="Texture2D" uid="uid://d1fk3q6bv4k6j" path="res://Assets/mechanic side/furnace vackground.png" id="20_yqdew"]
-[ext_resource type="Texture2D" uid="uid://bci4fu3dchyel" path="res://Assets/mechanic side/furnace2.png" id="21_1nmh3"]
+[ext_resource type="Texture2D" path="res://Assets/mechanic side/furnacedoor.png" id="20_x3l38"]
+[ext_resource type="Texture2D" path="res://Assets/mechanic side/furnace vackground.png" id="20_yqdew"]
+[ext_resource type="Texture2D" path="res://Assets/mechanic side/furnace2.png" id="21_1nmh3"]
 [ext_resource type="Script" path="res://Scripts/CoalOven.gd" id="21_a7u7q"]
 [ext_resource type="PackedScene" uid="uid://btusexu0lh4s7" path="res://NodeScenes/Coal.tscn" id="22_r64ks"]
 
@@ -219,6 +219,8 @@ size = Vector2(90.3374, 70.0647)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0fifu"]
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pypg2"]
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Ship World" type="Node2D" parent="."]
@@ -386,7 +388,7 @@ scale = Vector2(3.07386, 3.07386)
 shape = SubResource("RectangleShape2D_0w15l")
 
 [node name="DraggableCoal" parent="Ship Inside" groups=["draggables"] instance=ExtResource("19_62qb6")]
-position = Vector2(576, 568)
+position = Vector2(776, 592)
 
 [node name="Floor" type="StaticBody2D" parent="Ship Inside"]
 position = Vector2(664, 640)
@@ -395,6 +397,15 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ship Inside/Floor"]
 shape = SubResource("WorldBoundaryShape2D_0fifu")
+
+[node name="Left Wall" type="StaticBody2D" parent="Ship Inside"]
+position = Vector2(576, 336)
+rotation = 1.57079
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ship Inside/Left Wall"]
+shape = SubResource("WorldBoundaryShape2D_pypg2")
 
 [connection signal="mouse_entered" from="Ship Inside/Coal Pile" to="Ship Inside/Coal Pile" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Ship Inside/Coal Pile" to="Ship Inside/Coal Pile" method="_on_mouse_exited"]
