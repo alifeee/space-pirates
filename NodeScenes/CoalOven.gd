@@ -1,6 +1,5 @@
 extends Area2D
 
-@export var coal_nodes: Array[Node2D] = []
 @export var coals: Array[Node2D] = []
 
 func _init():
@@ -16,19 +15,21 @@ func _process(delta):
 	pass
 
 func _input(event):
-	if event.is_action_pressed("player1_action2"):
+	if event.is_action_pressed("player1_action1"):
 		add_coal_to_oven()
+	if event.is_action_pressed("player1_action2"):
+		remove_all_coal_from_oven()
 		
 func add_coal_to_oven():
-	for i in range(len(coal_nodes)):
-		print(i)
-		var coal = coals[i]
-		var coal_node = coal_nodes[i]
-		if coal.position != coal_node.position:
-			coal.position = coal_node.position
+	for coal in coals:
+		print(coal.visible)
+		if not coal.visible:
+			coal.visible = true
 			break
 
-
+func remove_all_coal_from_oven():
+	for coal in coals:
+		coal.visible = false
 
 
 

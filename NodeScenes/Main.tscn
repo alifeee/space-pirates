@@ -96,9 +96,8 @@ texture = ExtResource("5_lhwsp")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coal"]
 shape = SubResource("CircleShape2D_2eisw")
 
-[node name="Coal Oven" type="Area2D" parent="." node_paths=PackedStringArray("coal_nodes", "coals")]
+[node name="Coal Oven" type="Area2D" parent="." node_paths=PackedStringArray("coals")]
 script = ExtResource("15_0q2hx")
-coal_nodes = [NodePath("Coal Node 1"), NodePath("Coal Node 2"), NodePath("Coal Node 3"), NodePath("Coal Node 4"), NodePath("Coal Node 5"), NodePath("Coal Node 6")]
 coals = [NodePath("Coal 1"), NodePath("Coal 2"), NodePath("Coal 3"), NodePath("Coal 4"), NodePath("Coal 5"), NodePath("Coal 6")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coal Oven"]
@@ -106,38 +105,24 @@ position = Vector2(668.631, 392.631)
 scale = Vector2(3.07386, 3.07386)
 shape = SubResource("RectangleShape2D_0w15l")
 
-[node name="Coal Node 1" type="Node2D" parent="Coal Oven"]
-position = Vector2(592, 480)
-
-[node name="Coal Node 2" type="Node2D" parent="Coal Oven"]
-position = Vector2(644, 485)
-
-[node name="Coal Node 3" type="Node2D" parent="Coal Oven"]
-position = Vector2(699, 483)
-
-[node name="Coal Node 4" type="Node2D" parent="Coal Oven"]
-position = Vector2(616, 443)
-
-[node name="Coal Node 5" type="Node2D" parent="Coal Oven"]
-position = Vector2(673, 441)
-
-[node name="Coal Node 6" type="Node2D" parent="Coal Oven"]
-position = Vector2(643, 405)
-
 [node name="Coal 1" parent="Coal Oven" instance=ExtResource("16_vt864")]
-position = Vector2(-294, 233)
+position = Vector2(595, 477)
 
 [node name="Coal 2" parent="Coal Oven" instance=ExtResource("16_vt864")]
-position = Vector2(-294, 233)
+position = Vector2(662, 476)
 
 [node name="Coal 3" parent="Coal Oven" instance=ExtResource("16_vt864")]
-position = Vector2(-294, 233)
+visible = false
+position = Vector2(727, 480)
 
 [node name="Coal 4" parent="Coal Oven" instance=ExtResource("16_vt864")]
-position = Vector2(-294, 233)
+visible = false
+position = Vector2(626, 420)
 
 [node name="Coal 5" parent="Coal Oven" instance=ExtResource("16_vt864")]
-position = Vector2(-294, 233)
+visible = false
+position = Vector2(694, 421)
 
 [node name="Coal 6" parent="Coal Oven" instance=ExtResource("16_vt864")]
-position = Vector2(-294, 233)
+visible = false
+position = Vector2(659, 361)
