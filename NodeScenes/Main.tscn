@@ -1,27 +1,27 @@
-[gd_scene load_steps=80 format=3 uid="uid://cyscssogti41t"]
+[gd_scene load_steps=82 format=3 uid="uid://cyscssogti41t"]
 
-[ext_resource type="Texture2D" uid="uid://bioyswwnpynmk" path="res://Assets/Space shit/real space tiles.png" id="1_s85f7"]
+[ext_resource type="Texture2D" uid="uid://dj42bpxy5l4bl" path="res://Assets/Space shit/real space tiles.png" id="1_s85f7"]
 [ext_resource type="PackedScene" uid="uid://5qslbyyyg40x" path="res://Assets/NodeAssets/asteroid.tscn" id="2_n0fda"]
 [ext_resource type="Script" path="res://Scripts/ShipController.gd" id="3_5386y"]
 [ext_resource type="Texture2D" uid="uid://b1f1rtugrqdat" path="res://Assets/Space shit/spaceship/spaceship.png" id="4_0vrx3"]
 [ext_resource type="Texture2D" uid="uid://bscurni1iuq57" path="res://Assets/Space shit/spaceship/death.png" id="5_f3mkm"]
 [ext_resource type="Script" path="res://Scripts/CameraController.gd" id="6_oxnn0"]
-[ext_resource type="PackedScene" uid="uid://dts7q7u0qjncu" path="res://NodeScenes/win_boundary.tscn" id="7_u8ri6"]
+[ext_resource type="PackedScene" path="res://NodeScenes/win_boundary.tscn" id="7_u8ri6"]
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="7_xddt0"]
 [ext_resource type="Texture2D" uid="uid://brvklbtxo7j3r" path="res://Assets/mechanic side/mechanis.png" id="8_dqo4h"]
-[ext_resource type="PackedScene" uid="uid://pi28wul3o44l" path="res://Assets/federation.tscn" id="8_kxgkg"]
-[ext_resource type="Texture2D" uid="uid://ciqpsktohrrf4" path="res://Assets/Space shit/captain side/captains quarters.png" id="8_vy08g"]
+[ext_resource type="PackedScene" path="res://Assets/federation.tscn" id="8_kxgkg"]
+[ext_resource type="Texture2D" uid="uid://bijpwt851dnri" path="res://Assets/Space shit/captain side/captains quarters.png" id="8_vy08g"]
 [ext_resource type="Script" path="res://Scripts/Wheel.gd" id="11_b7h1i"]
-[ext_resource type="PackedScene" uid="uid://cha13gwjj3631" path="res://Assets/water_drips.tscn" id="11_cxwrk"]
+[ext_resource type="PackedScene" path="res://Assets/water_drips.tscn" id="11_cxwrk"]
 [ext_resource type="Texture2D" uid="uid://cfaedea26e3a7" path="res://Assets/Space shit/captain side/wheel.png" id="11_jp8pt"]
-[ext_resource type="Texture2D" uid="uid://bxct4tlom1vt2" path="res://Assets/mechanic side/press button.png" id="12_wktdw"]
+[ext_resource type="Texture2D" uid="uid://dmnalcgng2od4" path="res://Assets/mechanic side/press button.png" id="12_wktdw"]
 [ext_resource type="Script" path="res://Scripts/Mechanic_Button.gd" id="13_pp878"]
 [ext_resource type="Script" path="res://Scripts/PlayerIcon.gd" id="15_hk7kv"]
 [ext_resource type="Texture2D" uid="uid://sly1a18et6yu" path="res://Assets/hat1.png" id="15_s1xsl"]
 [ext_resource type="Texture2D" uid="uid://b51y0236rvoef" path="res://Assets/fire mechanic.png" id="16_21vc1"]
 [ext_resource type="Script" path="res://Scripts/CoalPile.gd" id="18_dtvdv"]
 [ext_resource type="Texture2D" uid="uid://mdui6mowj7hk" path="res://Assets/mechanic side/coal pile.png" id="19_1f8ds"]
-[ext_resource type="PackedScene" path="res://NodeScenes/DraggableCoal.tscn" id="19_62qb6"]
+[ext_resource type="PackedScene" uid="uid://cwewv3pdnwjv1" path="res://NodeScenes/DraggableCoal.tscn" id="19_62qb6"]
 [ext_resource type="Texture2D" uid="uid://d1fk3q6bv4k6j" path="res://Assets/mechanic side/furnace vackground.png" id="20_yqdew"]
 [ext_resource type="Texture2D" uid="uid://bci4fu3dchyel" path="res://Assets/mechanic side/furnace2.png" id="21_1nmh3"]
 [ext_resource type="Script" path="res://Scripts/CoalOven.gd" id="21_a7u7q"]
@@ -256,29 +256,37 @@ size = Vector2(90.3374, 70.0647)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pypg2"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3dpxl"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_85x6y"]
 atlas = ExtResource("27_glk8i")
-region = Rect2(0, 0, 20, 20)
+region = Rect2(0, 0, 20, 25)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yfbs6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dv5m8"]
 atlas = ExtResource("27_glk8i")
-region = Rect2(20, 0, 20, 20)
+region = Rect2(20, 0, 20, 25)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1gucb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfwmh"]
 atlas = ExtResource("27_glk8i")
-region = Rect2(0, 20, 20, 20)
+region = Rect2(40, 0, 20, 25)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4ux5o"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_247s4"]
 atlas = ExtResource("27_glk8i")
-region = Rect2(20, 20, 20, 20)
+region = Rect2(0, 25, 20, 25)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ribam"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cubwj"]
 atlas = ExtResource("27_glk8i")
-region = Rect2(0, 40, 20, 20)
+region = Rect2(20, 25, 20, 25)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2h6q1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uvi2"]
 atlas = ExtResource("27_glk8i")
-region = Rect2(20, 40, 20, 20)
+region = Rect2(40, 25, 20, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xovii"]
+atlas = ExtResource("27_glk8i")
+region = Rect2(0, 50, 20, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_muref"]
+atlas = ExtResource("27_glk8i")
+region = Rect2(20, 50, 20, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_elx7r"]
 atlas = ExtResource("28_r2i32")
@@ -324,22 +332,28 @@ region = Rect2(0, 60, 20, 20)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3dpxl")
+"texture": SubResource("AtlasTexture_85x6y")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yfbs6")
+"texture": SubResource("AtlasTexture_dv5m8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1gucb")
+"texture": SubResource("AtlasTexture_bfwmh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4ux5o")
+"texture": SubResource("AtlasTexture_247s4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ribam")
+"texture": SubResource("AtlasTexture_cubwj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2h6q1")
+"texture": SubResource("AtlasTexture_5uvi2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xovii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_muref")
 }],
 "loop": true,
 "name": &"chillin",
@@ -604,6 +618,7 @@ position = Vector2(522, 320)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_gvib2")
 animation = &"chillin"
+frame_progress = 0.502144
 script = ExtResource("28_fhklq")
 
 [node name="WinAndLoseScreen" parent="." instance=ExtResource("25_wj4lu")]
