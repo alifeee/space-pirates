@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://coews64022nqf"]
+[gd_scene load_steps=4 format=3 uid="uid://dvpdddf5rgm7p"]
 
 [ext_resource type="Script" path="res://Scripts/ControllerTest.gd" id="1_hj6fr"]
-[ext_resource type="PackedScene" uid="uid://dhl0mo4t5y41p" path="res://NodeScenes/ControllerPreview.tscn" id="1_i0i3m"]
+[ext_resource type="PackedScene" uid="uid://ciqliqa06s35c" path="res://NodeScenes/ControllerPreview.tscn" id="1_i0i3m"]
 [ext_resource type="Script" path="res://Scripts/SwitchSceneButton.gd" id="3_d2md8"]
 
 [node name="ControllerTest" type="Node2D"]
