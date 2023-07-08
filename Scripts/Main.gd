@@ -10,14 +10,9 @@ func _ready():
 	for node in get_tree().get_nodes_in_group("draggables"):
 		node.connect("clicked", _on_draggable_clicked)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-func _input(event):
-	if event.is_action_pressed("switch_player_control"):
-		switch_players()
-
+func _on_lightning_animation_finished():
+	switch_players()
+	
 func switch_players():
 	swapped_roles = !swapped_roles
 	
@@ -80,9 +75,9 @@ func game_lose():
 
 func _on_space_ship_ship_died():
 	game_lose()
-	pass # Replace with function body.
 
 
 func _on_space_ship_ship_escaped():
 	game_win()
-	pass # Replace with function body.
+
+
