@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cyscssogti41t"]
+[gd_scene load_steps=54 format=3 uid="uid://cyscssogti41t"]
 
 [ext_resource type="Texture2D" uid="uid://dj42bpxy5l4bl" path="res://Assets/Space shit/real space tiles.png" id="1_s85f7"]
 [ext_resource type="PackedScene" uid="uid://5qslbyyyg40x" path="res://Assets/NodeAssets/asteroid.tscn" id="2_n0fda"]
@@ -6,8 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://b1f1rtugrqdat" path="res://Assets/Space shit/spaceship/spaceship.png" id="4_0vrx3"]
 [ext_resource type="Texture2D" uid="uid://bscurni1iuq57" path="res://Assets/Space shit/spaceship/death.png" id="5_f3mkm"]
 [ext_resource type="Script" path="res://Scripts/CameraController.gd" id="6_oxnn0"]
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="7_xddt0"]
+[ext_resource type="Texture2D" uid="uid://brvklbtxo7j3r" path="res://Assets/mechanic side/mechanis.png" id="8_dqo4h"]
 [ext_resource type="Texture2D" uid="uid://bijpwt851dnri" path="res://Assets/Space shit/captain side/captains quarters.png" id="8_vy08g"]
-[ext_resource type="Texture2D" uid="uid://tv70ntjxkffm" path="res://Assets/mechanic_room.png" id="9_c24cm"]
 [ext_resource type="Texture2D" uid="uid://8b5lcvfcrtt8" path="res://Assets/Space shit/captain side/image.png" id="10_bfvsd"]
 [ext_resource type="Script" path="res://Scripts/Wheel.gd" id="11_b7h1i"]
 [ext_resource type="Texture2D" uid="uid://dmnalcgng2od4" path="res://Assets/mechanic side/press button.png" id="12_wktdw"]
@@ -18,9 +19,11 @@
 [ext_resource type="Texture2D" uid="uid://c1nsnw68oxqcv" path="res://Assets/pile_of_coal.png" id="17_51quc"]
 [ext_resource type="Script" path="res://Scripts/CoalPile.gd" id="18_dtvdv"]
 [ext_resource type="PackedScene" uid="uid://cwewv3pdnwjv1" path="res://NodeScenes/DraggableCoal.tscn" id="19_62qb6"]
+[ext_resource type="Texture2D" uid="uid://c45ei840muwhc" path="res://Assets/mechanic side/furnacedoor.png" id="20_x3l38"]
+[ext_resource type="Texture2D" uid="uid://d1fk3q6bv4k6j" path="res://Assets/mechanic side/furnace vackground.png" id="20_yqdew"]
+[ext_resource type="Texture2D" uid="uid://bci4fu3dchyel" path="res://Assets/mechanic side/furnace2.png" id="21_1nmh3"]
 [ext_resource type="Script" path="res://Scripts/CoalOven.gd" id="21_a7u7q"]
 [ext_resource type="PackedScene" uid="uid://btusexu0lh4s7" path="res://NodeScenes/Coal.tscn" id="22_r64ks"]
-[ext_resource type="Texture2D" uid="uid://3k0h1jj4s4iy" path="res://Assets/mechanic side/door.png" id="23_upe7s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x3xb6"]
 texture = ExtResource("1_s85f7")
@@ -158,39 +161,61 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="GDScript" id="GDScript_tlufi"]
-script/source = "extends CanvasLayer
-
-
-var held_object = null
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	for node in get_tree().get_nodes_in_group(\"draggables\"):
-		node.connect(\"clicked\", _on_draggable_clicked)
-
-func _on_draggable_clicked(object):
-	if !held_object:
-		held_object = object
-		held_object.pickup()
-		
-func _unhandled_input(event):
-	if event is InputEventMouseButton and event.is_action(\"joy0_select\"):
-		if held_object and !event.pressed:
-			held_object.drop(Input.get_last_mouse_velocity())
-			held_object = null
-
-
-func _on_coal_pile_new_coal_made(coal):
-	held_object = coal
-	coal.pickup()
-"
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_pih3j"]
 radius = 20.4973
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dhnl"]
+atlas = ExtResource("20_x3l38")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57q4b"]
+atlas = ExtResource("20_x3l38")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbewu"]
+atlas = ExtResource("20_x3l38")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6j6vj"]
+atlas = ExtResource("20_x3l38")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5llo"]
+atlas = ExtResource("20_x3l38")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfeg5"]
+atlas = ExtResource("20_x3l38")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0hlr3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dhnl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57q4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbewu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6j6vj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5llo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfeg5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0w15l"]
-size = Vector2(95.8854, 77.6673)
+size = Vector2(90.3374, 70.0647)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0fifu"]
 
@@ -241,11 +266,11 @@ script = ExtResource("6_oxnn0")
 PlayerNode = NodePath("../SpaceShip")
 
 [node name="Ship Inside" type="CanvasLayer" parent="."]
-script = SubResource("GDScript_tlufi")
+script = ExtResource("7_xddt0")
 
 [node name="Captain Room" type="Sprite2D" parent="Ship Inside"]
-position = Vector2(227.319, 253.734)
-scale = Vector2(1.5325, 1.5325)
+position = Vector2(288, 324)
+scale = Vector2(2, 2)
 texture = ExtResource("8_vy08g")
 
 [node name="Label" type="Label" parent="Ship Inside"]
@@ -256,24 +281,25 @@ offset_bottom = 66.0
 text = "0"
 
 [node name="Mechanic Room" type="Sprite2D" parent="Ship Inside"]
-position = Vector2(680, 320)
-texture = ExtResource("9_c24cm")
+position = Vector2(864, 324)
+scale = Vector2(2, 2)
+texture = ExtResource("8_dqo4h")
 
 [node name="Wheel" type="Sprite2D" parent="Ship Inside"]
-position = Vector2(232, 408)
+position = Vector2(296, 480)
 scale = Vector2(0.330741, 0.330741)
 texture = ExtResource("10_bfvsd")
 script = ExtResource("11_b7h1i")
 
 [node name="Button1" type="Sprite2D" parent="Ship Inside"]
-position = Vector2(608, 128)
+position = Vector2(1264, 152)
 texture = ExtResource("12_wktdw")
 vframes = 2
 frame = 1
 script = ExtResource("13_pp878")
 
 [node name="Button2" type="Sprite2D" parent="Ship Inside"]
-position = Vector2(712, 128)
+position = Vector2(1256, 272)
 texture = ExtResource("12_wktdw")
 vframes = 2
 frame = 1
@@ -281,27 +307,21 @@ script = ExtResource("13_pp878")
 PLAYER1_ACTION = "player1_action2"
 PLAYER2_ACTION = "player0_right"
 
-[node name="Button3" type="Sprite2D" parent="Ship Inside"]
-position = Vector2(816, 128)
-texture = ExtResource("12_wktdw")
-vframes = 2
-frame = 1
-
 [node name="Captain Icon" type="Sprite2D" parent="Ship Inside"]
-position = Vector2(240, 592)
+position = Vector2(96, 592)
 scale = Vector2(0.388941, 0.388941)
 texture = ExtResource("14_8djr3")
 script = ExtResource("15_hk7kv")
 
 [node name="Mechanic Icon" type="Sprite2D" parent="Ship Inside"]
-position = Vector2(672, 592)
+position = Vector2(632, 592)
 scale = Vector2(0.253364, 0.253364)
 texture = ExtResource("16_qk13n")
 script = ExtResource("15_hk7kv")
 controller = 1
 
 [node name="Coal Pile" type="Area2D" parent="Ship Inside"]
-position = Vector2(848, 584)
+position = Vector2(1096, 584)
 script = ExtResource("18_dtvdv")
 
 [node name="Sprite" type="Sprite2D" parent="Ship Inside/Coal Pile"]
@@ -321,38 +341,49 @@ script = ExtResource("21_a7u7q")
 coals = [NodePath("Coal 1"), NodePath("Coal 2"), NodePath("Coal 3"), NodePath("Coal 4"), NodePath("Coal 5"), NodePath("Coal 6")]
 door = NodePath("Door")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ship Inside/Coal Oven"]
-position = Vector2(668.631, 392.631)
-scale = Vector2(3.07386, 3.07386)
-shape = SubResource("RectangleShape2D_0w15l")
-
-[node name="Coal 1" parent="Ship Inside/Coal Oven" instance=ExtResource("22_r64ks")]
-visible = false
-position = Vector2(595, 477)
-
-[node name="Coal 2" parent="Ship Inside/Coal Oven" instance=ExtResource("22_r64ks")]
-visible = false
-position = Vector2(662, 476)
-
-[node name="Coal 3" parent="Ship Inside/Coal Oven" instance=ExtResource("22_r64ks")]
-visible = false
-position = Vector2(727, 480)
-
-[node name="Coal 4" parent="Ship Inside/Coal Oven" instance=ExtResource("22_r64ks")]
-visible = false
-position = Vector2(626, 420)
-
-[node name="Coal 5" parent="Ship Inside/Coal Oven" instance=ExtResource("22_r64ks")]
-visible = false
-position = Vector2(694, 421)
+[node name="Back" type="Sprite2D" parent="Ship Inside/Coal Oven"]
+position = Vector2(864, 368)
+scale = Vector2(6, 6)
+texture = ExtResource("20_yqdew")
 
 [node name="Coal 6" parent="Ship Inside/Coal Oven" instance=ExtResource("22_r64ks")]
 visible = false
-position = Vector2(659, 361)
+position = Vector2(880, 416)
 
-[node name="Door" type="Sprite2D" parent="Ship Inside/Coal Oven"]
-position = Vector2(680, 264)
-texture = ExtResource("23_upe7s")
+[node name="Coal 5" parent="Ship Inside/Coal Oven" instance=ExtResource("22_r64ks")]
+visible = false
+position = Vector2(904, 464)
+
+[node name="Coal 4" parent="Ship Inside/Coal Oven" instance=ExtResource("22_r64ks")]
+visible = false
+position = Vector2(848, 464)
+
+[node name="Coal 3" parent="Ship Inside/Coal Oven" instance=ExtResource("22_r64ks")]
+visible = false
+position = Vector2(936, 504)
+
+[node name="Coal 1" parent="Ship Inside/Coal Oven" instance=ExtResource("22_r64ks")]
+visible = false
+position = Vector2(808, 504)
+
+[node name="Coal 2" parent="Ship Inside/Coal Oven" instance=ExtResource("22_r64ks")]
+visible = false
+position = Vector2(872, 504)
+
+[node name="Door" type="AnimatedSprite2D" parent="Ship Inside/Coal Oven"]
+position = Vector2(872, 368)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_0hlr3")
+
+[node name="Oven" type="Sprite2D" parent="Ship Inside/Coal Oven"]
+position = Vector2(872, 368)
+scale = Vector2(6, 6)
+texture = ExtResource("21_1nmh3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ship Inside/Coal Oven"]
+position = Vector2(877.158, 448)
+scale = Vector2(3.07386, 3.07386)
+shape = SubResource("RectangleShape2D_0w15l")
 
 [node name="DraggableCoal" parent="Ship Inside" groups=["draggables"] instance=ExtResource("19_62qb6")]
 position = Vector2(576, 568)

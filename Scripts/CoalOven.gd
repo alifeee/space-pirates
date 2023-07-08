@@ -1,8 +1,8 @@
 extends Area2D
 
 @export var coals: Array[Node2D] = []
-@export var door: Sprite2D
-var door_open = true
+@export var door: AnimatedSprite2D
+var door_open = false
 
 signal coal_filled(amount)
 var coal_fill_amount = 0
