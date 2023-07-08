@@ -68,6 +68,7 @@ func checkCollisions():
 			kills_ship()
 
 
-func _on_coal_oven_coal_filled():
-	increase_coal(1000)
+
+func _on_coal_oven_coal_filled(amount):
+	increase_coal(amount)
 	pass # Replace with function body.
