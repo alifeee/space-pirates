@@ -25,7 +25,7 @@
 [ext_resource type="Script" path="res://Scripts/CoalOven.gd" id="21_a7u7q"]
 [ext_resource type="PackedScene" uid="uid://btusexu0lh4s7" path="res://NodeScenes/Coal.tscn" id="22_r64ks"]
 [ext_resource type="Script" path="res://Scripts/CoalOvenDoor.gd" id="23_xslfu"]
-[ext_resource type="Texture2D" uid="uid://dalf53wp3tyul" path="res://Assets/mechanic side/furnacedoor2.png" id="24_3em6p"]
+[ext_resource type="Texture2D" uid="uid://v6jxi2tqkhb2" path="res://Assets/furnacedoor.png" id="24_c32nm"]
 [ext_resource type="PackedScene" uid="uid://bv3g4mtknlkbu" path="res://NodeScenes/WinAndLosePopup.tscn" id="25_wj4lu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x3xb6"]
@@ -164,77 +164,77 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rcpnd"]
-atlas = ExtResource("24_3em6p")
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnskf"]
+atlas = ExtResource("24_c32nm")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wk4x0"]
-atlas = ExtResource("24_3em6p")
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwlfi"]
+atlas = ExtResource("24_c32nm")
 region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4l6ee"]
-atlas = ExtResource("24_3em6p")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijlo8"]
+atlas = ExtResource("24_c32nm")
 region = Rect2(0, 64, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ml8b6"]
-atlas = ExtResource("24_3em6p")
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4p32"]
+atlas = ExtResource("24_c32nm")
 region = Rect2(64, 64, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3ojew"]
-atlas = ExtResource("24_3em6p")
+[sub_resource type="AtlasTexture" id="AtlasTexture_fc2pm"]
+atlas = ExtResource("24_c32nm")
 region = Rect2(0, 128, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sp1v1"]
-atlas = ExtResource("24_3em6p")
+[sub_resource type="AtlasTexture" id="AtlasTexture_act3x"]
+atlas = ExtResource("24_c32nm")
 region = Rect2(64, 128, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0hlr3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rcpnd")
+"texture": SubResource("AtlasTexture_mnskf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wk4x0")
+"texture": SubResource("AtlasTexture_uwlfi")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4l6ee")
+"texture": SubResource("AtlasTexture_ijlo8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ml8b6")
+"texture": SubResource("AtlasTexture_g4p32")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3ojew")
+"texture": SubResource("AtlasTexture_fc2pm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sp1v1")
+"texture": SubResource("AtlasTexture_act3x")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3ojew")
+"texture": SubResource("AtlasTexture_fc2pm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sp1v1")
+"texture": SubResource("AtlasTexture_act3x")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3ojew")
+"texture": SubResource("AtlasTexture_fc2pm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sp1v1")
+"texture": SubResource("AtlasTexture_act3x")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3ojew")
+"texture": SubResource("AtlasTexture_fc2pm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ml8b6")
+"texture": SubResource("AtlasTexture_g4p32")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4l6ee")
+"texture": SubResource("AtlasTexture_ijlo8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wk4x0")
+"texture": SubResource("AtlasTexture_uwlfi")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rcpnd")
+"texture": SubResource("AtlasTexture_mnskf")
 }],
 "loop": true,
 "name": &"oven",
