@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://btusexu0lh4s7" path="res://NodeScenes/Coal.tscn" id="1_mgtso"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fgivo"]
-radius = 40.0
+radius = 33.0
 
 [node name="DraggableCoal" type="RigidBody2D"]
 collision_layer = 2
@@ -15,4 +15,5 @@ script = ExtResource("1_5s7n8")
 [node name="Coal" parent="." instance=ExtResource("1_mgtso")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 3)
 shape = SubResource("CircleShape2D_fgivo")
