@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://br4vudmfn607"]
+[gd_scene load_steps=8 format=3 uid="uid://o5cbvqa1whwp"]
 
 [ext_resource type="Texture2D" uid="uid://76ev6qb2a1qi" path="res://Assets/captain_room.png" id="1_isubg"]
 [ext_resource type="Texture2D" uid="uid://tv70ntjxkffm" path="res://Assets/mechanic_room.png" id="2_oshy8"]
-[ext_resource type="Texture2D" uid="uid://8b5lcvfcrtt8" path="res://Assets/Space shit/captain side/image.png" id="3_gsado"]
+[ext_resource type="Texture2D" uid="uid://bx5a4ue37vx4i" path="res://Assets/Space shit/captain side/image.png" id="3_gsado"]
 [ext_resource type="Script" path="res://NodeScenes/Wheel.gd" id="4_vi048"]
+[ext_resource type="Texture2D" uid="uid://dmqtjbaf70lpg" path="res://Assets/mechanic side/coal.png" id="5_lhwsp"]
+[ext_resource type="Script" path="res://NodeScenes/Coal.gd" id="6_028wc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pv2i4"]
+radius = 36.0
 
 [node name="Main" type="Node2D"]
 
@@ -20,3 +25,17 @@ position = Vector2(232, 408)
 scale = Vector2(0.330741, 0.330741)
 texture = ExtResource("3_gsado")
 script = ExtResource("4_vi048")
+
+[node name="Coal" type="RigidBody2D" parent="." groups=["pickable"]]
+position = Vector2(764, 157)
+input_pickable = true
+gravity_scale = 0.0
+freeze_mode = 1
+script = ExtResource("6_028wc")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Coal"]
+texture = ExtResource("5_lhwsp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coal"]
+shape = SubResource("CircleShape2D_pv2i4")
