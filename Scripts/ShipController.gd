@@ -43,7 +43,7 @@ func _physics_process(delta):
 		move_speed = move_toward(move_speed, 0, deceleration)
 		move_speed = clamp(move_speed, 0, max_move_speed)
 		velocity = -transform.y * move_speed
-		coal_count = 0
+		decrease_coal(coal_burn_rate * delta)
 	
 	rotation += rotation_direction * rotation_speed * delta
 	move_and_slide()
@@ -55,7 +55,7 @@ func increase_coal(coalAmount):
 	_coal_label.text = str(coal_count)
 	
 func decrease_coal(coalAmount):
-	coal_count -= coalAmount
+	coal_count = move_toward(coal_count, 0, coalAmount)
 	_coal_label.text = str(coal_count)
 
 func kills_ship():
