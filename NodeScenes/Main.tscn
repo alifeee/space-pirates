@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://cyscssogti41t"]
+[gd_scene load_steps=58 format=3 uid="uid://cyscssogti41t"]
 
 [ext_resource type="Texture2D" uid="uid://dj42bpxy5l4bl" path="res://Assets/Space shit/real space tiles.png" id="1_s85f7"]
 [ext_resource type="PackedScene" uid="uid://5qslbyyyg40x" path="res://Assets/NodeAssets/asteroid.tscn" id="2_n0fda"]
@@ -17,8 +17,8 @@
 [ext_resource type="Script" path="res://Scripts/PlayerIcon.gd" id="15_hk7kv"]
 [ext_resource type="Texture2D" uid="uid://sly1a18et6yu" path="res://Assets/hat1.png" id="15_s1xsl"]
 [ext_resource type="Texture2D" uid="uid://b51y0236rvoef" path="res://Assets/fire mechanic.png" id="16_21vc1"]
-[ext_resource type="Texture2D" uid="uid://c1nsnw68oxqcv" path="res://Assets/pile_of_coal.png" id="17_51quc"]
 [ext_resource type="Script" path="res://Scripts/CoalPile.gd" id="18_dtvdv"]
+[ext_resource type="Texture2D" uid="uid://mdui6mowj7hk" path="res://Assets/mechanic side/coal pile.png" id="19_1f8ds"]
 [ext_resource type="PackedScene" uid="uid://cwewv3pdnwjv1" path="res://NodeScenes/DraggableCoal.tscn" id="19_62qb6"]
 [ext_resource type="Texture2D" uid="uid://c45ei840muwhc" path="res://Assets/mechanic side/furnacedoor.png" id="20_x3l38"]
 [ext_resource type="Texture2D" uid="uid://d1fk3q6bv4k6j" path="res://Assets/mechanic side/furnace vackground.png" id="20_yqdew"]
@@ -163,9 +163,6 @@ animations = [{
 "name": &"ShipDeath",
 "speed": 10.0
 }]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_pih3j"]
-radius = 20.4973
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2dhnl"]
 atlas = ExtResource("20_x3l38")
@@ -356,20 +353,21 @@ script = ExtResource("15_hk7kv")
 controller = 1
 
 [node name="Coal Pile" type="Area2D" parent="Ship Inside"]
-position = Vector2(1096, 584)
+position = Vector2(1112, 584)
 script = ExtResource("18_dtvdv")
 
 [node name="Sprite" type="Sprite2D" parent="Ship Inside/Coal Pile"]
-position = Vector2(3.05176e-05, 0)
-scale = Vector2(0.517974, 0.517974)
-texture = ExtResource("17_51quc")
+position = Vector2(-55.9999, -32)
+scale = Vector2(4, 4)
+texture = ExtResource("19_1f8ds")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ship Inside/Coal Pile"]
-position = Vector2(0, 1.52588e-05)
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Ship Inside/Coal Pile"]
+position = Vector2(-40, -16)
 scale = Vector2(2.73206, 2.73206)
-shape = SubResource("CircleShape2D_pih3j")
+polygon = PackedVector2Array(2.92819, -38.0665, 23.4256, -5.8564, 23.4256, 23.4255, -26.3537, 23.4255, -38.0665, 11.7128, -38.0665, 2.92819, -20.4973, 2.92819, -20.4973, -14.641)
 
 [node name="Coal Oven" type="Area2D" parent="Ship Inside" node_paths=PackedStringArray("coals", "door")]
+position = Vector2(-24, 8)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("21_a7u7q")
