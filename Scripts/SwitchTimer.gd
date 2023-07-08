@@ -1,11 +1,13 @@
 extends Timer
 
+const INITIAL_WAIT_TIME = 20
 const MIN_TIME_TO_SWITCH = 8
 const MAX_TIME_TO_SWITCH = 25
 var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	wait_time = INITIAL_WAIT_TIME
 	start()
 
 func get_random_time():
