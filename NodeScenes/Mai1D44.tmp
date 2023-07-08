@@ -433,7 +433,7 @@ scale = Vector2(3.07386, 3.07386)
 shape = SubResource("RectangleShape2D_0w15l")
 
 [node name="DraggableCoal" parent="Ship Inside" groups=["draggables"] instance=ExtResource("19_62qb6")]
-position = Vector2(775, 599)
+position = Vector2(776, 592)
 
 [node name="Floor" type="StaticBody2D" parent="Ship Inside"]
 position = Vector2(664, 640)

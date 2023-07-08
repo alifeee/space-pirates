@@ -61,23 +61,26 @@ func stop_steering():
 		close_door()
 
 func _input(event):
-	if get_controller() != 0:
-		return
-	if event.is_action("joy0_select"):
-		if locked:
-			return
-		if (event.position - self.position).length() and mouse_over_door:
-			if not dragging and event.pressed:
-				start_steering()
-		if dragging and not event.pressed:
-			stop_steering()
+	if get_controller() == 1:
+		if event.is_action_pressed("player1_action2"):
+			toggle_door()
+		
+	if get_controller() == 0:
+		if event.is_action("joy0_select"):
+			if locked:
+				return
+			if (event.position - self.position).length() and mouse_over_door:
+				if not dragging and event.pressed:
+					start_steering()
+			if dragging and not event.pressed:
+				stop_steering()
 
-	if event is InputEventMouseMotion and dragging:
-		if locked:
-			return
-		var yamount = event.relative.y
-		translate(Vector2.DOWN * yamount)
-		position.y = clamp(position.y, initial_y_position + OPEN_HEIGHT, initial_y_position + CLOSED_HEIGHT)
+		if event is InputEventMouseMotion and dragging:
+			if locked:
+				return
+			var yamount = event.relative.y
+			translate(Vector2.DOWN * yamount)
+			position.y = clamp(position.y, initial_y_position + OPEN_HEIGHT, initial_y_position + CLOSED_HEIGHT)
 
 
 func _on_animated_sprite_2d_animation_looped():
