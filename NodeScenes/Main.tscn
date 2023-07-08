@@ -594,7 +594,7 @@ position = Vector2(522, 320)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_gvib2")
 animation = &"chillin"
-frame_progress = 0.000253069
+frame_progress = 0.815705
 script = ExtResource("28_fhklq")
 
 [node name="WinAndLoseScreen" parent="." instance=ExtResource("25_wj4lu")]

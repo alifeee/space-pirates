@@ -52,10 +52,10 @@ func is_oven_full():
 	return num_coals_in_oven() >= len(coals)
 
 func remove_all_coal_from_oven():
+	coal_filled.emit(num_coals_in_oven())
 	for coal in coals:
 		coal.visible = false
 	
-	coal_filled.emit(num_coals_in_oven())
 
 
 func _on_door_door_closed():
