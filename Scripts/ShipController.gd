@@ -7,6 +7,7 @@ extends CharacterBody2D
 @export var acceleration = 0.5
 @export var deceleration = 0.5
 
+@onready var _ship_wheel = $"../../Main/Wheel"
 @onready var _animated_sprite = $AnimatedSprite2D
 
 var shipIsDead = false
@@ -20,7 +21,8 @@ func get_input():
 	if(shipIsDead):
 		return
 
-	rotation_direction = Input.get_axis("left", "right")
+	rotation_direction = _ship_wheel.rotation
+	print(rotation_direction)
 	if(Input.is_action_just_pressed("add_coal")):
 		increase_coal(coal_increase_amount)
 
@@ -28,6 +30,9 @@ func _process(_delta):
 	get_input()
 
 func _physics_process(delta):
+	if(shipIsDead):
+		velocity = Vector2(0,0)
+		return
 	if(coal_count > 0):
 		move_speed = move_toward(move_speed, max_move_speed, acceleration)
 		move_speed = clamp(move_speed, 0, max_move_speed)
@@ -61,3 +66,8 @@ func checkCollisions():
 		if collider.is_in_group("Asteroid"):
 			print("I collided with ", collider.name)
 			kills_ship()
+
+
+func _on_coal_oven_coal_filled():
+	increase_coal(1000)
+	pass # Replace with function body.

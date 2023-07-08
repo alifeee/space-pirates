@@ -10,11 +10,10 @@ radius = 40.0125
 script = ExtResource("1_ltq0j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.4, 0.4)
 shape = SubResource("CircleShape2D_mgsi5")
 
 [node name="Asteroide" type="Sprite2D" parent="."]
-rotation = -0.175174
-scale = Vector2(2.3, 2.3)
 texture = ExtResource("1_xkps5")
 hframes = 2
 vframes = 3

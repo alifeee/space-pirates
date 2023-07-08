@@ -4,6 +4,9 @@ extends Area2D
 @export var door: Sprite2D
 var door_open = true
 
+signal coal_filled
+var coal_fill_amount = 0
+
 func _init():
 	pass
 	
@@ -31,6 +34,7 @@ func add_coal_to_oven():
 			break
 
 func remove_all_coal_from_oven():
+	coal_filled.emit()
 	for coal in coals:
 		coal.visible = false
 

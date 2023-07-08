@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://tv70ntjxkffm" path="res://Assets/mechanic_room.png" id="2_oshy8"]
 [ext_resource type="Texture2D" uid="uid://8b5lcvfcrtt8" path="res://Assets/Space shit/captain side/image.png" id="3_gsado"]
 [ext_resource type="Script" path="res://NodeScenes/Wheel.gd" id="4_vi048"]
-[ext_resource type="Texture2D" uid="uid://dt6pxm2kypgl3" path="res://Assets/mechanic side/coal.png" id="5_lhwsp"]
-[ext_resource type="Texture2D" uid="uid://dmnalcgng2od4" path="res://Assets/mechanic side/press button.png" id="5_qgp27"]
+[ext_resource type="Texture2D" uid="uid://bfyr3wwohs6rp" path="res://Assets/mechanic side/coal.png" id="5_lhwsp"]
+[ext_resource type="Texture2D" uid="uid://bxct4tlom1vt2" path="res://Assets/mechanic side/press button.png" id="5_qgp27"]
 [ext_resource type="Script" path="res://NodeScenes/Coal.gd" id="6_028wc"]
 [ext_resource type="Script" path="res://NodeScenes/Button1.gd" id="6_ttfst"]
 [ext_resource type="Texture2D" uid="uid://okibml5s40ng" path="res://Assets/captain_hat.png" id="8_81xj1"]
@@ -15,8 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://c1nsnw68oxqcv" path="res://Assets/pile_of_coal.png" id="13_j51dl"]
 [ext_resource type="Script" path="res://NodeScenes/CoalPile.gd" id="14_bgr24"]
 [ext_resource type="Script" path="res://NodeScenes/CoalOven.gd" id="15_0q2hx"]
-[ext_resource type="Texture2D" uid="uid://3k0h1jj4s4iy" path="res://Assets/mechanic side/door.png" id="16_itaa6"]
-[ext_resource type="PackedScene" uid="uid://btusexu0lh4s7" path="res://NodeScenes/Coal.tscn" id="16_vt864"]
+[ext_resource type="Texture2D" uid="uid://cooa0qvuurr1b" path="res://Assets/mechanic side/door.png" id="16_itaa6"]
+[ext_resource type="PackedScene" path="res://NodeScenes/Coal.tscn" id="16_vt864"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2eisw"]
 radius = 28.96
@@ -24,7 +24,7 @@ radius = 28.96
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0w15l"]
 size = Vector2(95.8854, 77.6673)
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="CanvasLayer"]
 script = ExtResource("1_uptqq")
 
 [node name="Captain Room" type="Sprite2D" parent="."]
@@ -88,7 +88,6 @@ input_pickable = true
 gravity_scale = 0.0
 freeze_mode = 1
 script = ExtResource("6_028wc")
-controller = 1
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Coal"]
