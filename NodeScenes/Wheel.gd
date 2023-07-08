@@ -67,5 +67,4 @@ func _input(event):
 		elif xmove < 0:
 			rotation = move_toward(rotation, -ROTATION_MAX, - MOUSE_CONTROL_SPEED * xmove)
 			
-#		rotation = xmoive
 
