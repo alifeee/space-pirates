@@ -22,9 +22,19 @@ func _input(event):
 	if event is InputEventJoypadButton:
 		if event.pressed and event.button_index == 0: # Adjust button_index as per your joystick configuration
 			dragging = true
-			offset = event.position - position
+			offset = get_viewport().get_mouse_position() - position
 		elif !event.pressed and event.button_index == 0: # Adjust button_index as per your joystick configuration
 			dragging = false
+			
+	if event is InputEventMouseButton:
+		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+			dragging = true
+			offset = event.position - position
+		elif !event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+			dragging = false
+
+	if event is InputEventMouseMotion and dragging:
+		set_position(get_viewport().get_mouse_position() - offset)
 
 	if event is InputEventJoypadMotion and dragging:
 		set_position(get_viewport().get_mouse_position() - offset)
