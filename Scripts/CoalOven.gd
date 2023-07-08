@@ -20,7 +20,7 @@ func _process(delta):
 	var overlapping_coals = get_overlapping_bodies()
 	if len(overlapping_coals) > 0:
 		var first_overlapping_coal = overlapping_coals[0]
-		if first_overlapping_coal.held:
+		if first_overlapping_coal.held or not door_open:
 			return
 		else:
 			first_overlapping_coal.queue_free()
