@@ -41,6 +41,9 @@ func _process(delta):
 			rotation = move_toward(rotation, -ROTATION_MAX, CONTROL_SPEED * delta)
 
 func _input(event):
+	# mouse control (player 0 only)
+	if controller != 0:
+		return
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if (event.position - self.position).length() < CLICK_RADIUS:
 			if not steering and event.pressed:
