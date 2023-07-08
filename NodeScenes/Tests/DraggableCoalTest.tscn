@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwybc2f5hv6fe"]
+
+[ext_resource type="PackedScene" uid="uid://cwewv3pdnwjv1" path="res://NodeScenes/DraggableCoal.tscn" id="1_1wsfm"]
+[ext_resource type="Script" path="res://NodeScenes/Tests/DraggableCoalTest.gd" id="1_2c1o0"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_h3iwk"]
+
+[node name="DraggableCoalTest" type="Node2D"]
+script = ExtResource("1_2c1o0")
+
+[node name="DraggableCoal" parent="." groups=["draggables"] instance=ExtResource("1_1wsfm")]
+position = Vector2(472, 280)
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(664, 640)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+shape = SubResource("WorldBoundaryShape2D_h3iwk")

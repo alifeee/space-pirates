@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwewv3pdnwjv1"]
+
+[ext_resource type="Script" path="res://Scripts/DraggableCoal.gd" id="1_5s7n8"]
+[ext_resource type="PackedScene" uid="uid://btusexu0lh4s7" path="res://NodeScenes/Coal.tscn" id="1_mgtso"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fgivo"]
+radius = 40.0
+
+[node name="DraggableCoal" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
+input_pickable = true
+script = ExtResource("1_5s7n8")
+
+[node name="Coal" parent="." instance=ExtResource("1_mgtso")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fgivo")

@@ -28,20 +28,7 @@ func _physics_process(delta):
 
 				
 func _process(delta):
-	if controller == 0:
-		return
-#	if controller == 1:
-#		if Input.is_action_just_pressed("add_coal_button"):
-#			isMoving = true
-#		print("add coal button pressed")
-#		if isMoving:
-#			var movementSpeed = 3 
-#			var direction = (targetPosition - self.position)
-#			var distance = movementSpeed * delta
-#			self.position += direction * distance
-#
-#			if self.position.distance_to(targetPosition) <= distance:
-#				isMoving = false	
+	pass
 
 func start_dragging():
 	dragging = true
@@ -60,10 +47,10 @@ func _input(event):
 #			dragging = false
 			
 	if event is InputEventMouseButton:
-		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed and event.is_action("joy0_select"):
 			if (event.position - self.position).length() < click_radius:
 				start_dragging()
-		elif !event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		elif !event.pressed and event.is_action("joy0_select"):
 			stop_dragging()
 
 	if event is InputEventMouseMotion and dragging:
