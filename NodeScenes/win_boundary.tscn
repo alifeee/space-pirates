@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dts7q7u0qjncu"]
+
+[ext_resource type="Script" path="res://Scripts/win_boundary.gd" id="1_5m705"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oxxmo"]
+size = Vector2(858, 66)
+
+[sub_resource type="Gradient" id="Gradient_v1hpc"]
+offsets = PackedFloat32Array(0, 0.287975, 1)
+colors = PackedColorArray(0, 0.305882, 0, 1, 0.0588235, 0.643137, 0.0470588, 0.788235, 0.139667, 1, 0.11, 0.0823529)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_q8eb5"]
+gradient = SubResource("Gradient_v1hpc")
+fill_from = Vector2(1, 0)
+fill_to = Vector2(1, 1)
+
+[node name="WinBoundary" type="Area2D" groups=["WinZone"]]
+script = ExtResource("1_5m705")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -25)
+shape = SubResource("RectangleShape2D_oxxmo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -17)
+scale = Vector2(13.4, 1.4)
+texture = SubResource("GradientTexture2D_q8eb5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
