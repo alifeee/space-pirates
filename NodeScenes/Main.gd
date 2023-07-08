@@ -32,6 +32,8 @@ func switch_players():
 	captain_icon.swap_controller()
 	mechanic_icon.swap_controller()
 	
+	var coal = get_node("Coal")
+	coal.controller = swap(coal.controller)
 
 func swap(num: int):
 	if num == 0:
