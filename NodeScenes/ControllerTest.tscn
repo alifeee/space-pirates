@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://k8ms0urp16wg"]
+
+[ext_resource type="PackedScene" uid="uid://dhl0mo4t5y41p" path="res://NodeScenes/ControllerPreview.tscn" id="1_i0i3m"]
+[ext_resource type="Script" path="res://NodeScenes/ControllerTest.gd" id="1_kv6yg"]
+
+[node name="ControllerTest" type="Node2D"]
+script = ExtResource("1_kv6yg")
+
+[node name="ControllerPreview" parent="." instance=ExtResource("1_i0i3m")]
+offset_left = 128.0
+offset_top = 64.0
+offset_right = 209.0
+offset_bottom = 133.0
+scale = Vector2(4.44678, 4.44678)
+
+[node name="ControllerPreview2" parent="." instance=ExtResource("1_i0i3m")]
+offset_left = 640.0
+offset_top = 64.0
+offset_right = 721.0
+offset_bottom = 133.0
+scale = Vector2(4.44678, 4.44678)
+device = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 184.0
+offset_top = 376.0
+offset_right = 246.0
+offset_bottom = 402.0
+scale = Vector2(3.89312, 3.89312)
+text = "Player 1"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 704.0
+offset_top = 384.0
+offset_right = 766.0
+offset_bottom = 410.0
+scale = Vector2(3.89312, 3.89312)
+text = "Player 2"
