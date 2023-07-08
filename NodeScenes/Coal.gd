@@ -8,6 +8,7 @@ var click_radius = 32
 var mouse_sens= 300.0
 
 func _physics_process(delta):
+	return
 	var direction: Vector2
 	direction.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	direction.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
