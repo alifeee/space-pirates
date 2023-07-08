@@ -53,8 +53,10 @@ func _unhandled_input(event):
 			held_object.drop(Input.get_last_mouse_velocity())
 			held_object = null
 
-
 func _on_coal_pile_new_coal_made(coal):
+	coal.connect("clicked", _on_draggable_clicked)
+	if held_object:
+		held_object.drop()
 	held_object = coal
 	coal.pickup()
 	
