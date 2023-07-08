@@ -464,6 +464,7 @@ shape = SubResource("WorldBoundaryShape2D_pypg2")
 [node name="WinAndLoseScreen" parent="." instance=ExtResource("25_wj4lu")]
 
 [connection signal="shipDied" from="Ship World/SpaceShip" to="Ship Inside" method="_on_space_ship_ship_died"]
+[connection signal="shipEscaped" from="Ship World/SpaceShip" to="Ship Inside" method="_on_space_ship_ship_escaped"]
 [connection signal="mouse_entered" from="Ship Inside/Coal Pile" to="Ship Inside/Coal Pile" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Ship Inside/Coal Pile" to="Ship Inside/Coal Pile" method="_on_mouse_exited"]
 [connection signal="new_coal_made" from="Ship Inside/Coal Pile" to="Ship Inside" method="_on_coal_pile_new_coal_made"]
