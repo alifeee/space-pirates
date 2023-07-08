@@ -249,10 +249,10 @@ scale = Vector2(1.5325, 1.5325)
 texture = ExtResource("8_vy08g")
 
 [node name="Label" type="Label" parent="Ship Inside"]
-offset_left = 378.0
-offset_top = 53.0
-offset_right = 418.0
-offset_bottom = 79.0
+offset_left = 408.0
+offset_top = 40.0
+offset_right = 448.0
+offset_bottom = 66.0
 text = "0"
 
 [node name="Mechanic Room" type="Sprite2D" parent="Ship Inside"]
