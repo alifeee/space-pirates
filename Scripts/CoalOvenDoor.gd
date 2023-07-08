@@ -7,8 +7,12 @@ const CLOSED_HEIGHT = 0
 
 const MIDDLE_OF_DOOR_OFFSET = 100
 
+var opening = false
+var closing = false
+
 var open = false
 var locked = false
+const MOVE_SPEED = 1000
 
 var mouse_over_door = false
 var dragging = false
@@ -26,13 +30,28 @@ func get_controller():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if opening:
+		var open_position = initial_y_position + OPEN_HEIGHT
+		position.y = move_toward(position.y, open_position, delta * MOVE_SPEED)
+		if position.y == open_position:
+			opening = false
+			open_door()
+	if closing:
+		var closed_position = initial_y_position + CLOSED_HEIGHT
+		position.y = move_toward(position.y, closed_position, delta * MOVE_SPEED)
+		if position.y == closed_position:
+			closing = false
+			close_door()
 
 func toggle_door():
+	if locked:
+		return
 	if open:
-		close_door()
+		opening = false
+		closing = true
 	else:
-		open_door()
+		opening = true
+		closing = false
 
 func open_door():
 	if locked:
@@ -41,11 +60,12 @@ func open_door():
 	open = true
 func close_door():
 	position.y = initial_y_position + CLOSED_HEIGHT
-	door_closed.emit()
 	open = false
-	locked = true
-	$AnimatedSprite2D.play()
-	door_timer.start()
+	if $"..".num_coals_in_oven() > 0:
+		locked = true
+		$AnimatedSprite2D.play()
+		door_timer.start()
+	door_closed.emit()
 
 func start_steering():
 	dragging = true
