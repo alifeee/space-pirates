@@ -7,6 +7,8 @@ var door_open = false
 signal coal_filled(amount)
 var coal_fill_amount = 0
 
+var controller: int = 1
+
 func _init():
 	pass
 	
@@ -27,9 +29,9 @@ func _process(delta):
 			add_coal_to_oven()
 
 func _input(event):
-	if event.is_action_pressed("player1_action1"):
+	if event.is_action_pressed("player1_action1") and controller == 1:
 		add_coal_to_oven()
-	if event.is_action_pressed("player1_action2"):
+	if event.is_action_pressed("player1_action2") and controller == 1:
 		toggle_door()
 		
 func add_coal_to_oven():

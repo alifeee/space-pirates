@@ -19,6 +19,9 @@ func _input(event):
 	pass
 
 func new_coal():
+	if controller != 0:
+		return
+		
 	var new_coal = preload("res://NodeScenes/DraggableCoal.tscn").instantiate()
 	
 	$"..".add_child(new_coal)

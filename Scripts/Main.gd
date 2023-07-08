@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 var held_object = null
+var swapped_roles: bool = false
 
 @export var WinAndLoseScreen: CanvasLayer
 
@@ -18,25 +19,27 @@ func _input(event):
 		switch_players()
 
 func switch_players():
-	var wheel = get_node("Wheel")
+	swapped_roles = !swapped_roles
 	
+	var wheel = get_node("Wheel")
 	wheel.controller = swap(wheel.controller)
 	wheel.stop_steering()
 	
 	var button1 = get_node("Button1")
 	var button2 = get_node("Button2")
-	
 	button1.controller = swap(button1.controller)
 	button2.controller = swap(button2.controller)
 	
 	var captain_icon = get_node("Captain Icon")
 	var mechanic_icon = get_node("Mechanic Icon")
-	
 	captain_icon.swap_controller()
 	mechanic_icon.swap_controller()
 	
 	var coal_pile = get_node("Coal Pile")
 	coal_pile.controller = swap(coal_pile.controller)
+	
+	var coal_oven = get_node("Coal Oven")
+	coal_oven.controller = swap(coal_oven.controller)
 
 func swap(num: int):
 	if num == 0:
@@ -45,6 +48,9 @@ func swap(num: int):
 		return 0
 	
 func _on_draggable_clicked(object):
+	if !swapped_roles:
+		return
+		
 	if !held_object:
 		held_object = object
 		held_object.pickup()
