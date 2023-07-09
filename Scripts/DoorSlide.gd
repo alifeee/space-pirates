@@ -1,4 +1,4 @@
-extends AudioStreamPlayer2D
+extends AudioStreamPlayer
 
 @export var START_VOLUME: float = 0
 @export var MIN_VOLUME: float = -30

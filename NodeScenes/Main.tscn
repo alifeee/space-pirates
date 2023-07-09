@@ -32,7 +32,7 @@
 [ext_resource type="PackedScene" path="res://NodeScenes/Coal.tscn" id="22_r64ks"]
 [ext_resource type="Script" path="res://Scripts/CoalOvenDoor.gd" id="23_xslfu"]
 [ext_resource type="Texture2D" uid="uid://v6jxi2tqkhb2" path="res://Assets/furnacedoor.png" id="24_c32nm"]
-[ext_resource type="PackedScene" path="res://NodeScenes/WinAndLosePopup.tscn" id="25_wj4lu"]
+[ext_resource type="PackedScene" uid="uid://bv3g4mtknlkbu" path="res://NodeScenes/WinAndLosePopup.tscn" id="25_wj4lu"]
 [ext_resource type="Texture2D" uid="uid://233rf6jcwfdq" path="res://Assets/mind stone up n down.png" id="27_glk8i"]
 [ext_resource type="Script" path="res://Scripts/AnimateGem.gd" id="28_fhklq"]
 [ext_resource type="Texture2D" uid="uid://dlp1ggec1236e" path="res://Assets/mind stone.png" id="28_r2i32"]
@@ -928,7 +928,7 @@ scale = Vector2(4, 4)
 texture = ExtResource("11_jp8pt")
 script = ExtResource("11_b7h1i")
 
-[node name="Click" type="AudioStreamPlayer2D" parent="Ship Inside/Wheel"]
+[node name="Click" type="AudioStreamPlayer" parent="Ship Inside/Wheel"]
 stream = ExtResource("18_cpany")
 
 [node name="Button1" type="Sprite2D" parent="Ship Inside"]
@@ -1029,13 +1029,11 @@ animation = &"oven"
 position = Vector2(0.666656, 14)
 shape = SubResource("RectangleShape2D_lmahe")
 
-[node name="DoorSlide" type="AudioStreamPlayer2D" parent="Ship Inside/Coal Oven/Door"]
+[node name="DoorSlide" type="AudioStreamPlayer" parent="Ship Inside/Coal Oven/Door"]
 stream = ExtResource("31_fi2j5")
 script = ExtResource("32_ialae")
 
-[node name="DoorShut" type="AudioStreamPlayer2D" parent="Ship Inside/Coal Oven/Door"]
-position = Vector2(-141.333, -62.6667)
-scale = Vector2(0.166667, 0.166667)
+[node name="DoorShut" type="AudioStreamPlayer" parent="Ship Inside/Coal Oven/Door"]
 stream = ExtResource("33_it7jn")
 
 [node name="Oven" type="Sprite2D" parent="Ship Inside/Coal Oven"]
@@ -1048,10 +1046,10 @@ position = Vector2(877.158, 448)
 scale = Vector2(3.07386, 3.07386)
 shape = SubResource("RectangleShape2D_0w15l")
 
-[node name="Flame on" type="AudioStreamPlayer2D" parent="Ship Inside/Coal Oven"]
+[node name="Flame on" type="AudioStreamPlayer" parent="Ship Inside/Coal Oven"]
 stream = ExtResource("31_ee4sb")
 
-[node name="Coal Place" type="AudioStreamPlayer2D" parent="Ship Inside/Coal Oven"]
+[node name="Coal Place" type="AudioStreamPlayer" parent="Ship Inside/Coal Oven"]
 stream = ExtResource("36_8qw0m")
 
 [node name="DraggableCoal" parent="Ship Inside" groups=["draggables"] instance=ExtResource("19_62qb6")]
