@@ -33,3 +33,9 @@ python serve.py --root .
 ```
 
 By default, it attempts to automatically open the page in browser, but this breaks. Manually open <http://localhost:8060>.
+
+## Screenshots
+
+![Screenshot of title screen, with title, controls, play button, and story image of two people stealing a green gem from a lit pedestal.](images/title-screen.png)
+
+![In-game screenshot, showing two sides of the game. Left: cockpit of spaceship, with wheel and gem from title screen. Outside window is a ship sprite and space background. Right: underbelly of the spaceship, with coal boiler, pipes, gauges.](images/in-game.png)
