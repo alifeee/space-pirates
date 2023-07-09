@@ -42,6 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://dfjit3lwf06ra" path="res://Assets/mechanislightning.png" id="32_xetf2"]
 [ext_resource type="AudioStream" uid="uid://cj3774v0sumh7" path="res://Assets/maxkomusic-space-heroes.mp3" id="33_2npr5"]
 [ext_resource type="Script" path="res://Scripts/AnimateLightning.gd" id="33_elh6w"]
+[ext_resource type="AudioStream" uid="uid://dveei36okmlej" path="res://Assets/Audio/furnace door shut.mp3" id="33_it7jn"]
 [ext_resource type="Script" path="res://Scripts/SwitchTimer.gd" id="35_aouu4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x3xb6"]

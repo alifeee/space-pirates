@@ -23,6 +23,7 @@ var initial_y_position: int
 
 @onready var flameon_sound = $"../Flame on"
 @onready var slide_sound = $"DoorSlide"
+@onready var shut_sound = $"DoorShut"
 const SCALE_Y_MOVE_FOR_SOUND = 2.
 
 # Called when the node enters the scene tree for the first time.
@@ -81,6 +82,7 @@ func open_door():
 func close_door():
 	position.y = initial_y_position + CLOSED_HEIGHT
 	open = false
+	shut_sound.play()
 	if $"..".num_coals_in_oven() > 0:
 		locked = true
 		$AnimatedSprite2D.play()
@@ -93,13 +95,13 @@ func start_steering():
 	
 func stop_steering():
 	if dragging:
-	dragging = false
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	get_viewport().warp_mouse(position + Vector2.DOWN * MIDDLE_OF_DOOR_OFFSET)
-	if position.y < initial_y_position + OPEN_HEIGHT * 0.1:
-		open_door()
-	else:
-		close_door()
+		dragging = false
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		get_viewport().warp_mouse(position + Vector2.DOWN * MIDDLE_OF_DOOR_OFFSET)
+		if position.y < initial_y_position + OPEN_HEIGHT * 0.1:
+			open_door()
+		else:
+			close_door()
 
 func _input(event):
 	if get_controller() == 1:

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dveei36okmlej"
+path="res://.godot/imported/furnace door shut.mp3-3a432af9e6208de64a8a3dfe69f322ba.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/furnace door shut.mp3"
+dest_files=["res://.godot/imported/furnace door shut.mp3-3a432af9e6208de64a8a3dfe69f322ba.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
