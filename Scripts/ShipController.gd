@@ -72,6 +72,7 @@ func ship_escaped():
 		return
 	shipIsDead = true
 	shipEscaped.emit()
+	visible = false
 
 func checkCollisions():
 	for i in get_slide_collision_count():

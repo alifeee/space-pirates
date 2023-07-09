@@ -64,18 +64,17 @@ func _on_coal_pile_new_coal_made(coal):
 	coal.pickup()
 	
 func game_win():
-	$"../WinAndLoseScreen".showSelf(true)
-	print("You LOSE!")
+	WinAndLoseScreen.showSelf(true)
+	print("You Win!")
 	pass
 
 func game_lose():
-	$"../WinAndLoseScreen".showSelf(false)
+	WinAndLoseScreen.showSelf(false)
 	print("You LOSE!")
 	pass
 
 func _on_space_ship_ship_died():
 	game_lose()
-
 
 func _on_space_ship_ship_escaped():
 	game_win()

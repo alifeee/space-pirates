@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpafm4qlq0pu3"]
+
+[ext_resource type="Script" path="res://Scripts/pointTowardsRotator.gd" id="1_pb7ii"]
+[ext_resource type="Texture2D" uid="uid://cua2v4eihdd1l" path="res://Assets/controls_tilemap.png" id="2_pu6um"]
+
+[node name="ArrowToWin" type="Node2D"]
+script = ExtResource("1_pb7ii")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_pu6um")
+hframes = 34
+vframes = 24
+frame = 578

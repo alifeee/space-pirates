@@ -1,8 +1,10 @@
 extends Area2D
 
+@onready var anim = $AnimatedSprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	anim.play("default")
 	pass # Replace with function body.
 
 
@@ -13,4 +15,6 @@ func _process(delta):
 func _on_body_entered(body):
 	print("interaction")
 	if(body.is_in_group("Player")):
+		anim.play("used")
 		body.ship_escaped()
+
