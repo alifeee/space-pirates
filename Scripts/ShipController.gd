@@ -11,6 +11,7 @@ extends CharacterBody2D
 @onready var _ship_wheel = $"../../Ship Inside/Wheel"
 @onready var _coal_label = $"../../Ship Inside/Label"
 @onready var _animated_sprite = $AnimatedSprite2D
+@onready var _move_particles = $"Ship Moving Particles"
 
 signal shipDied
 signal shipEscaped
@@ -38,11 +39,13 @@ func _physics_process(delta):
 		velocity = Vector2(0,0)
 		return
 	if(coal_count > 0):
+		_move_particles.visible = true
 		move_speed = move_toward(move_speed, max_move_speed, acceleration)
 		move_speed = clamp(move_speed, 0, max_move_speed)
 		velocity = -transform.y * move_speed
 		decrease_coal(coal_burn_rate * delta)
 	else:
+		_move_particles.visible = false
 		move_speed = move_toward(move_speed, 0, deceleration)
 		move_speed = clamp(move_speed, 0, max_move_speed)
 		velocity = -transform.y * move_speed
