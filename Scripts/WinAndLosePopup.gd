@@ -14,6 +14,6 @@ func _process(delta):
 func showSelf(didWin):
 	visible = true
 	if(didWin):
-		MainLabel.text = "Congrats! You escaped the federation in time!"
+		MainLabel.text = "Congrats! You escaped from the Gem Keepers!"
 	else:
 		MainLabel.text = "You've encountered a terrible fate."
