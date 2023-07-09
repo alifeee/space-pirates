@@ -1,11 +1,15 @@
-[gd_scene load_steps=23 format=3 uid="uid://br2eyy8g1mtc3"]
+[gd_scene load_steps=27 format=3 uid="uid://br2eyy8g1mtc3"]
 
 [ext_resource type="Texture2D" uid="uid://cua2v4eihdd1l" path="res://Assets/controls_tilemap.png" id="1_46kj0"]
+[ext_resource type="Texture2D" uid="uid://bxjtw7xvs3pdm" path="res://Assets/space pirates.png" id="1_qo8gg"]
 [ext_resource type="Script" path="res://Scripts/StoryBoard.gd" id="2_6ykde"]
 [ext_resource type="Script" path="res://Scripts/PlayButton.gd" id="3_al44t"]
 [ext_resource type="AudioStream" uid="uid://4xjt6wjar6cx" path="res://Assets/space-ambient-sci-fi-121842.mp3" id="3_cmkun"]
+[ext_resource type="Texture2D" uid="uid://bk52bkraoi57k" path="res://Assets/captain text.png" id="3_t1sb5"]
 [ext_resource type="Texture2D" uid="uid://csvvgwpqed6e2" path="res://Assets/dsah (1).png" id="4_onn6q"]
+[ext_resource type="Texture2D" uid="uid://jrf46673e5bc" path="res://Assets/mechanic text.png" id="5_7xm1v"]
 [ext_resource type="Script" path="res://Scripts/FadeRect.gd" id="6_q1ft8"]
+[ext_resource type="Texture2D" uid="uid://dfetux4po5o1d" path="res://Assets/main menu button.png" id="9_0nb63"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d6j4e"]
 atlas = ExtResource("4_onn6q")
@@ -942,12 +946,10 @@ offset_bottom = 40.0
 scale = Vector2(29.8656, 16.8955)
 color = Color(0.109804, 0.0784314, 0.113725, 1)
 
-[node name="Title" type="Label" parent="."]
-offset_left = 472.0
-offset_top = 64.0
-offset_right = 731.0
-offset_bottom = 90.0
-text = "Space Pirates and the Mind Stone"
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(600, 64)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_qo8gg")
 
 [node name="StoryBoard" type="AnimatedSprite2D" parent="."]
 position = Vector2(576, 320)
@@ -961,19 +963,15 @@ script = ExtResource("2_6ykde")
 [node name="Player1" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -120.0
-offset_top = 64.0
-offset_right = -80.0
-offset_bottom = 104.0
-
-[node name="Player 1 controls" type="Label" parent="Player1"]
-layout_mode = 2
-offset_left = 192.0
+offset_left = 656.0
 offset_top = 128.0
-offset_right = 352.0
-offset_bottom = 154.0
-text = "PLAYER 1 CONTROLS
-"
+offset_right = 696.0
+offset_bottom = 168.0
+
+[node name="Player 1 controls" type="Sprite2D" parent="Player1"]
+position = Vector2(296, 144)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_t1sb5")
 
 [node name="Player 1 controls3" type="TileMap" parent="Player1"]
 position = Vector2(320, 256)
@@ -1006,18 +1004,15 @@ text = "Steer"
 [node name="Player2" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 72.0
-offset_top = 64.0
-offset_right = 112.0
-offset_bottom = 104.0
-
-[node name="Player 2 controls" type="Label" parent="Player2"]
-offset_left = 768.0
+offset_left = -696.0
 offset_top = 128.0
-offset_right = 928.0
-offset_bottom = 154.0
-text = "PLAYER 2 CONTROLS
-"
+offset_right = -656.0
+offset_bottom = 168.0
+
+[node name="Mechanic" type="Sprite2D" parent="Player2"]
+position = Vector2(896, 144)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_7xm1v")
 
 [node name="Player 2 controls2" type="TileMap" parent="Player2"]
 position = Vector2(832, 256)
@@ -1065,6 +1060,8 @@ offset_top = 560.0
 offset_right = 704.0
 offset_bottom = 624.0
 text = "PLAY"
+icon = ExtResource("9_0nb63")
+icon_alignment = 1
 script = ExtResource("3_al44t")
 
 [connection signal="animation_finished" from="StoryBoard" to="StoryBoard" method="_on_animation_finished"]
