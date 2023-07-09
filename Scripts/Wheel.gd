@@ -4,7 +4,7 @@ var elapsed_reset = 0
 var elapsed_go = 0
 
 const ROTATION_MAX = PI * 0.8
-const CONTROL_SPEED = PI * 5
+const CONTROL_SPEED = PI * 2.5
 const RESET_SPEED = PI * 1
 
 @export var controller: int = 0
