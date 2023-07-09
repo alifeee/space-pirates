@@ -21,12 +21,17 @@ func _input(event):
 func new_coal():
 	if controller != 0:
 		return
-		
+	var num_current_coal = get_tree().get_nodes_in_group("draggables")
+	if len(num_current_coal) > 10:
+		return
+	
 	var new_coal = preload("res://NodeScenes/DraggableCoal.tscn").instantiate()
 	
 	$"..".add_child(new_coal)
 	new_coal.position = position
+	new_coal.add_to_group("draggables")
 	new_coal_made.emit(new_coal)
+	
 
 func _on_mouse_entered():
 	mouse_in = true
