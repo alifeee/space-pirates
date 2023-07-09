@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=3 uid="uid://br4vudmfn607"]
+[gd_scene load_steps=112 format=3 uid="uid://br4vudmfn607"]
 
 [ext_resource type="Texture2D" uid="uid://dj42bpxy5l4bl" path="res://Assets/Space shit/real space tiles.png" id="1_s85f7"]
 [ext_resource type="PackedScene" uid="uid://5qslbyyyg40x" path="res://Assets/NodeAssets/asteroid.tscn" id="2_n0fda"]
@@ -44,6 +44,7 @@
 [ext_resource type="Script" path="res://Scripts/AnimateLightning.gd" id="33_elh6w"]
 [ext_resource type="AudioStream" uid="uid://dveei36okmlej" path="res://Assets/Audio/furnace door shut.mp3" id="33_it7jn"]
 [ext_resource type="Script" path="res://Scripts/SwitchTimer.gd" id="35_aouu4"]
+[ext_resource type="AudioStream" uid="uid://bq204wcvxyax1" path="res://Assets/Audio/coal place.mp3" id="36_8qw0m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x3xb6"]
 texture = ExtResource("1_s85f7")
@@ -1018,6 +1019,11 @@ shape = SubResource("RectangleShape2D_lmahe")
 stream = ExtResource("31_fi2j5")
 script = ExtResource("32_ialae")
 
+[node name="DoorShut" type="AudioStreamPlayer2D" parent="Ship Inside/Coal Oven/Door"]
+position = Vector2(-141.333, -62.6667)
+scale = Vector2(0.166667, 0.166667)
+stream = ExtResource("33_it7jn")
+
 [node name="Oven" type="Sprite2D" parent="Ship Inside/Coal Oven"]
 position = Vector2(872, 368)
 scale = Vector2(6, 6)
@@ -1030,6 +1036,9 @@ shape = SubResource("RectangleShape2D_0w15l")
 
 [node name="Flame on" type="AudioStreamPlayer2D" parent="Ship Inside/Coal Oven"]
 stream = ExtResource("31_ee4sb")
+
+[node name="Coal Place" type="AudioStreamPlayer2D" parent="Ship Inside/Coal Oven"]
+stream = ExtResource("36_8qw0m")
 
 [node name="DraggableCoal" parent="Ship Inside" groups=["draggables"] instance=ExtResource("19_62qb6")]
 position = Vector2(775, 599)

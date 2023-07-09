@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bq204wcvxyax1"
+path="res://.godot/imported/coal place.mp3-e65b41a703d66d601409789da16e1485.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/coal place.mp3"
+dest_files=["res://.godot/imported/coal place.mp3-e65b41a703d66d601409789da16e1485.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

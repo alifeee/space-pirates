@@ -8,6 +8,8 @@ var coal_fill_amount = 0
 
 var controller: int = 1
 
+@onready var coal_place_sound = $"Coal Place"
+
 func _init():
 	pass
 	
@@ -39,6 +41,7 @@ func add_coal_to_oven():
 	for coal in coals:
 		if not coal.visible:
 			coal.visible = true
+			coal_place_sound.play()
 			break
 
 func num_coals_in_oven():
