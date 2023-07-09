@@ -1,6 +1,6 @@
 extends AnimatedSprite2D
 
-const THRESHOLDS: Array[float] = [3,6,9,12,15,18]
+const THRESHOLDS: Array[float] = [3,6,9,12,15,17.9]
 
 @export var ship: CharacterBody2D
 
