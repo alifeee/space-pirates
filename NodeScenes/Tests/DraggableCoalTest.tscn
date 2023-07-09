@@ -11,6 +11,9 @@ script = ExtResource("1_2c1o0")
 [node name="DraggableCoal" parent="." groups=["draggables"] instance=ExtResource("1_1wsfm")]
 position = Vector2(472, 280)
 
+[node name="DraggableCoal2" parent="." groups=["draggables"] instance=ExtResource("1_1wsfm")]
+position = Vector2(472, 280)
+
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(664, 640)
 collision_layer = 2
@@ -18,3 +21,6 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 shape = SubResource("WorldBoundaryShape2D_h3iwk")
+
+[connection signal="body_shape_entered" from="DraggableCoal" to="DraggableCoal" method="_on_body_shape_entered"]
+[connection signal="body_shape_entered" from="DraggableCoal2" to="DraggableCoal2" method="_on_body_shape_entered"]

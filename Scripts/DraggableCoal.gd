@@ -7,6 +7,8 @@ var held: bool = false
 var in_furnace: bool = false
 var limit = 0
 
+@onready var clicksound = $"AudioStreamPlayer2D"
+
 func _init():
 	limit = ProjectSettings.get_setting("display/window/size/viewport_width") / 2
 	
@@ -18,6 +20,7 @@ func _input_event(viewport, event, shape_idx):
 func _physics_process(delta):
 	if held:
 		global_transform.origin = get_global_mouse_position()
+	
 
 func pickup():
 	if held:
@@ -30,3 +33,8 @@ func drop(impulse=Vector2.ZERO):
 		freeze = false
 		apply_central_impulse(impulse)
 		held = false
+
+
+
+func _on_body_entered(body):
+	clicksound.play()
