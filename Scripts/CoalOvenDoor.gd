@@ -22,6 +22,8 @@ signal door_closed
 var initial_y_position: int
 
 @onready var flameon_sound = $"../Flame on"
+@onready var slide_sound = $"DoorSlide"
+const SCALE_Y_MOVE_FOR_SOUND = 2.
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -38,12 +40,28 @@ func _process(delta):
 		if position.y == open_position:
 			opening = false
 			open_door()
-	if closing:
+	elif closing:
 		var closed_position = initial_y_position + CLOSED_HEIGHT
 		position.y = move_toward(position.y, closed_position, delta * MOVE_SPEED)
 		if position.y == closed_position:
 			closing = false
 			close_door()
+			
+	# door sound
+	if not dragging:
+		slide_sound.volume_db = slide_sound.START_VOLUME
+	if opening or closing or dragging:
+		if !slide_sound.playing:
+			slide_sound.play()
+	else:
+		if slide_sound.playing:
+			slide_sound.stop()
+			
+func scale_slide_sound(scale):
+	# scale 0 to 1. 0 is quiet
+	var new_vol = lerp(slide_sound.MIN_VOLUME, slide_sound.START_VOLUME, scale)
+	slide_sound.volume_db = clamp(new_vol, slide_sound.MIN_VOLUME, slide_sound.START_VOLUME)
+	
 
 func toggle_door():
 	if locked:
@@ -93,6 +111,7 @@ func _input(event):
 				return
 			if (event.position - self.position).length() and mouse_over_door:
 				if not dragging and event.pressed:
+					scale_slide_sound(0)
 					start_steering()
 			if dragging and not event.pressed:
 				stop_steering()
@@ -101,6 +120,7 @@ func _input(event):
 			if locked:
 				return
 			var yamount = event.relative.y
+			scale_slide_sound(abs(yamount) / SCALE_Y_MOVE_FOR_SOUND)
 			translate(Vector2.DOWN * yamount)
 			position.y = clamp(position.y, initial_y_position + OPEN_HEIGHT, initial_y_position + CLOSED_HEIGHT)
 	

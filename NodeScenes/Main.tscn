@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=3 uid="uid://br4vudmfn607"]
+[gd_scene load_steps=110 format=3 uid="uid://br4vudmfn607"]
 
 [ext_resource type="Texture2D" uid="uid://dj42bpxy5l4bl" path="res://Assets/Space shit/real space tiles.png" id="1_s85f7"]
 [ext_resource type="PackedScene" uid="uid://5qslbyyyg40x" path="res://Assets/NodeAssets/asteroid.tscn" id="2_n0fda"]
@@ -37,6 +37,8 @@
 [ext_resource type="Script" path="res://Scripts/AnimateGem.gd" id="28_fhklq"]
 [ext_resource type="Texture2D" uid="uid://dlp1ggec1236e" path="res://Assets/mind stone.png" id="28_r2i32"]
 [ext_resource type="AudioStream" uid="uid://bpuflxcpw5517" path="res://Assets/Audio/furnace flame up.mp3" id="31_ee4sb"]
+[ext_resource type="AudioStream" uid="uid://d17asn1l8itks" path="res://Assets/Audio/furnace door slide.mp3" id="31_fi2j5"]
+[ext_resource type="Script" path="res://Scripts/DoorSlide.gd" id="32_ialae"]
 [ext_resource type="Texture2D" uid="uid://dfjit3lwf06ra" path="res://Assets/mechanislightning.png" id="32_xetf2"]
 [ext_resource type="AudioStream" uid="uid://cj3774v0sumh7" path="res://Assets/maxkomusic-space-heroes.mp3" id="33_2npr5"]
 [ext_resource type="Script" path="res://Scripts/AnimateLightning.gd" id="33_elh6w"]
@@ -1010,6 +1012,10 @@ animation = &"oven"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ship Inside/Coal Oven/Door"]
 position = Vector2(0.666656, 14)
 shape = SubResource("RectangleShape2D_lmahe")
+
+[node name="DoorSlide" type="AudioStreamPlayer2D" parent="Ship Inside/Coal Oven/Door"]
+stream = ExtResource("31_fi2j5")
+script = ExtResource("32_ialae")
 
 [node name="Oven" type="Sprite2D" parent="Ship Inside/Coal Oven"]
 position = Vector2(872, 368)
