@@ -916,6 +916,7 @@ offset_right = 1008.0
 offset_bottom = 282.0
 text = "Operate hatch"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Menu Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_cmkun")
+volume_db = -20.0
 autoplay = true
