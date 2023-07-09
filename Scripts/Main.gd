@@ -5,6 +5,8 @@ var swapped_roles: bool = false
 
 @export var WinAndLoseScreen: CanvasLayer
 
+@onready var swap_sound = $"SwapPlayerSound"
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for node in get_tree().get_nodes_in_group("draggables"):
@@ -17,6 +19,8 @@ func _on_lightning_animation_finished():
 	switch_players()
 	
 func switch_players():
+	swap_sound.play()
+	
 	swapped_roles = !swapped_roles
 	
 	var wheel = get_node("Wheel")

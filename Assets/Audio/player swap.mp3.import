@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c83exoiynsnsl"
+path="res://.godot/imported/player swap.mp3-74cd48561362b301ee65ef183a249e17.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/player swap.mp3"
+dest_files=["res://.godot/imported/player swap.mp3-74cd48561362b301ee65ef183a249e17.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
