@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bv3g4mtknlkbu"]
+[gd_scene load_steps=4 format=3 uid="uid://bpgislddrx2x"]
 
 [ext_resource type="Script" path="res://Scripts/WinAndLosePopup.gd" id="1_jir6s"]
 [ext_resource type="Script" path="res://Scripts/Button.gd" id="1_l8mps"]
