@@ -1,8 +1,115 @@
-[gd_scene load_steps=6 format=3 uid="uid://br2eyy8g1mtc3"]
+[gd_scene load_steps=23 format=3 uid="uid://br2eyy8g1mtc3"]
 
-[ext_resource type="Script" path="res://Scripts/SwitchSceneButton.gd" id="1_3t4ip"]
 [ext_resource type="Texture2D" uid="uid://cua2v4eihdd1l" path="res://Assets/controls_tilemap.png" id="1_46kj0"]
+[ext_resource type="Script" path="res://Scripts/StoryBoard.gd" id="2_6ykde"]
+[ext_resource type="Script" path="res://Scripts/PlayButton.gd" id="3_al44t"]
 [ext_resource type="AudioStream" uid="uid://4xjt6wjar6cx" path="res://Assets/space-ambient-sci-fi-121842.mp3" id="3_cmkun"]
+[ext_resource type="Texture2D" uid="uid://csvvgwpqed6e2" path="res://Assets/dsah (1).png" id="4_onn6q"]
+[ext_resource type="Script" path="res://Scripts/FadeRect.gd" id="6_q1ft8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6j4e"]
+atlas = ExtResource("4_onn6q")
+region = Rect2(0, 0, 574, 381)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iewgs"]
+atlas = ExtResource("4_onn6q")
+region = Rect2(574, 0, 574, 381)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_772m0"]
+atlas = ExtResource("4_onn6q")
+region = Rect2(1148, 0, 574, 381)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnact"]
+atlas = ExtResource("4_onn6q")
+region = Rect2(1722, 0, 574, 381)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gxxj"]
+atlas = ExtResource("4_onn6q")
+region = Rect2(0, 381, 574, 381)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pjxh"]
+atlas = ExtResource("4_onn6q")
+region = Rect2(574, 381, 574, 381)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5kwd"]
+atlas = ExtResource("4_onn6q")
+region = Rect2(1148, 381, 574, 381)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_homth"]
+atlas = ExtResource("4_onn6q")
+region = Rect2(1722, 381, 574, 381)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4qge"]
+atlas = ExtResource("4_onn6q")
+region = Rect2(574, 762, 574, 381)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8ysi"]
+atlas = ExtResource("4_onn6q")
+region = Rect2(1148, 762, 574, 381)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_io1wu"]
+atlas = ExtResource("4_onn6q")
+region = Rect2(1722, 762, 574, 381)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlevh"]
+atlas = ExtResource("4_onn6q")
+region = Rect2(0, 1143, 574, 381)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uei0h"]
+atlas = ExtResource("4_onn6q")
+region = Rect2(574, 1143, 574, 381)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_62lyf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6j4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iewgs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_772m0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnact")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6gxxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pjxh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5kwd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_homth")
+}],
+"loop": true,
+"name": &"vibin",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4qge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8ysi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_io1wu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlevh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uei0h")
+}],
+"loop": false,
+"name": &"zappin",
+"speed": 5.0
+}]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gkh6h"]
 texture = ExtResource("1_46kj0")
@@ -829,22 +936,38 @@ sources/0 = SubResource("TileSetAtlasSource_gkh6h")
 
 [node name="MainMenu" type="Node2D"]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(29.8656, 16.8955)
+color = Color(0.109804, 0.0784314, 0.113725, 1)
+
 [node name="Title" type="Label" parent="."]
-offset_left = 512.0
+offset_left = 472.0
 offset_top = 64.0
-offset_right = 604.0
+offset_right = 731.0
 offset_bottom = 90.0
-text = "space game"
+text = "Space Pirates and the Mind Stone"
 
-[node name="Play button" type="Button" parent="."]
-offset_left = 448.0
-offset_top = 256.0
-offset_right = 704.0
-offset_bottom = 320.0
-text = "PLAY"
-script = ExtResource("1_3t4ip")
+[node name="StoryBoard" type="AnimatedSprite2D" parent="."]
+position = Vector2(576, 320)
+sprite_frames = SubResource("SpriteFrames_62lyf")
+animation = &"zappin"
+autoplay = "vibin"
+frame = 4
+frame_progress = 1.0
+script = ExtResource("2_6ykde")
 
-[node name="Player 1 controls" type="Label" parent="."]
+[node name="Player1" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -120.0
+offset_top = 64.0
+offset_right = -80.0
+offset_bottom = 104.0
+
+[node name="Player 1 controls" type="Label" parent="Player1"]
+layout_mode = 2
 offset_left = 192.0
 offset_top = 128.0
 offset_right = 352.0
@@ -852,7 +975,43 @@ offset_bottom = 154.0
 text = "PLAYER 1 CONTROLS
 "
 
-[node name="Player 2 controls" type="Label" parent="."]
+[node name="Player 1 controls3" type="TileMap" parent="Player1"]
+position = Vector2(320, 256)
+scale = Vector2(4, 4)
+tile_set = SubResource("TileSet_wxjsx")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65536, 589824, 2)
+
+[node name="Player 1 controls2" type="TileMap" parent="Player1"]
+position = Vector2(256, 256)
+scale = Vector2(4, 4)
+tile_set = SubResource("TileSet_wxjsx")
+format = 2
+layer_0/tile_data = PackedInt32Array(-1, 524288, 2)
+
+[node name="p1 interact" type="Label" parent="Player1"]
+offset_left = 320.0
+offset_top = 256.0
+offset_right = 381.0
+offset_bottom = 282.0
+text = "Interact"
+
+[node name="p1 steer" type="Label" parent="Player1"]
+offset_left = 192.0
+offset_top = 256.0
+offset_right = 233.0
+offset_bottom = 282.0
+text = "Steer"
+
+[node name="Player2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 72.0
+offset_top = 64.0
+offset_right = 112.0
+offset_bottom = 104.0
+
+[node name="Player 2 controls" type="Label" parent="Player2"]
 offset_left = 768.0
 offset_top = 128.0
 offset_right = 928.0
@@ -860,56 +1019,28 @@ offset_bottom = 154.0
 text = "PLAYER 2 CONTROLS
 "
 
-[node name="Player 1 controls2" type="TileMap" parent="."]
-position = Vector2(256, 256)
-scale = Vector2(4, 4)
-tile_set = SubResource("TileSet_wxjsx")
-format = 2
-layer_0/tile_data = PackedInt32Array(-1, 524288, 2)
-
-[node name="Player 1 controls3" type="TileMap" parent="."]
-position = Vector2(320, 256)
-scale = Vector2(4, 4)
-tile_set = SubResource("TileSet_wxjsx")
-format = 2
-layer_0/tile_data = PackedInt32Array(-65536, 589824, 2)
-
-[node name="Player 2 controls2" type="TileMap" parent="."]
+[node name="Player 2 controls2" type="TileMap" parent="Player2"]
 position = Vector2(832, 256)
 scale = Vector2(4, 4)
 tile_set = SubResource("TileSet_wxjsx")
 format = 2
 layer_0/tile_data = PackedInt32Array(-1, 2162688, 4)
 
-[node name="Player 2 controls3" type="TileMap" parent="."]
+[node name="Player 2 controls3" type="TileMap" parent="Player2"]
 position = Vector2(896, 256)
 scale = Vector2(4, 4)
 tile_set = SubResource("TileSet_wxjsx")
 format = 2
 layer_0/tile_data = PackedInt32Array(-65536, 2031616, 4)
 
-[node name="p1 steer" type="Label" parent="."]
-offset_left = 192.0
-offset_top = 256.0
-offset_right = 233.0
-offset_bottom = 282.0
-text = "Steer"
-
-[node name="p1 interact" type="Label" parent="."]
-offset_left = 320.0
-offset_top = 256.0
-offset_right = 381.0
-offset_bottom = 282.0
-text = "Interact"
-
-[node name="p2 shovel coal" type="Label" parent="."]
+[node name="p2 shovel coal" type="Label" parent="Player2"]
 offset_left = 768.0
 offset_top = 256.0
 offset_right = 855.0
 offset_bottom = 282.0
 text = "Shovel coal"
 
-[node name="p2 operate hatch" type="Label" parent="."]
+[node name="p2 operate hatch" type="Label" parent="Player2"]
 offset_left = 896.0
 offset_top = 256.0
 offset_right = 1008.0
@@ -920,3 +1051,23 @@ text = "Operate hatch"
 stream = ExtResource("3_cmkun")
 volume_db = -20.0
 autoplay = true
+
+[node name="FadeRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(30.2896, 17.1256)
+color = Color(0, 0, 0, 0)
+script = ExtResource("6_q1ft8")
+
+[node name="Play button" type="Button" parent="."]
+offset_left = 448.0
+offset_top = 560.0
+offset_right = 704.0
+offset_bottom = 624.0
+text = "PLAY"
+script = ExtResource("3_al44t")
+
+[connection signal="animation_finished" from="StoryBoard" to="StoryBoard" method="_on_animation_finished"]
+[connection signal="animation_finished" from="StoryBoard" to="FadeRect" method="_on_story_board_animation_finished"]
+[connection signal="pressed" from="Play button" to="Play button" method="_on_pressed"]
+[connection signal="pressed" from="Play button" to="StoryBoard" method="_on_play_button_pressed"]
