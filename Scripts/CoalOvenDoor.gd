@@ -21,6 +21,8 @@ signal door_closed
 
 var initial_y_position: int
 
+@onready var flameon_sound = $"../Flame on"
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	initial_y_position = position.y
@@ -64,6 +66,7 @@ func close_door():
 	if $"..".num_coals_in_oven() > 0:
 		locked = true
 		$AnimatedSprite2D.play()
+		flameon_sound.play()
 	door_closed.emit()
 
 func start_steering():
