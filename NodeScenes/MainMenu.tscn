@@ -1,13 +1,13 @@
 [gd_scene load_steps=27 format=3 uid="uid://br2eyy8g1mtc3"]
 
 [ext_resource type="Texture2D" uid="uid://cua2v4eihdd1l" path="res://Assets/controls_tilemap.png" id="1_46kj0"]
-[ext_resource type="Texture2D" uid="uid://bxjtw7xvs3pdm" path="res://Assets/space pirates.png" id="1_qo8gg"]
+[ext_resource type="Texture2D" uid="uid://dguqrey2kp4ph" path="res://Assets/space pirates.png" id="1_qo8gg"]
 [ext_resource type="Script" path="res://Scripts/StoryBoard.gd" id="2_6ykde"]
 [ext_resource type="Script" path="res://Scripts/PlayButton.gd" id="3_al44t"]
 [ext_resource type="AudioStream" uid="uid://4xjt6wjar6cx" path="res://Assets/space-ambient-sci-fi-121842.mp3" id="3_cmkun"]
-[ext_resource type="Texture2D" uid="uid://bk52bkraoi57k" path="res://Assets/captain text.png" id="3_t1sb5"]
-[ext_resource type="Texture2D" uid="uid://csvvgwpqed6e2" path="res://Assets/dsah (1).png" id="4_onn6q"]
-[ext_resource type="Texture2D" uid="uid://jrf46673e5bc" path="res://Assets/mechanic text.png" id="5_7xm1v"]
+[ext_resource type="Texture2D" uid="uid://b0g72y57t4khc" path="res://Assets/captain text.png" id="3_t1sb5"]
+[ext_resource type="Texture2D" uid="uid://cgfoxbasq4rxd" path="res://Assets/dsah (1).png" id="4_onn6q"]
+[ext_resource type="Texture2D" uid="uid://rfm2wr8cbtym" path="res://Assets/mechanic text.png" id="5_7xm1v"]
 [ext_resource type="Script" path="res://Scripts/FadeRect.gd" id="6_q1ft8"]
 [ext_resource type="Texture2D" uid="uid://dfetux4po5o1d" path="res://Assets/main menu button.png" id="9_0nb63"]
 
@@ -988,6 +988,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(-1, 524288, 2)
 
 [node name="p1 interact" type="Label" parent="Player1"]
+layout_mode = 0
 offset_left = 320.0
 offset_top = 256.0
 offset_right = 381.0
@@ -995,6 +996,7 @@ offset_bottom = 282.0
 text = "Interact"
 
 [node name="p1 steer" type="Label" parent="Player1"]
+layout_mode = 0
 offset_left = 192.0
 offset_top = 256.0
 offset_right = 233.0
@@ -1029,6 +1031,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(-65536, 2031616, 4)
 
 [node name="p2 shovel coal" type="Label" parent="Player2"]
+layout_mode = 0
 offset_left = 768.0
 offset_top = 256.0
 offset_right = 855.0
@@ -1036,6 +1039,7 @@ offset_bottom = 282.0
 text = "Shovel coal"
 
 [node name="p2 operate hatch" type="Label" parent="Player2"]
+layout_mode = 0
 offset_left = 896.0
 offset_top = 256.0
 offset_right = 1008.0
@@ -1066,5 +1070,5 @@ script = ExtResource("3_al44t")
 
 [connection signal="animation_finished" from="StoryBoard" to="StoryBoard" method="_on_animation_finished"]
 [connection signal="animation_finished" from="StoryBoard" to="FadeRect" method="_on_story_board_animation_finished"]
-[connection signal="pressed" from="Play button" to="Play button" method="_on_pressed"]
 [connection signal="pressed" from="Play button" to="StoryBoard" method="_on_play_button_pressed"]
+[connection signal="pressed" from="Play button" to="Play button" method="_on_pressed"]
