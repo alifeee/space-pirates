@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://btusexu0lh4s7"]
 
-[ext_resource type="Texture2D" uid="uid://24tgl44iceog" path="res://Assets/mechanic side/coal real.png" id="1_7hgnc"]
+[ext_resource type="Texture2D" uid="uid://bjp8ryr7ovf1j" path="res://Assets/mechanic side/coal for real this time.png" id="1_jusxr"]
 
 [node name="Coal" type="Sprite2D"]
 scale = Vector2(4, 4)
-texture = ExtResource("1_7hgnc")
+texture = ExtResource("1_jusxr")
