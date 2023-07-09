@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://br4vudmfn607"]
+[gd_scene load_steps=105 format=3 uid="uid://br4vudmfn607"]
 
 [ext_resource type="Texture2D" uid="uid://dj42bpxy5l4bl" path="res://Assets/Space shit/real space tiles.png" id="1_s85f7"]
 [ext_resource type="PackedScene" uid="uid://5qslbyyyg40x" path="res://Assets/NodeAssets/asteroid.tscn" id="2_n0fda"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dmnalcgng2od4" path="res://Assets/mechanic side/press button.png" id="12_wktdw"]
 [ext_resource type="Texture2D" uid="uid://dhxj8hq8m2muj" path="res://Assets/Space shit/captain side/COALOMETER.png" id="13_4m2l1"]
 [ext_resource type="Script" path="res://Scripts/Mechanic_Button.gd" id="13_pp878"]
+[ext_resource type="Script" path="res://Scripts/Coalometer.gd" id="14_w30ld"]
 [ext_resource type="Script" path="res://Scripts/PlayerIcon.gd" id="15_hk7kv"]
 [ext_resource type="Texture2D" uid="uid://sly1a18et6yu" path="res://Assets/hat1.png" id="15_s1xsl"]
 [ext_resource type="Texture2D" uid="uid://b51y0236rvoef" path="res://Assets/fire mechanic.png" id="16_21vc1"]
@@ -724,10 +725,12 @@ texture = ExtResource("8_dqo4h")
 position = Vector2(-91, 5)
 scale = Vector2(0.5, 0.5)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ship Inside"]
+[node name="Coalometer" type="AnimatedSprite2D" parent="Ship Inside" node_paths=PackedStringArray("ship")]
 position = Vector2(1016, 281)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_kni00")
+script = ExtResource("14_w30ld")
+ship = NodePath("../../Ship World/SpaceShip")
 
 [node name="Wheel" type="Sprite2D" parent="Ship Inside"]
 position = Vector2(296, 511)
