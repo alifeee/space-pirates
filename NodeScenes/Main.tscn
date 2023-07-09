@@ -898,8 +898,9 @@ script = ExtResource("33_elh6w")
 wait_time = 5.0
 script = ExtResource("35_aouu4")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Main Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("33_2npr5")
+volume_db = -20.0
 autoplay = true
 
 [connection signal="shipDied" from="Ship World/SpaceShip" to="Ship Inside" method="_on_space_ship_ship_died"]
