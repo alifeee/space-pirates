@@ -90,14 +90,15 @@ func close_door():
 	door_closed.emit()
 
 func start_steering():
-	dragging = true
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	if not dragging:
+		dragging = true
+#		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 	
 func stop_steering():
 	if dragging:
 		dragging = false
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		get_viewport().warp_mouse(position + Vector2.DOWN * MIDDLE_OF_DOOR_OFFSET)
+#		get_viewport().warp_mouse(position + Vector2.DOWN * MIDDLE_OF_DOOR_OFFSET)
+#		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		if position.y < initial_y_position + OPEN_HEIGHT * 0.1:
 			open_door()
 		else:
