@@ -38,6 +38,7 @@ func switch_players():
 	
 	var coal_oven = get_node("Coal Oven")
 	coal_oven.controller = swap(coal_oven.controller)
+	coal_oven.door.stop_steering()
 
 func swap(num: int):
 	if num == 0:
