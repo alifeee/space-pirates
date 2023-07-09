@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dav51td18e2xg"
+path="res://.godot/imported/wheel click.mp3-8b29bf0b16ae7f9e5a52128ac9911b24.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/wheel click.mp3"
+dest_files=["res://.godot/imported/wheel click.mp3-8b29bf0b16ae7f9e5a52128ac9911b24.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
