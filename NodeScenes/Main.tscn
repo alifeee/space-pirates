@@ -668,7 +668,9 @@ scale = Vector2(1.975, 1.975)
 [node name="SpaceShip" type="CharacterBody2D" parent="Ship World" groups=["Player"]]
 position = Vector2(288, 162)
 script = ExtResource("3_5386y")
-max_move_speed = 600.0
+max_move_speed = 200.0
+coal_burn_rate = 1.5
+acceleration = 1.0
 deceleration = 1.5
 
 [node name="Collider" type="CollisionShape2D" parent="Ship World/SpaceShip"]
