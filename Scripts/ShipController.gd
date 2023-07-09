@@ -72,6 +72,7 @@ func kills_ship():
 	if(shipIsDead):
 		return
 	shipIsDead = true
+	_move_particles.visible = false
 	_animated_sprite.play("ShipDeath")
 	coal_count = 0
 	shipDied.emit()
@@ -80,6 +81,7 @@ func ship_escaped():
 	if(shipIsDead):
 		return
 	shipIsDead = true
+	_move_particles.visible = false
 	shipEscaped.emit()
 	visible = false
 

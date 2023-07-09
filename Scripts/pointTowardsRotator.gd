@@ -18,4 +18,4 @@ func _process(delta: float) -> void:
 	var angle_to_player = shipPosition.direction_to(targetPosition).angle()
 	
 	# slowly changes the rotation to face the angle
-	rotation = move_toward(rotation, angle_to_player, delta)
+	rotation = move_toward(rotation, angle_to_player, delta * 5)

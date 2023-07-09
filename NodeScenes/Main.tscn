@@ -1,25 +1,25 @@
 [gd_scene load_steps=120 format=3 uid="uid://br4vudmfn607"]
 
-[ext_resource type="Texture2D" uid="uid://dj42bpxy5l4bl" path="res://Assets/Space shit/real space tiles.png" id="1_s85f7"]
+[ext_resource type="Texture2D" uid="uid://bioyswwnpynmk" path="res://Assets/Space shit/real space tiles.png" id="1_s85f7"]
 [ext_resource type="PackedScene" uid="uid://5qslbyyyg40x" path="res://Assets/NodeAssets/asteroid.tscn" id="2_n0fda"]
 [ext_resource type="Script" path="res://Scripts/ShipController.gd" id="3_5386y"]
 [ext_resource type="Texture2D" uid="uid://b1f1rtugrqdat" path="res://Assets/Space shit/spaceship/spaceship.png" id="4_0vrx3"]
 [ext_resource type="Texture2D" uid="uid://bscurni1iuq57" path="res://Assets/Space shit/spaceship/death.png" id="5_f3mkm"]
-[ext_resource type="PackedScene" path="res://Assets/NodeAssets/ship_moving_particles.tscn" id="6_logw0"]
+[ext_resource type="PackedScene" uid="uid://bvtln75ip7sah" path="res://Assets/NodeAssets/ship_moving_particles.tscn" id="6_logw0"]
 [ext_resource type="Script" path="res://Scripts/CameraController.gd" id="6_oxnn0"]
 [ext_resource type="AudioStream" uid="uid://48fahso4i37q" path="res://Assets/Audio/rocket thrust.mp3" id="7_6gegv"]
-[ext_resource type="PackedScene" path="res://NodeScenes/win_boundary.tscn" id="7_u8ri6"]
+[ext_resource type="PackedScene" uid="uid://dts7q7u0qjncu" path="res://NodeScenes/win_boundary.tscn" id="7_u8ri6"]
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="7_xddt0"]
 [ext_resource type="Texture2D" uid="uid://brvklbtxo7j3r" path="res://Assets/mechanic side/mechanis.png" id="8_dqo4h"]
-[ext_resource type="PackedScene" path="res://Assets/federation.tscn" id="8_kxgkg"]
-[ext_resource type="Texture2D" uid="uid://bijpwt851dnri" path="res://Assets/Space shit/captain side/captains quarters.png" id="8_vy08g"]
+[ext_resource type="PackedScene" uid="uid://btsg7h70a0ae0" path="res://Assets/federation.tscn" id="8_kxgkg"]
+[ext_resource type="Texture2D" uid="uid://ciqpsktohrrf4" path="res://Assets/Space shit/captain side/captains quarters.png" id="8_vy08g"]
 [ext_resource type="Texture2D" uid="uid://dfetu76rpdoe7" path="res://Assets/Space shit/Asteroide.png" id="9_p48so"]
 [ext_resource type="PackedScene" uid="uid://bpafm4qlq0pu3" path="res://Assets/NodeAssets/arrow_to_win.tscn" id="11_45hqy"]
 [ext_resource type="Script" path="res://Scripts/Wheel.gd" id="11_b7h1i"]
-[ext_resource type="PackedScene" path="res://Assets/water_drips.tscn" id="11_cxwrk"]
+[ext_resource type="PackedScene" uid="uid://cha13gwjj3631" path="res://Assets/water_drips.tscn" id="11_cxwrk"]
 [ext_resource type="Texture2D" uid="uid://cfaedea26e3a7" path="res://Assets/Space shit/captain side/wheel.png" id="11_jp8pt"]
-[ext_resource type="Texture2D" uid="uid://dmnalcgng2od4" path="res://Assets/mechanic side/press button.png" id="12_wktdw"]
-[ext_resource type="Texture2D" uid="uid://dhxj8hq8m2muj" path="res://Assets/Space shit/captain side/COALOMETER.png" id="13_4m2l1"]
+[ext_resource type="Texture2D" uid="uid://bxct4tlom1vt2" path="res://Assets/mechanic side/press button.png" id="12_wktdw"]
+[ext_resource type="Texture2D" uid="uid://bjqu8uq5klb1d" path="res://Assets/Space shit/captain side/COALOMETER.png" id="13_4m2l1"]
 [ext_resource type="Script" path="res://Scripts/Mechanic_Button.gd" id="13_pp878"]
 [ext_resource type="Script" path="res://Scripts/Coalometer.gd" id="14_w30ld"]
 [ext_resource type="Script" path="res://Scripts/PlayerIcon.gd" id="15_hk7kv"]
@@ -28,11 +28,11 @@
 [ext_resource type="AudioStream" uid="uid://chr1n60q3eg64" path="res://Assets/Audio/wheel click.mp3" id="18_cpany"]
 [ext_resource type="Script" path="res://Scripts/CoalPile.gd" id="18_dtvdv"]
 [ext_resource type="Texture2D" uid="uid://mdui6mowj7hk" path="res://Assets/mechanic side/coal pile.png" id="19_1f8ds"]
-[ext_resource type="PackedScene" uid="uid://cwewv3pdnwjv1" path="res://NodeScenes/DraggableCoal.tscn" id="19_62qb6"]
+[ext_resource type="PackedScene" path="res://NodeScenes/DraggableCoal.tscn" id="19_62qb6"]
 [ext_resource type="Texture2D" uid="uid://d1fk3q6bv4k6j" path="res://Assets/mechanic side/furnace vackground.png" id="20_yqdew"]
 [ext_resource type="Texture2D" uid="uid://bci4fu3dchyel" path="res://Assets/mechanic side/furnace2.png" id="21_1nmh3"]
 [ext_resource type="Script" path="res://Scripts/CoalOven.gd" id="21_a7u7q"]
-[ext_resource type="PackedScene" path="res://NodeScenes/Coal.tscn" id="22_r64ks"]
+[ext_resource type="PackedScene" uid="uid://btusexu0lh4s7" path="res://NodeScenes/Coal.tscn" id="22_r64ks"]
 [ext_resource type="Script" path="res://Scripts/CoalOvenDoor.gd" id="23_xslfu"]
 [ext_resource type="Texture2D" uid="uid://v6jxi2tqkhb2" path="res://Assets/furnacedoor.png" id="24_c32nm"]
 [ext_resource type="PackedScene" uid="uid://bv3g4mtknlkbu" path="res://NodeScenes/WinAndLosePopup.tscn" id="25_wj4lu"]
@@ -830,6 +830,38 @@ scale = Vector2(1.975, 1.975)
 position = Vector2(-751, -2400)
 scale = Vector2(3.235, 3.235)
 
+[node name="Asteroid84" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(-1054, -1795)
+scale = Vector2(3.235, 3.235)
+
+[node name="Asteroid85" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(1267, -887)
+scale = Vector2(3.235, 3.235)
+
+[node name="Asteroid86" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(-1108, -3342)
+scale = Vector2(3.235, 3.235)
+
+[node name="Asteroid87" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(-1088, -2494)
+scale = Vector2(3.235, 3.235)
+
+[node name="Asteroid88" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(1240, -4068)
+scale = Vector2(3.235, 3.235)
+
+[node name="Asteroid89" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(1139, -3651)
+scale = Vector2(3.235, 3.235)
+
+[node name="Asteroid90" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(1186, -2743)
+scale = Vector2(3.235, 3.235)
+
+[node name="Asteroid91" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(1213, -4775)
+scale = Vector2(3.235, 3.235)
+
 [node name="Asteroid59" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
 position = Vector2(940, -2566)
 
@@ -874,6 +906,211 @@ scale = Vector2(3.235, 3.235)
 
 [node name="Asteroid82" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
 position = Vector2(-652, -5459)
+scale = Vector2(3.235, 3.235)
+
+[node name="Asteroid92" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(802, -5882)
+scale = Vector2(1.87, 1.87)
+
+[node name="Asteroid93" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(-802, -5699)
+scale = Vector2(1.975, 1.975)
+
+[node name="Asteroid94" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(-16, -5712)
+
+[node name="Asteroid95" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(-376, -5760)
+
+[node name="Asteroid96" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(664, -5772)
+scale = Vector2(1.975, 1.975)
+
+[node name="Asteroid97" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(-136, -6182)
+scale = Vector2(1.975, 1.975)
+
+[node name="Asteroid98" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(98, -6080)
+scale = Vector2(3.235, 3.235)
+
+[node name="Asteroid99" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(746, -5934)
+scale = Vector2(1.975, 1.975)
+
+[node name="Asteroid100" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(341, -5803)
+
+[node name="Asteroid101" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(-302, -5808)
+scale = Vector2(3.235, 3.235)
+
+[node name="Asteroid102" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(-1009, -5724)
+scale = Vector2(3.235, 3.235)
+
+[node name="Asteroid103" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(1284, -5971)
+scale = Vector2(1.87, 1.87)
+
+[node name="Asteroid104" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(-361, -5551)
+scale = Vector2(1.975, 1.975)
+
+[node name="Asteroid105" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(425, -5564)
+
+[node name="Asteroid106" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(65, -5612)
+
+[node name="Asteroid107" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(1105, -5624)
+scale = Vector2(1.975, 1.975)
+
+[node name="Asteroid108" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(656, -5956)
+scale = Vector2(1.975, 1.975)
+
+[node name="Asteroid109" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(539, -5932)
+scale = Vector2(3.235, 3.235)
+
+[node name="Asteroid110" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(1000, -5984)
+scale = Vector2(1.975, 1.975)
+
+[node name="Asteroid111" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(782, -5655)
+
+[node name="Asteroid112" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(139, -5660)
+scale = Vector2(3.235, 3.235)
+
+[node name="Asteroid113" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(-241, -6115)
+scale = Vector2(3.235, 3.235)
+
+[node name="Asteroid114" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(541, -5779)
+scale = Vector2(1.87, 1.87)
+
+[node name="Asteroid115" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(-1104, -5359)
+scale = Vector2(1.975, 1.975)
+
+[node name="Asteroid116" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(-318, -5372)
+
+[node name="Asteroid117" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(-678, -5420)
+
+[node name="Asteroid118" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(362, -5432)
+scale = Vector2(1.975, 1.975)
+
+[node name="Asteroid119" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(-408, -6073)
+scale = Vector2(1.975, 1.975)
+
+[node name="Asteroid120" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(-204, -5740)
+scale = Vector2(3.235, 3.235)
+
+[node name="Asteroid121" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(257, -5792)
+scale = Vector2(1.975, 1.975)
+
+[node name="Asteroid122" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(39, -5463)
+
+[node name="Asteroid123" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(-604, -5468)
+scale = Vector2(3.235, 3.235)
+
+[node name="Asteroid124" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(-984, -5923)
+scale = Vector2(3.235, 3.235)
+
+[node name="Asteroid125" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(1061, -5912)
+scale = Vector2(1.87, 1.87)
+
+[node name="Asteroid126" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(-441, -5736)
+scale = Vector2(1.975, 1.975)
+
+[node name="Asteroid127" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(345, -5749)
+
+[node name="Asteroid128" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(-15, -5797)
+
+[node name="Asteroid129" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(1025, -5809)
+scale = Vector2(1.975, 1.975)
+
+[node name="Asteroid130" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(-350, -6162)
+scale = Vector2(1.975, 1.975)
+
+[node name="Asteroid131" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(257, -6026)
+scale = Vector2(3.235, 3.235)
+
+[node name="Asteroid132" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(944, -5883)
+scale = Vector2(1.975, 1.975)
+
+[node name="Asteroid133" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(702, -5840)
+
+[node name="Asteroid134" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(59, -5845)
+scale = Vector2(3.235, 3.235)
+
+[node name="Asteroid135" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(-555, -6014)
+scale = Vector2(3.235, 3.235)
+
+[node name="Asteroid136" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(1153, -5946)
+scale = Vector2(1.87, 1.87)
+
+[node name="Asteroid137" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(-1168, -5827)
+scale = Vector2(1.975, 1.975)
+
+[node name="Asteroid138" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(-382, -5840)
+
+[node name="Asteroid139" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(-742, -5888)
+
+[node name="Asteroid140" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(298, -5900)
+scale = Vector2(1.975, 1.975)
+
+[node name="Asteroid141" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(-531, -6233)
+scale = Vector2(1.975, 1.975)
+
+[node name="Asteroid142" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(-49, -6089)
+scale = Vector2(3.235, 3.235)
+
+[node name="Asteroid143" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(421, -5918)
+scale = Vector2(1.975, 1.975)
+
+[node name="Asteroid144" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(-25, -5931)
+
+[node name="Asteroid145" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(-668, -5936)
+scale = Vector2(3.235, 3.235)
+
+[node name="Asteroid146" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
+position = Vector2(-859, -5971)
 scale = Vector2(3.235, 3.235)
 
 [node name="Asteroid83" parent="Ship World/Asteroids" instance=ExtResource("2_n0fda")]
@@ -1787,7 +2024,7 @@ hframes = 2
 vframes = 3
 
 [node name="Sprite2D55" type="Sprite2D" parent="Ship World/WorldBorderLeft2/Fakeasteroids"]
-position = Vector2(578.401, 322.599)
+position = Vector2(378, 373.001)
 scale = Vector2(2, 2)
 texture = ExtResource("9_p48so")
 hframes = 2
