@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=3 uid="uid://br4vudmfn607"]
+[gd_scene load_steps=108 format=3 uid="uid://br4vudmfn607"]
 
 [ext_resource type="Texture2D" uid="uid://dj42bpxy5l4bl" path="res://Assets/Space shit/real space tiles.png" id="1_s85f7"]
 [ext_resource type="PackedScene" uid="uid://5qslbyyyg40x" path="res://Assets/NodeAssets/asteroid.tscn" id="2_n0fda"]
@@ -22,6 +22,7 @@
 [ext_resource type="Script" path="res://Scripts/PlayerIcon.gd" id="15_hk7kv"]
 [ext_resource type="Texture2D" uid="uid://sly1a18et6yu" path="res://Assets/hat1.png" id="15_s1xsl"]
 [ext_resource type="Texture2D" uid="uid://b51y0236rvoef" path="res://Assets/fire mechanic.png" id="16_21vc1"]
+[ext_resource type="AudioStream" uid="uid://chr1n60q3eg64" path="res://Assets/Audio/wheel click.mp3" id="18_cpany"]
 [ext_resource type="Script" path="res://Scripts/CoalPile.gd" id="18_dtvdv"]
 [ext_resource type="Texture2D" uid="uid://mdui6mowj7hk" path="res://Assets/mechanic side/coal pile.png" id="19_1f8ds"]
 [ext_resource type="PackedScene" uid="uid://cwewv3pdnwjv1" path="res://NodeScenes/DraggableCoal.tscn" id="19_62qb6"]
@@ -910,6 +911,9 @@ position = Vector2(296, 511)
 scale = Vector2(4, 4)
 texture = ExtResource("11_jp8pt")
 script = ExtResource("11_b7h1i")
+
+[node name="Click" type="AudioStreamPlayer2D" parent="Ship Inside/Wheel"]
+stream = ExtResource("18_cpany")
 
 [node name="Button1" type="Sprite2D" parent="Ship Inside"]
 position = Vector2(1264, 152)

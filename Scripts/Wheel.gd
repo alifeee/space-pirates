@@ -13,6 +13,10 @@ var mouse_steering = false
 const CLICK_RADIUS = 150
 const MOUSE_CONTROL_SPEED = .01
 
+var prev_wheel_segment = 0
+const WHEEL_SEGMENTS = 10
+@onready var click_sound = $"Click"
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -39,6 +43,19 @@ func _process(delta):
 			rotation = move_toward(rotation, ROTATION_MAX, CONTROL_SPEED * delta)
 		elif direction == -1:
 			rotation = move_toward(rotation, -ROTATION_MAX, CONTROL_SPEED * delta)
+			
+	# sound
+	var deg_round = rad_to_deg(rotation)
+	var segment_size_deg = 360 / WHEEL_SEGMENTS
+	var segment_number
+	if deg_round < 0:
+		segment_number = int(deg_round / segment_size_deg) - 1
+	else:
+		segment_number = int(deg_round / segment_size_deg)
+		
+	if segment_number != prev_wheel_segment:
+		click_sound.play()
+	prev_wheel_segment = segment_number
 
 func start_steering():
 	mouse_steering = true
