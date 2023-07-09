@@ -3,7 +3,8 @@ extends CharacterBody2D
 @export var max_move_speed = 400.0
 @export var rotation_speed = 1.5
 @export var coal_increase_amount = 1
-@export var coal_burn_rate = 2
+@export var max_coal_amount = 18
+@export var coal_burn_rate = 2.0
 @export var acceleration = 0.5
 @export var deceleration = 0.5
 
@@ -52,7 +53,7 @@ func _physics_process(delta):
 	checkCollisions()
 
 func increase_coal(coalAmount):
-	coal_count += coalAmount
+	coal_count = min(coal_count + coalAmount, max_coal_amount)
 	_coal_label.text = str(coal_count)
 	
 func decrease_coal(coalAmount):
