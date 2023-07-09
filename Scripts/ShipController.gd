@@ -27,7 +27,7 @@ func get_input():
 		return
 
 	rotation_direction = _ship_wheel.rotation
-	if(Input.is_action_just_pressed("add_coal")):
+	if(Input.is_action_just_pressed("add_coal")) and OS.is_debug_build():
 		increase_coal(coal_increase_amount)
 
 func _process(_delta):
