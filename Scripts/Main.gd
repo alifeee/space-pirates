@@ -9,6 +9,9 @@ var swapped_roles: bool = false
 func _ready():
 	for node in get_tree().get_nodes_in_group("draggables"):
 		node.connect("clicked", _on_draggable_clicked)
+		
+func _process(delta):
+	pass
 
 func _on_lightning_animation_finished():
 	switch_players()

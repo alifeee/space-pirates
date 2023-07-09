@@ -903,6 +903,7 @@ autoplay = true
 [connection signal="shipEscaped" from="Ship World/SpaceShip" to="Ship Inside" method="_on_space_ship_ship_escaped"]
 [connection signal="mouse_entered" from="Ship Inside/Coal Pile" to="Ship Inside/Coal Pile" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Ship Inside/Coal Pile" to="Ship Inside/Coal Pile" method="_on_mouse_exited"]
+[connection signal="new_coal_made" from="Ship Inside/Coal Pile" to="Ship Inside" method="_on_coal_pile_new_coal_made"]
 [connection signal="coal_filled" from="Ship Inside/Coal Oven" to="Ship World/SpaceShip" method="_on_coal_oven_coal_filled"]
 [connection signal="door_closed" from="Ship Inside/Coal Oven/Door" to="Ship Inside/Coal Oven" method="_on_door_door_closed"]
 [connection signal="mouse_entered" from="Ship Inside/Coal Oven/Door" to="Ship Inside/Coal Oven/Door" method="_on_mouse_entered"]
