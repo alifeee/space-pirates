@@ -1,5 +1,7 @@
 extends AnimatedSprite2D
 
+@export var Flash:Node2D
+@export var FlashTimer:Timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,3 +14,9 @@ func _process(delta):
 
 func _on_timer_timeout():
 	play()
+	FlashTimer.start()
+	Flash.visible = true
+
+
+func _on_flash_timer_timeout():
+	Flash.visible = false
