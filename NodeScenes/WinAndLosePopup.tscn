@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bv3g4mtknlkbu"]
+[gd_scene load_steps=10 format=3 uid="uid://bv3g4mtknlkbu"]
 
 [ext_resource type="Script" path="res://Scripts/WinAndLosePopup.gd" id="1_jir6s"]
 [ext_resource type="Script" path="res://Scripts/Button.gd" id="1_l8mps"]
-[ext_resource type="FontFile" uid="uid://caadhswx0wbgx" path="res://Assets/Early GameBoy.ttf" id="2_i0jfc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6n54d"]
 bg_color = Color(0.0509804, 0.0941176, 0.121569, 0.588235)
@@ -21,13 +20,12 @@ Panel/styles/panel = SubResource("StyleBoxFlat_6n54d")
 
 [sub_resource type="LabelSettings" id="LabelSettings_a50uv"]
 line_spacing = 2.0
-font = ExtResource("2_i0jfc")
-font_size = 40
+font_size = 50
 outline_size = 6
 outline_color = Color(0.0431373, 0.0431373, 0.0431373, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tjm1n"]
-bg_color = Color(0.298039, 0.270588, 0.309804, 1)
+bg_color = Color(0.172549, 0.243137, 0.4, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -38,19 +36,20 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o2yuu"]
-bg_color = Color(0.243137, 0.207843, 0.270588, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b4qgm"]
+bg_color = Color(0.207843, 0.286275, 0.466667, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i5tkx"]
-bg_color = Color(0.298039, 0.270588, 0.309804, 1)
+bg_color = Color(0.407843, 0.517647, 0.745098, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -65,7 +64,7 @@ corner_radius_bottom_left = 10
 Button/colors/icon_normal_color = Color(0.690196, 0.305882, 0.231373, 1)
 Button/font_sizes/font_size = 19
 Button/styles/hover = SubResource("StyleBoxFlat_tjm1n")
-Button/styles/normal = SubResource("StyleBoxFlat_o2yuu")
+Button/styles/normal = SubResource("StyleBoxFlat_b4qgm")
 Button/styles/pressed = SubResource("StyleBoxFlat_i5tkx")
 
 [node name="Node2D" type="CanvasLayer" node_paths=PackedStringArray("MainLabel")]
@@ -98,12 +97,11 @@ offset_bottom = 25.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("2_i0jfc")
 text = "You Win!"
 label_settings = SubResource("LabelSettings_a50uv")
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
+autowrap_mode = 3
 
 [node name="Control" type="Control" parent="Panel"]
 layout_mode = 1
@@ -136,9 +134,7 @@ offset_bottom = 111.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("2_i0jfc")
-theme_override_font_sizes/font_size = 14
-text = " Play Again! "
+text = "Play Again! "
 script = ExtResource("1_l8mps")
 restartScene = true
 
@@ -156,8 +152,6 @@ offset_bottom = 111.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("2_i0jfc")
-theme_override_font_sizes/font_size = 14
-text = " Return to menu "
+text = "Return to menu"
 script = ExtResource("1_l8mps")
 returnToMenu = true

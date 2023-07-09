@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://br2eyy8g1mtc3"]
+[gd_scene load_steps=28 format=3 uid="uid://br2eyy8g1mtc3"]
 
 [ext_resource type="Texture2D" uid="uid://cua2v4eihdd1l" path="res://Assets/controls_tilemap.png" id="1_46kj0"]
 [ext_resource type="Texture2D" uid="uid://dguqrey2kp4ph" path="res://Assets/space pirates.png" id="1_qo8gg"]
@@ -10,10 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://rfm2wr8cbtym" path="res://Assets/mechanic text.png" id="5_7xm1v"]
 [ext_resource type="FontFile" uid="uid://caadhswx0wbgx" path="res://Assets/Early GameBoy.ttf" id="6_3ooi4"]
 [ext_resource type="Script" path="res://Scripts/FadeRect.gd" id="6_q1ft8"]
-[ext_resource type="Texture2D" uid="uid://cfaedea26e3a7" path="res://Assets/Space shit/captain side/wheel.png" id="7_5cexb"]
 [ext_resource type="Texture2D" uid="uid://dfetux4po5o1d" path="res://Assets/main menu button.png" id="9_0nb63"]
-[ext_resource type="Texture2D" uid="uid://dalf53wp3tyul" path="res://Assets/mechanic side/furnacedoor2.png" id="9_g0op3"]
-[ext_resource type="Texture2D" uid="uid://bci4fu3dchyel" path="res://Assets/mechanic side/furnace2.png" id="10_fdrls"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d6j4e"]
 atlas = ExtResource("4_onn6q")
@@ -942,21 +939,6 @@ separation = Vector2i(1, 1)
 [sub_resource type="TileSet" id="TileSet_wxjsx"]
 sources/0 = SubResource("TileSetAtlasSource_gkh6h")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ixjug"]
-atlas = ExtResource("9_g0op3")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_1pnjg"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ixjug")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [node name="MainMenu" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -966,7 +948,7 @@ scale = Vector2(29.8656, 16.8955)
 color = Color(0.109804, 0.0784314, 0.113725, 1)
 
 [node name="Title" type="Sprite2D" parent="."]
-position = Vector2(576, 64)
+position = Vector2(600, 64)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_qo8gg")
 
@@ -982,36 +964,31 @@ script = ExtResource("2_6ykde")
 [node name="Player1" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -112.0
-offset_top = 176.0
-offset_right = -72.0
-offset_bottom = 216.0
+offset_left = 656.0
+offset_top = 128.0
+offset_right = 696.0
+offset_bottom = 168.0
 
 [node name="Player 1 controls" type="Sprite2D" parent="Player1"]
 position = Vector2(296, 144)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_t1sb5")
 
-[node name="Control" type="Control" parent="Player1"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Player 1 controls3" type="TileMap" parent="Player1/Control"]
+[node name="Player 1 controls3" type="TileMap" parent="Player1"]
 position = Vector2(320, 256)
 scale = Vector2(4, 4)
 tile_set = SubResource("TileSet_wxjsx")
 format = 2
 layer_0/tile_data = PackedInt32Array(-65536, 589824, 2)
 
-[node name="Player 1 controls2" type="TileMap" parent="Player1/Control"]
+[node name="Player 1 controls2" type="TileMap" parent="Player1"]
 position = Vector2(256, 256)
 scale = Vector2(4, 4)
 tile_set = SubResource("TileSet_wxjsx")
 format = 2
 layer_0/tile_data = PackedInt32Array(-1, 524288, 2)
 
-[node name="p1 interact" type="Label" parent="Player1/Control"]
+[node name="p1 interact" type="Label" parent="Player1"]
 layout_mode = 0
 offset_left = 297.0
 offset_top = 264.0
@@ -1020,53 +997,43 @@ offset_bottom = 290.0
 theme_override_fonts/font = ExtResource("6_3ooi4")
 text = "Interact"
 
-[node name="p1 steer" type="Label" parent="Player1/Control"]
+[node name="p1 steer" type="Label" parent="Player1"]
 layout_mode = 0
-offset_left = 184.0
-offset_top = 264.0
-offset_right = 264.0
-offset_bottom = 290.0
+offset_left = 192.0
+offset_top = 263.0
+offset_right = 272.0
+offset_bottom = 289.0
 theme_override_fonts/font = ExtResource("6_3ooi4")
 text = "Steer"
-
-[node name="WheelIcon" type="Sprite2D" parent="Player1"]
-position = Vector2(288, 48)
-texture = ExtResource("7_5cexb")
 
 [node name="Player2" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 80.0
-offset_top = 176.0
-offset_right = 120.0
-offset_bottom = 216.0
+offset_left = -696.0
+offset_top = 128.0
+offset_right = -656.0
+offset_bottom = 168.0
 
 [node name="Mechanic" type="Sprite2D" parent="Player2"]
 position = Vector2(896, 144)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("5_7xm1v")
 
-[node name="Control" type="Control" parent="Player2"]
-anchors_preset = 0
-offset_left = 24.0
-offset_right = 64.0
-offset_bottom = 40.0
-
-[node name="Player 2 controls2" type="TileMap" parent="Player2/Control"]
+[node name="Player 2 controls2" type="TileMap" parent="Player2"]
 position = Vector2(832, 256)
 scale = Vector2(4, 4)
 tile_set = SubResource("TileSet_wxjsx")
 format = 2
 layer_0/tile_data = PackedInt32Array(-1, 2162688, 4)
 
-[node name="Player 2 controls3" type="TileMap" parent="Player2/Control"]
+[node name="Player 2 controls3" type="TileMap" parent="Player2"]
 position = Vector2(896, 256)
 scale = Vector2(4, 4)
 tile_set = SubResource("TileSet_wxjsx")
 format = 2
 layer_0/tile_data = PackedInt32Array(-65536, 2031616, 4)
 
-[node name="p2 shovel coal" type="Label" parent="Player2/Control"]
+[node name="p2 shovel coal" type="Label" parent="Player2"]
 layout_mode = 0
 offset_left = 758.0
 offset_top = 259.0
@@ -1077,7 +1044,7 @@ text = "Shovel coal"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="p2 operate hatch" type="Label" parent="Player2/Control"]
+[node name="p2 operate hatch" type="Label" parent="Player2"]
 layout_mode = 0
 offset_left = 878.0
 offset_top = 259.0
@@ -1087,19 +1054,6 @@ theme_override_fonts/font = ExtResource("6_3ooi4")
 text = "Operate hatch"
 horizontal_alignment = 1
 autowrap_mode = 2
-
-[node name="Node2D" type="Node2D" parent="Player2"]
-position = Vector2(816, 32)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player2/Node2D"]
-position = Vector2(72, 0)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_1pnjg")
-
-[node name="OvenIcon" type="Sprite2D" parent="Player2/Node2D"]
-position = Vector2(72, 0)
-scale = Vector2(2, 2)
-texture = ExtResource("10_fdrls")
 
 [node name="Menu Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_cmkun")
