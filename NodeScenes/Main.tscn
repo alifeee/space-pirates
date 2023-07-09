@@ -1,6 +1,6 @@
-[gd_scene load_steps=103 format=3 uid="uid://br4vudmfn607"]
+[gd_scene load_steps=104 format=3 uid="uid://br4vudmfn607"]
 
-[ext_resource type="Texture2D" path="res://Assets/Space shit/real space tiles.png" id="1_s85f7"]
+[ext_resource type="Texture2D" uid="uid://dj42bpxy5l4bl" path="res://Assets/Space shit/real space tiles.png" id="1_s85f7"]
 [ext_resource type="PackedScene" uid="uid://5qslbyyyg40x" path="res://Assets/NodeAssets/asteroid.tscn" id="2_n0fda"]
 [ext_resource type="Script" path="res://Scripts/ShipController.gd" id="3_5386y"]
 [ext_resource type="Texture2D" uid="uid://b1f1rtugrqdat" path="res://Assets/Space shit/spaceship/spaceship.png" id="4_0vrx3"]
@@ -10,31 +10,32 @@
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="7_xddt0"]
 [ext_resource type="Texture2D" uid="uid://brvklbtxo7j3r" path="res://Assets/mechanic side/mechanis.png" id="8_dqo4h"]
 [ext_resource type="PackedScene" path="res://Assets/federation.tscn" id="8_kxgkg"]
-[ext_resource type="Texture2D" path="res://Assets/Space shit/captain side/captains quarters.png" id="8_vy08g"]
+[ext_resource type="Texture2D" uid="uid://bijpwt851dnri" path="res://Assets/Space shit/captain side/captains quarters.png" id="8_vy08g"]
 [ext_resource type="Script" path="res://Scripts/Wheel.gd" id="11_b7h1i"]
 [ext_resource type="PackedScene" path="res://Assets/water_drips.tscn" id="11_cxwrk"]
-[ext_resource type="Texture2D" path="res://Assets/Space shit/captain side/wheel.png" id="11_jp8pt"]
+[ext_resource type="Texture2D" uid="uid://cfaedea26e3a7" path="res://Assets/Space shit/captain side/wheel.png" id="11_jp8pt"]
 [ext_resource type="Texture2D" uid="uid://dmnalcgng2od4" path="res://Assets/mechanic side/press button.png" id="12_wktdw"]
-[ext_resource type="Texture2D" path="res://Assets/Space shit/captain side/COALOMETER.png" id="13_4m2l1"]
+[ext_resource type="Texture2D" uid="uid://dhxj8hq8m2muj" path="res://Assets/Space shit/captain side/COALOMETER.png" id="13_4m2l1"]
 [ext_resource type="Script" path="res://Scripts/Mechanic_Button.gd" id="13_pp878"]
+[ext_resource type="Script" path="res://Scripts/Coalometer.gd" id="14_w30ld"]
 [ext_resource type="Script" path="res://Scripts/PlayerIcon.gd" id="15_hk7kv"]
-[ext_resource type="Texture2D" path="res://Assets/hat1.png" id="15_s1xsl"]
-[ext_resource type="Texture2D" path="res://Assets/fire mechanic.png" id="16_21vc1"]
+[ext_resource type="Texture2D" uid="uid://sly1a18et6yu" path="res://Assets/hat1.png" id="15_s1xsl"]
+[ext_resource type="Texture2D" uid="uid://b51y0236rvoef" path="res://Assets/fire mechanic.png" id="16_21vc1"]
 [ext_resource type="Script" path="res://Scripts/CoalPile.gd" id="18_dtvdv"]
-[ext_resource type="Texture2D" path="res://Assets/mechanic side/coal pile.png" id="19_1f8ds"]
-[ext_resource type="PackedScene" path="res://NodeScenes/DraggableCoal.tscn" id="19_62qb6"]
-[ext_resource type="Texture2D" path="res://Assets/mechanic side/furnace vackground.png" id="20_yqdew"]
-[ext_resource type="Texture2D" path="res://Assets/mechanic side/furnace2.png" id="21_1nmh3"]
+[ext_resource type="Texture2D" uid="uid://mdui6mowj7hk" path="res://Assets/mechanic side/coal pile.png" id="19_1f8ds"]
+[ext_resource type="PackedScene" uid="uid://cwewv3pdnwjv1" path="res://NodeScenes/DraggableCoal.tscn" id="19_62qb6"]
+[ext_resource type="Texture2D" uid="uid://d1fk3q6bv4k6j" path="res://Assets/mechanic side/furnace vackground.png" id="20_yqdew"]
+[ext_resource type="Texture2D" uid="uid://bci4fu3dchyel" path="res://Assets/mechanic side/furnace2.png" id="21_1nmh3"]
 [ext_resource type="Script" path="res://Scripts/CoalOven.gd" id="21_a7u7q"]
 [ext_resource type="PackedScene" path="res://NodeScenes/Coal.tscn" id="22_r64ks"]
 [ext_resource type="Script" path="res://Scripts/CoalOvenDoor.gd" id="23_xslfu"]
-[ext_resource type="Texture2D" path="res://Assets/furnacedoor.png" id="24_c32nm"]
+[ext_resource type="Texture2D" uid="uid://v6jxi2tqkhb2" path="res://Assets/furnacedoor.png" id="24_c32nm"]
 [ext_resource type="PackedScene" path="res://NodeScenes/WinAndLosePopup.tscn" id="25_wj4lu"]
-[ext_resource type="Texture2D" path="res://Assets/mind stone up n down.png" id="27_glk8i"]
+[ext_resource type="Texture2D" uid="uid://233rf6jcwfdq" path="res://Assets/mind stone up n down.png" id="27_glk8i"]
 [ext_resource type="Script" path="res://Scripts/AnimateGem.gd" id="28_fhklq"]
-[ext_resource type="Texture2D" path="res://Assets/mind stone.png" id="28_r2i32"]
-[ext_resource type="Texture2D" path="res://Assets/mechanislightning.png" id="32_xetf2"]
-[ext_resource type="AudioStream" path="res://Assets/maxkomusic-space-heroes.mp3" id="33_2npr5"]
+[ext_resource type="Texture2D" uid="uid://dlp1ggec1236e" path="res://Assets/mind stone.png" id="28_r2i32"]
+[ext_resource type="Texture2D" uid="uid://dfjit3lwf06ra" path="res://Assets/mechanislightning.png" id="32_xetf2"]
+[ext_resource type="AudioStream" uid="uid://cj3774v0sumh7" path="res://Assets/maxkomusic-space-heroes.mp3" id="33_2npr5"]
 [ext_resource type="Script" path="res://Scripts/AnimateLightning.gd" id="33_elh6w"]
 [ext_resource type="Script" path="res://Scripts/SwitchTimer.gd" id="35_aouu4"]
 
@@ -633,10 +634,12 @@ texture = ExtResource("8_dqo4h")
 position = Vector2(-91, 5)
 scale = Vector2(0.5, 0.5)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ship Inside"]
+[node name="Coalometer" type="AnimatedSprite2D" parent="Ship Inside" node_paths=PackedStringArray("ship")]
 position = Vector2(1016, 281)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_kni00")
+script = ExtResource("14_w30ld")
+ship = NodePath("../../Ship World/SpaceShip")
 
 [node name="Wheel" type="Sprite2D" parent="Ship Inside"]
 position = Vector2(296, 511)
