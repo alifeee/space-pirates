@@ -1070,8 +1070,9 @@ script = ExtResource("6_q1ft8")
 [node name="Play button" type="Button" parent="."]
 offset_left = 448.0
 offset_top = 560.0
-offset_right = 704.0
-offset_bottom = 624.0
+offset_right = 711.0
+offset_bottom = 631.0
+theme_override_fonts/font = ExtResource("6_3ooi4")
 text = "PLAY"
 icon = ExtResource("9_0nb63")
 icon_alignment = 1
