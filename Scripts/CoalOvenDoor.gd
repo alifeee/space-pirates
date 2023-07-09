@@ -114,7 +114,7 @@ func _input(event):
 				return
 			if (event.position - self.position).length() and mouse_over_door:
 				if not dragging and event.pressed:
-					scale_slide_sound(0)
+#					scale_slide_sound(0)
 					start_steering()
 			if dragging and not event.pressed:
 				stop_steering()
@@ -123,7 +123,7 @@ func _input(event):
 			if locked:
 				return
 			var yamount = event.relative.y
-			scale_slide_sound(abs(yamount) / SCALE_Y_MOVE_FOR_SOUND)
+#			scale_slide_sound(abs(yamount) / SCALE_Y_MOVE_FOR_SOUND)
 			translate(Vector2.DOWN * yamount)
 			position.y = clamp(position.y, initial_y_position + OPEN_HEIGHT, initial_y_position + CLOSED_HEIGHT)
 	
