@@ -1,3 +1,5 @@
+> [!CAUTION]
+> MOVED! see <https://git.alifeee.net/space-pirates/about/>
 # Space Pirates and the Mind Stone
 
 This is a game made in Godot as part of the [GMTK Game Jam 2023](https://itch.io/jam/gmtk-2023), where we had 48 hours to make a game based on the theme "Roles Reversed".
